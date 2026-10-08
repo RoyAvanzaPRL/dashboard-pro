@@ -1,0 +1,49 @@
+<div id="tabla2" class="relative flex h-full min-h-0 flex-col overflow-hidden px-7 pb-5 pt-6">
+  <div class="flex items-center justify-between gap-4">
+    <div>
+      <h1 class="text-lg font-semibold">Tabla 2</h1>
+      <p id="tabla2-count" class="text-sm text-mute">18 encargos</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <form id="tabla2-search" class="relative">
+        <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+        <label class="sr-only" for="tabla2-q">Buscar encargo</label>
+        <input id="tabla2-q" type="search" placeholder="Buscar encargo" class="w-56 rounded-lg bg-[#f3f4f6] py-2 pl-9 pr-3 text-sm outline-none placeholder:text-mute" />
+      </form>
+      <button type="button" data-open="order-sheet" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">+ Encargo</button>
+    </div>
+  </div>
+  <div id="tabla2-tabs" class="mt-4 flex gap-6 border-b border-line" role="tablist" aria-label="Vistas"></div>
+  <div class="min-h-0 flex-1 overflow-x-auto overflow-y-auto pt-2">
+    <div id="tabla2-head"></div>
+    <div id="tabla2-body"></div>
+    <p id="tabla2-empty" hidden class="px-2 py-8 text-sm text-mute">Ningún encargo coincide con esta vista.</p>
+  </div>
+  <div id="tabla2-foot" class="flex items-center justify-between gap-4 pt-4"></div>
+  <div id="tabla2-bulk" hidden class="absolute bottom-16 left-1/2 z-20 -translate-x-1/2"></div>
+  <div id="order-sheet" hidden class="fixed inset-0 z-40 grid place-items-center bg-ink/30">
+    <form class="w-[420px] rounded-2xl bg-white p-5 shadow-[0_24px_60px_rgba(20,24,28,0.18)]">
+      <h2 class="text-lg font-semibold">Nuevo encargo</h2>
+      <label class="mt-4 block text-xs font-medium text-mute" for="nuevo-cliente">Cliente</label>
+      <input id="nuevo-cliente" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Nombre del cliente" />
+      <label class="mt-3 block text-xs font-medium text-mute" for="nuevo-estado">Estado</label>
+      <select id="nuevo-estado" class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm">
+        <option value="pendiente">Pendiente</option>
+        <option value="curso">En curso</option>
+        <option value="vencido">Vencido</option>
+        <option value="terminado">Terminado</option>
+      </select>
+      <label class="mt-3 block text-xs font-medium text-mute" for="nuevo-importe">Importe</label>
+      <input id="nuevo-importe" type="number" min="0" step="0.01" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="0,00" />
+      <label class="mt-3 block text-xs font-medium text-mute" for="nuevo-pago">Pago</label>
+      <select id="nuevo-pago" class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm">
+        <option value="impagado">Impagado</option>
+        <option value="pagado">Pagado</option>
+      </select>
+      <div class="mt-4 flex justify-end gap-3">
+        <button type="button" data-close class="text-sm font-medium">Cerrar</button>
+        <button type="submit" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">Añadir</button>
+      </div>
+    </form>
+  </div>
+</div>

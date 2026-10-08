@@ -1,0 +1,79 @@
+<div id="tabla5" class="flex h-full min-h-0 flex-col overflow-hidden px-7 pb-5 pt-6">
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    <div>
+      <h1 class="text-lg font-semibold">Tabla 5</h1>
+      <p id="tabla5-count" class="text-sm text-mute">16 asuntos</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <form id="tabla5-search" class="relative">
+        <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+        <label class="sr-only" for="tabla5-q">Buscar asunto</label>
+        <input id="tabla5-q" type="search" placeholder="Buscar asunto" autocomplete="off" class="w-56 rounded-lg bg-[#f3f4f6] py-2 pl-9 pr-3 text-sm outline-none placeholder:text-mute" />
+      </form>
+      <button type="button" data-t5-open class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">+ Asunto</button>
+    </div>
+  </div>
+
+  <div class="mt-4 flex flex-wrap items-center gap-2">
+    <div class="seg" role="group" aria-label="Filtrar por estado">
+      <button type="button" data-t5-status="todos" aria-pressed="true">Todos</button>
+      <button type="button" data-t5-status="Abierto" aria-pressed="false">Abiertos</button>
+      <button type="button" data-t5-status="Urgente" aria-pressed="false">Urgentes</button>
+      <button type="button" data-t5-status="Cerrado" aria-pressed="false">Cerrados</button>
+    </div>
+    <label class="inline-flex items-center gap-2 rounded-lg bg-[#f3f4f6] px-2.5 py-1.5 text-xs text-[#5c6570]">Orden
+      <select id="tabla5-sort" class="bg-transparent text-sm font-medium text-ink outline-none">
+        <option value="fecha:desc">Fecha, más reciente</option>
+        <option value="fecha:asc">Fecha, más antigua</option>
+        <option value="asunto:asc">Asunto, A–Z</option>
+        <option value="asunto:desc">Asunto, Z–A</option>
+        <option value="cliente:asc">Cliente, A–Z</option>
+        <option value="cliente:desc">Cliente, Z–A</option>
+        <option value="juzgado:asc">Juzgado, A–Z</option>
+        <option value="juzgado:desc">Juzgado, Z–A</option>
+        <option value="cuantia:desc">Cuantía, mayor</option>
+        <option value="cuantia:asc">Cuantía, menor</option>
+        <option value="estado:asc">Estado, A–Z</option>
+        <option value="estado:desc">Estado, Z–A</option>
+      </select>
+    </label>
+    <div id="tabla5-filters" class="flex flex-wrap items-center gap-2"></div>
+  </div>
+
+  <div class="mt-3 min-h-0 flex-1 overflow-x-auto overflow-y-auto">
+    <div class="min-w-0">
+      <div id="tabla5-head"></div>
+      <div id="tabla5-body"></div>
+      <p id="tabla5-empty" hidden class="px-2 py-8 text-sm text-mute">Ningún asunto coincide con esta búsqueda.</p>
+    </div>
+  </div>
+  <div id="tabla5-foot" class="flex flex-wrap items-center justify-between gap-3 pt-4"></div>
+
+  <div id="tabla5-sheet" hidden class="fixed inset-0 z-40 grid place-items-center bg-ink/30">
+    <form class="w-[420px] rounded-2xl bg-white p-5 shadow-[0_24px_60px_rgba(20,24,28,0.18)]">
+      <h2 class="text-lg font-semibold">Nuevo asunto</h2>
+      <label class="mt-4 block text-xs font-medium text-mute" for="tabla5-asunto">Asunto</label>
+      <input id="tabla5-asunto" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Título del asunto" />
+      <label class="mt-3 block text-xs font-medium text-mute" for="tabla5-cliente">Cliente</label>
+      <input id="tabla5-cliente" list="tabla5-clientes" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Nombre del cliente" />
+      <datalist id="tabla5-clientes"></datalist>
+      <label class="mt-3 block text-xs font-medium text-mute" for="tabla5-juzgado">Juzgado</label>
+      <input id="tabla5-juzgado" list="tabla5-juzgados" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Juzgado" />
+      <datalist id="tabla5-juzgados"></datalist>
+      <label class="mt-3 block text-xs font-medium text-mute" for="tabla5-cuantia">Cuantía</label>
+      <input id="tabla5-cuantia" type="number" min="0" step="0.01" class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Opcional" />
+      <label class="mt-3 block text-xs font-medium text-mute" for="tabla5-estado">Estado</label>
+      <select id="tabla5-estado" class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm">
+        <option>Abierto</option>
+        <option>Urgente</option>
+        <option>Cerrado</option>
+      </select>
+      <label class="mt-3 block text-xs font-medium text-mute" for="tabla5-fecha">Fecha</label>
+      <input id="tabla5-fecha" type="date" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" />
+      <div class="mt-4 flex justify-end gap-3">
+        <button type="button" data-t5-close class="text-sm font-medium">Cerrar</button>
+        <button type="submit" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">Añadir</button>
+      </div>
+    </form>
+  </div>
+</div>

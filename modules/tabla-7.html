@@ -1,0 +1,81 @@
+<div id="tabla7" class="relative flex h-full min-h-0 flex-col gap-6 overflow-hidden bg-[#f3f4f6] px-4 py-6">
+  <section class="relative flex shrink-0 flex-col gap-5 rounded-2xl bg-white px-5 py-5 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h1 class="text-lg font-semibold">Tabla 7</h1>
+        <p class="text-sm text-mute">Recursos contenciosos</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <p id="tabla7-count" aria-live="polite" class="text-sm text-mute">18 recursos</p>
+        <button type="button" id="tabla7-add" class="h-9 rounded-lg bg-ink px-3 text-sm font-semibold text-white">Añadir</button>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <form id="tabla7-search" class="relative min-w-0 flex-1">
+        <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+        <label class="sr-only" for="tabla7-q">Buscar en cualquier dato</label>
+        <input id="tabla7-q" type="search" placeholder="Buscar" autocomplete="off" class="h-9 w-full rounded-lg border border-line bg-white pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-ink" />
+      </form>
+      <div class="relative shrink-0">
+        <button type="button" id="tabla7-filter-btn" data-t7-keep data-t7-toggle="filtrar" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-filter">
+          <span id="tabla7-filter-label">Filtrar</span>
+          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        <div id="tabla7-pop-filter" data-t7-keep data-t7-pop="filtrar" hidden class="absolute left-0 z-30 mt-2 w-72 rounded-xl border border-line bg-white p-2 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+      </div>
+      <div class="relative shrink-0">
+        <button type="button" id="tabla7-sort-btn" data-t7-keep data-t7-toggle="orden" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-sort">
+          <span id="tabla7-sort-label">Orden</span>
+          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        <div id="tabla7-pop-sort" data-t7-keep data-t7-pop="orden" hidden class="absolute right-0 z-30 mt-2 w-56 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+      </div>
+      <div class="relative shrink-0">
+        <button type="button" id="tabla7-cols-btn" data-t7-keep data-t7-toggle="columnas" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-cols">
+          <span>Columnas</span>
+          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        <div id="tabla7-pop-cols" data-t7-keep data-t7-pop="columnas" hidden class="absolute right-0 z-30 mt-2 w-48 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+      </div>
+      <div class="relative shrink-0">
+        <button type="button" id="tabla7-size-btn" data-t7-keep data-t7-toggle="tamano" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-size">
+          <span id="tabla7-size-label">10 por página</span>
+          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        <div id="tabla7-pop-size" data-t7-keep data-t7-pop="tamano" hidden class="absolute right-0 z-30 mt-2 w-44 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl bg-white px-4 pb-6 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+    <div id="tabla7-context" class="flex h-12 shrink-0 items-center gap-3 overflow-hidden text-sm" aria-live="polite"></div>
+    <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-line">
+      <div id="tabla7-scroll" class="min-h-0 flex-1 overflow-x-auto overflow-y-auto">
+        <table id="tabla7-table" class="w-full table-fixed border-separate border-spacing-0 text-sm">
+          <thead id="tabla7-head"></thead>
+          <tbody id="tabla7-body"></tbody>
+        </table>
+      </div>
+      <div id="tabla7-foot" class="flex flex-wrap items-center justify-between gap-3 border-t border-line bg-white px-4 py-4"></div>
+    </div>
+  </section>
+
+  <div id="tabla7-row-menu" data-t7-menu hidden class="fixed z-40 w-44 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.14)]"></div>
+
+  <div id="tabla7-sheet" hidden class="absolute inset-0 z-20 flex justify-end bg-ink/20">
+    <form class="flex h-full w-full max-w-sm flex-col bg-white shadow-[-12px_0_40px_rgba(20,24,28,0.08)]">
+      <div class="flex items-center justify-between border-b border-line px-5 py-4">
+        <h2 id="tabla7-sheet-title" class="text-base font-semibold">Nuevo recurso</h2>
+        <button type="button" data-t7-close class="grid size-8 place-items-center rounded-lg text-mute hover:bg-[#f6f7f8] hover:text-ink" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" class="line size-4"><path d="m7 7 10 10M17 7 7 17"></path></svg>
+        </button>
+      </div>
+      <div id="tabla7-fields" class="min-h-0 flex-1 space-y-3 overflow-y-auto px-5 py-4"></div>
+      <div class="flex justify-end gap-3 border-t border-line px-5 py-4">
+        <button type="button" data-t7-close class="text-sm font-medium">Cancelar</button>
+        <button type="submit" class="rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

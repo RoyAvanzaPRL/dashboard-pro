@@ -1,0 +1,80 @@
+<div id="news-home" class="relative flex h-full min-h-0 gap-4 overflow-hidden bg-[#f3f4f6] px-4 py-6">
+  <div class="flex min-w-0 flex-1 flex-col gap-4 overflow-hidden">
+    <section class="relative flex shrink-0 flex-col gap-3 rounded-2xl bg-white px-5 py-4 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h1 class="text-lg font-semibold">Inicio 2</h1>
+          <p class="text-sm text-mute">Novedades para Marina · Mié, 7 oct</p>
+        </div>
+        <div class="flex items-center gap-1">
+          <button type="button" id="news-week-prev" class="grid size-8 place-items-center rounded-lg border border-line text-mute hover:bg-[#f6f7f8]" aria-label="Semana anterior">
+            <svg viewBox="0 0 24 24" class="line size-4"><path d="m14 6-6 6 6 6"></path></svg>
+          </button>
+          <p id="news-week-label" class="min-w-[9rem] text-center text-sm font-medium"></p>
+          <button type="button" id="news-week-next" class="grid size-8 place-items-center rounded-lg border border-line text-mute hover:bg-[#f6f7f8]" aria-label="Semana siguiente">
+            <svg viewBox="0 0 24 24" class="line size-4"><path d="m10 6 6 6-6 6"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div id="news-assistant" class="flex items-center gap-2 rounded-xl bg-mint px-3 py-2"></div>
+      <div class="flex flex-wrap items-center gap-2">
+        <div class="seg" role="group" aria-label="Filtrar por tipo">
+          <button type="button" data-news-filter="todas" aria-pressed="true">Todas</button>
+          <button type="button" data-news-filter="boe" aria-pressed="false">BOE</button>
+          <button type="button" data-news-filter="jurisprudencia" aria-pressed="false">Jurisprudencia</button>
+          <button type="button" data-news-filter="legislacion" aria-pressed="false">Legislación</button>
+          <button type="button" data-news-filter="practica" aria-pressed="false">Prácticas</button>
+        </div>
+        <label class="relative ml-auto min-w-[11rem] flex-1 sm:max-w-[14rem]">
+          <span class="sr-only">Buscar noticias</span>
+          <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 3.5 3.5"></path></svg>
+          <input id="news-q" type="search" placeholder="Buscar" class="h-9 w-full rounded-lg border border-line bg-white py-1.5 pl-8 pr-3 text-sm outline-none placeholder:text-mute focus:border-ink" />
+        </label>
+      </div>
+    </section>
+
+    <section class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <div class="flex h-12 shrink-0 items-center justify-between gap-3 px-5 text-sm">
+        <h2 id="news-list-title" class="text-[15px] font-semibold">Esta semana</h2>
+        <p id="news-count" class="text-xs text-mute"></p>
+      </div>
+      <div id="news-scroll" class="min-h-0 flex-1 overflow-y-auto px-5 pb-5">
+        <div id="news-featured"></div>
+        <div id="news-list" class="mt-1"></div>
+        <div class="mt-5 border-t border-line pt-4">
+          <h3 class="text-sm font-semibold">Resumen de la semana</h3>
+          <p class="mt-0.5 text-xs text-mute">Lo esencial del periodo seleccionado.</p>
+          <ul id="news-digest" class="mt-2 text-sm"></ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <aside id="news-panel" class="flex w-[300px] shrink-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+    <div class="flex h-12 shrink-0 items-center px-5">
+      <p class="text-xs font-semibold uppercase tracking-wide text-mute">Lectura</p>
+    </div>
+    <div class="min-h-0 flex-1 overflow-y-auto px-5 pb-4">
+      <div id="news-detail"></div>
+    </div>
+    <div class="flex items-center justify-between gap-2 border-t border-line px-4 py-3">
+      <button id="news-mark" type="button" class="text-[13px] font-medium text-[#3c424a]">Marcar leída</button>
+      <button id="news-next" type="button" class="shrink-0 whitespace-nowrap rounded-lg bg-tide px-3 py-2 text-[13px] font-semibold text-white">Siguiente sin leer</button>
+    </div>
+  </aside>
+</div>
+<style>
+  #news-home .is-read .news-title {
+    color: #8b919a;
+  }
+  #news-home .is-active {
+    background: #f6fbfa;
+  }
+  #news-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #b4bac3 transparent;
+  }
+  #news-scroll::-webkit-scrollbar-thumb {
+    background: #b4bac3;
+  }
+</style>
