@@ -33,7 +33,7 @@
     <div class="flex h-full gap-3">
       <aside id="sidebar" class="relative flex w-[220px] shrink-0 flex-col px-2 py-3">
         <div class="flex shrink-0 flex-col gap-2.5 px-0.5">
-          <div class="flex items-center gap-1">
+          <div class="brand-row flex items-center gap-1">
             <button type="button" class="flex min-w-0 flex-1 items-center gap-2 rounded-lg px-1 py-1 text-left hover:bg-white/70" aria-label="Perfil de Marina Soler">
               <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[11px] font-semibold text-[#1d4ed8]">MS</span>
               <span class="only-full min-w-0 leading-tight">
@@ -46,42 +46,34 @@
             </button>
           </div>
 
-          <div class="flex items-center gap-1">
-            <div class="relative min-w-0 flex-1">
-              <button id="sede-toggle" type="button" class="flex w-full items-center gap-2 rounded-lg px-1 py-1 text-left hover:bg-white/70" aria-expanded="false" aria-controls="sede-panel">
-                <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-white text-ink shadow-sm">
-                  <svg viewBox="0 0 24 24" class="line size-[18px]"><path d="M4 20V6.5A1.5 1.5 0 0 1 5.5 5h5A1.5 1.5 0 0 1 12 6.5V20"></path><path d="M12 10.5h6.5A1.5 1.5 0 0 1 20 12v8"></path><path d="M3 20h18"></path><path d="M7 9h2M7 13h2M7 17h2M15 14h2M15 17h2"></path></svg>
-                </span>
-                <span class="only-full min-w-0 leading-tight">
-                  <span class="block text-[10px] font-semibold uppercase tracking-[0.14em] text-mute">Albor</span>
-                  <span id="sede-label" class="block text-sm font-semibold">Barcelona</span>
-                </span>
-                <svg viewBox="0 0 24 24" class="line only-full size-3.5 shrink-0 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
-              </button>
-              <div id="sede-panel" hidden class="absolute left-0 top-12 z-40 w-64 rounded-xl border border-line bg-white p-1.5 shadow-[0_12px_32px_rgba(20,24,28,0.12)]">
-                <label class="relative mb-1.5 block">
-                  <span class="sr-only" for="sede-q">Buscar sede</span>
-                  <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
-                  <input id="sede-q" type="search" placeholder="Buscar sede" autocomplete="off" class="h-8 w-full rounded-lg border border-line bg-[#f7f8f9] pl-8 pr-2 text-sm outline-none placeholder:text-mute focus:border-ink focus:bg-white" />
-                </label>
-                <div id="sede-list" class="max-h-56 overflow-y-auto"></div>
-              </div>
-            </div>
-            <button id="notice-toggle" type="button" class="relative grid size-8 shrink-0 place-items-center rounded-lg text-mute hover:bg-white/70 hover:text-ink" aria-expanded="false" aria-controls="notice-panel" aria-label="Avisos">
-              <svg viewBox="0 0 24 24" class="line size-[18px]"><path d="M6 16.5V11a6 6 0 1 1 12 0v5.5l1.2 1.5H4.8L6 16.5Z"></path><path d="M10 19.5a2 2 0 0 0 4 0"></path></svg>
-              <span class="absolute right-1.5 top-1.5 size-1.5 rounded-full bg-hot"></span>
+          <div class="relative min-w-0">
+            <button id="sede-toggle" type="button" class="flex w-full items-center gap-2 rounded-lg px-1 py-1 text-left hover:bg-white/70" aria-expanded="false" aria-controls="sede-panel">
+              <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-white text-ink shadow-sm">
+                <svg viewBox="0 0 24 24" class="line size-[18px]"><path d="M4 20V6.5A1.5 1.5 0 0 1 5.5 5h5A1.5 1.5 0 0 1 12 6.5V20"></path><path d="M12 10.5h6.5A1.5 1.5 0 0 1 20 12v8"></path><path d="M3 20h18"></path><path d="M7 9h2M7 13h2M7 17h2M15 14h2M15 17h2"></path></svg>
+              </span>
+              <span class="only-full min-w-0 leading-tight">
+                <span class="block text-[10px] font-semibold uppercase tracking-[0.14em] text-mute">Albor</span>
+                <span id="sede-label" class="block text-sm font-semibold">Barcelona</span>
+              </span>
+              <svg viewBox="0 0 24 24" class="line only-full size-3.5 shrink-0 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
+            <div id="sede-panel" hidden class="absolute left-0 top-12 z-40 w-64 rounded-xl border border-line bg-white p-1.5 shadow-[0_12px_32px_rgba(20,24,28,0.12)]">
+              <label class="relative mb-1.5 block">
+                <span class="sr-only" for="sede-q">Buscar sede</span>
+                <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+                <input id="sede-q" type="search" placeholder="Buscar sede" autocomplete="off" class="h-8 w-full rounded-lg border border-line bg-[#f7f8f9] pl-8 pr-2 text-sm outline-none placeholder:text-mute focus:border-ink focus:bg-white" />
+              </label>
+              <div id="sede-list" class="max-h-56 overflow-y-auto"></div>
+            </div>
           </div>
 
-          <label class="relative block">
-            <span class="sr-only" for="q-global">Buscar</span>
-            <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
-            <input id="q-global" type="search" placeholder="Buscar" autocomplete="off" class="w-full rounded-xl border border-transparent bg-white py-2 pl-9 pr-12 text-sm shadow-sm outline-none placeholder:text-mute focus:border-tide/40" />
-            <kbd class="only-full pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 rounded border border-[#e1e3e8] bg-[#f7f8f9] px-1.5 py-0.5 text-[10px] font-medium text-mute">⌘K</kbd>
-          </label>
-        </div>
-
-        <div id="notice-panel" hidden class="absolute left-full top-3 z-40 ml-1 w-80 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]">
+          <div class="relative">
+            <button id="notice-toggle" type="button" class="notice-btn relative flex w-full items-center gap-2 rounded-xl border border-transparent bg-white px-3 py-2 text-left text-sm text-ink shadow-sm hover:border-tide/40" aria-expanded="false" aria-controls="notice-panel" aria-label="Avisos">
+              <svg viewBox="0 0 24 24" class="line size-4 shrink-0 text-mute"><path d="M6 16.5V11a6 6 0 1 1 12 0v5.5l1.2 1.5H4.8L6 16.5Z"></path><path d="M10 19.5a2 2 0 0 0 4 0"></path></svg>
+              <span class="only-full font-medium">Avisos</span>
+              <span class="notice-dot size-1.5 shrink-0 rounded-full bg-hot"></span>
+            </button>
+            <div id="notice-panel" hidden class="absolute top-0 z-40 w-80 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]">
           <p class="px-2.5 py-1.5 text-[11px] font-semibold tracking-wide text-mute">HOY</p>
           <a href="#/expediente/EXP-2026-019" class="block rounded-lg px-2.5 py-2 hover:bg-[#f6f7f8]">
             <p class="text-sm font-medium">Contestación de Nou Transport</p>
@@ -95,10 +87,8 @@
             <p class="text-sm font-medium">Clara dejó la tasación de Riera</p>
             <p class="text-xs text-mute">Lista para la propuesta del día 16</p>
           </a>
-        </div>
-
-        <div id="palette" hidden class="relative">
-          <div class="absolute left-0 top-1 z-40 max-h-80 w-72 overflow-y-auto rounded-xl border border-line bg-white p-1 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+            </div>
+          </div>
         </div>
 
         <div class="relative mt-4 flex min-h-0 flex-1">
@@ -144,7 +134,7 @@
         <div class="nav-fade" aria-hidden="true"></div>
         </div>
 
-        <div class="relative mt-3 flex gap-2">
+        <div class="foot-row relative mt-3 flex gap-2">
           <button type="button" class="foot-btn" title="Ajustes">
             <svg viewBox="0 0 24 24" class="line size-4"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"></path><path d="M12 3.5v2M12 18.5v2M4.8 7.2l1.5 1.5M17.7 15.3l1.5 1.5M3.5 12h2M18.5 12h2M4.8 16.8l1.5-1.5M17.7 8.7l1.5-1.5"></path></svg>
             <span class="only-full">Ajustes</span>
@@ -219,6 +209,12 @@
         font-weight: 600;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        transition:
+          height 360ms cubic-bezier(0.22, 1, 0.36, 1),
+          margin 360ms cubic-bezier(0.22, 1, 0.36, 1),
+          padding 360ms cubic-bezier(0.22, 1, 0.36, 1),
+          color 140ms ease,
+          opacity 140ms ease;
       }
       .nav-link {
         display: flex;
@@ -230,6 +226,11 @@
         font-size: 14px;
         font-weight: 500;
         text-decoration: none;
+        transition:
+          gap 180ms cubic-bezier(0.22, 1, 0.36, 1),
+          padding 180ms cubic-bezier(0.22, 1, 0.36, 1),
+          background-color 160ms ease,
+          color 160ms ease;
       }
       .nav-link svg {
         width: 18px;
@@ -270,6 +271,7 @@
         place-items: center;
         border-radius: 8px;
         color: #8b919a;
+        transition: opacity 140ms ease;
       }
       .nav-chevron svg {
         width: 14px;
@@ -306,9 +308,16 @@
         color: #0f766e;
         font-weight: 600;
       }
-      #sidebar.is-compact .nav-chevron,
       #sidebar.is-compact .nav-subs {
         display: none;
+      }
+      #sidebar.is-compact .nav-chevron {
+        width: 0;
+        min-width: 0;
+        margin: 0;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
       }
       .foot-btn {
         display: inline-flex;
@@ -324,9 +333,56 @@
         font-size: 13px;
         font-weight: 500;
         box-shadow: 0 1px 2px rgba(20, 24, 28, 0.04);
+        transition:
+          padding 180ms cubic-bezier(0.22, 1, 0.36, 1),
+          background-color 160ms ease;
       }
       .foot-btn:hover {
         background: #f8f9fa;
+      }
+      .notice-btn {
+        padding-right: 1.75rem;
+        transition:
+          border-radius 180ms cubic-bezier(0.22, 1, 0.36, 1),
+          background-color 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+      .notice-dot {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+      }
+      #notice-panel {
+        left: calc(100% + 14px);
+      }
+      #sidebar {
+        width: 220px;
+        transition: width 360ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      #sidebar-toggle {
+        position: absolute;
+        top: 16px;
+        right: 10px;
+        z-index: 3;
+        transition:
+          background-color 160ms ease,
+          color 160ms ease;
+      }
+      .brand-row {
+        padding-right: 2.25rem;
+      }
+      #sidebar .only-full {
+        min-width: 0;
+        overflow: hidden;
+        max-width: 11rem;
+        max-height: 2.8rem;
+        opacity: 1;
+        transition:
+          opacity 180ms ease 140ms,
+          max-width 360ms cubic-bezier(0.22, 1, 0.36, 1),
+          max-height 360ms cubic-bezier(0.22, 1, 0.36, 1);
       }
       #sidebar.is-compact {
         width: 72px;
@@ -334,7 +390,85 @@
         padding-right: 8px;
       }
       #sidebar.is-compact .only-full {
-        display: none;
+        max-width: 0;
+        max-height: 0;
+        opacity: 0;
+        transition:
+          opacity 120ms ease,
+          max-width 280ms cubic-bezier(0.22, 1, 0.36, 1),
+          max-height 280ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      #sidebar.is-moving .nav-scroll {
+        overflow: visible;
+      }
+      #sidebar.is-compact .brand-row > button,
+      #sidebar.is-compact #sede-toggle,
+      #sidebar.is-compact .notice-btn,
+      #sidebar.is-compact .nav-link,
+      #sidebar.is-compact .foot-btn {
+        overflow: hidden;
+      }
+      #sidebar.is-compact.is-settled #sidebar-toggle {
+        position: relative;
+        top: auto;
+        right: auto;
+        order: -1;
+      }
+      #sidebar.is-compact.is-settled .brand-row,
+      #sidebar.is-compact.is-settled .foot-row {
+        flex-direction: column;
+      }
+      #sidebar.is-compact.is-settled .foot-row {
+        align-items: center;
+      }
+      #sidebar.is-compact.is-settled .brand-row {
+        align-items: stretch;
+        padding-right: 0;
+      }
+      #sidebar.is-compact.is-settled .brand-row > button:first-child {
+        justify-content: flex-start;
+        width: 100%;
+      }
+      #sidebar.is-compact.is-settled #sidebar-toggle {
+        width: 2rem;
+        margin-inline: auto;
+      }
+      #sidebar.is-compact.is-settled #sede-toggle {
+        justify-content: flex-start;
+      }
+      #sidebar.is-compact.is-settled .notice-btn {
+        width: 2rem;
+        height: 2rem;
+        margin-inline: auto;
+        justify-content: center;
+        gap: 0;
+        padding: 0;
+        border-radius: 8px;
+        background: transparent;
+        box-shadow: none;
+      }
+      #sidebar.is-compact.is-settled .notice-btn:hover {
+        border-color: transparent;
+        background: rgba(255, 255, 255, 0.7);
+      }
+      #sidebar.is-compact.is-settled .notice-dot {
+        top: 5px;
+        right: 5px;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #sidebar,
+        #sidebar-toggle,
+        #sidebar .only-full,
+        .brand-row,
+        .nav-section,
+        .nav-link,
+        .nav-chevron,
+        .notice-btn,
+        .notice-dot,
+        .foot-btn {
+          transition: none;
+        }
       }
       #sidebar.is-compact .nav-section {
         height: 10px;
@@ -343,12 +477,15 @@
         overflow: hidden;
         color: transparent;
       }
-      #sidebar.is-compact .nav-link {
+      #sidebar.is-compact.is-settled .nav-link {
         justify-content: center;
+        gap: 0;
         padding-left: 0;
         padding-right: 0;
       }
-      #sidebar.is-compact .foot-btn {
+      #sidebar.is-compact.is-settled .foot-btn {
+        flex: none;
+        width: 100%;
         padding-left: 0;
         padding-right: 0;
       }
@@ -424,6 +561,6 @@
       }
     </style>
     <script src="data.js?v=50"></script>
-    <script src="app.js?v=76"></script>
+    <script src="app.js?v=82"></script>
   </body>
 </html>

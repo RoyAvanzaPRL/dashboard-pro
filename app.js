@@ -592,9 +592,6 @@ function renderSedes(query = "") {
 function syncSedeLabel() {
   sedeLabel.textContent = sedeById(ui.sede).name;
 }
-const palette = document.querySelector("#palette");
-const paletteList = palette.querySelector("div");
-const globalSearch = document.querySelector("#q-global");
 
 function parseRoute() {
   const raw = decodeURIComponent(location.hash.replace(/^#/, ""));
@@ -644,7 +641,6 @@ function closeLayer(panel, toggle) {
 function closeFloaters() {
   closeLayer(noticePanel, noticeToggle);
   closeLayer(sedePanel, sedeToggle);
-  palette.hidden = true;
 }
 
 function heatTone(n) {
@@ -1181,37 +1177,6 @@ function bindMatter(id) {
         </li>`,
     )
     .join("");
-}
-
-function paletteItems(query) {
-  const q = query.trim().toLowerCase();
-  if (!q) return [];
-  const items = [];
-  Object.entries(window.ALBOR.matters).forEach(([id, matter]) => {
-    const clientName = window.ALBOR.clients[matter.clientId]?.name || "";
-    const blob = `${id} ${matter.title} ${matter.area} ${matter.lead} ${matter.opponent} ${clientName}`.toLowerCase();
-    if (blob.includes(q)) items.push({ href: `#/expediente/${id}`, title: matter.title, meta: `${id} · ${matter.area}` });
-  });
-  return items.slice(0, 8);
-}
-
-function renderPalette() {
-  const items = paletteItems(globalSearch.value);
-  if (!globalSearch.value.trim()) {
-    palette.hidden = true;
-    return;
-  }
-  palette.hidden = false;
-  paletteList.innerHTML = items.length
-    ? items
-        .map(
-          (item) => `<a href="${esc(item.href)}" class="block rounded-lg px-3 py-2 hover:bg-[#f6f7f8]">
-            <p class="text-sm font-medium">${esc(item.title)}</p>
-            <p class="text-xs text-mute">${esc(item.meta)}</p>
-          </a>`,
-        )
-        .join("")
-    : `<p class="px-3 py-3 text-sm text-mute">Nada coincide con esa búsqueda.</p>`;
 }
 
 let renderToken = 0;
@@ -2778,10 +2743,87 @@ document.querySelectorAll("[data-branch] .nav-chevron").forEach((button) => {
   });
 });
 
+const SIDEBAR_MOTION_MS = 360;
+let settleTimer = 0;
+let reorderGen = 0;
+const sidebarToggle = document.querySelector("#sidebar-toggle");
+const SIDEBAR_EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+function sidebarSlots() {
+  return [...sidebar.querySelectorAll("#sidebar-toggle, .brand-row > button:first-child, #sede-toggle, #notice-toggle, .nav-link, .foot-btn")];
+}
+
+function playSidebar(compact) {
+  const gen = ++reorderGen;
+  const list = sidebarSlots();
+  const first = list.map((node) => node.getBoundingClientRect());
+  const fromWidth = sidebar.getBoundingClientRect().width;
+
+  sidebar.style.transition = "none";
+  list.forEach((node) => {
+    node.style.transition = "none";
+    node.style.transform = "";
+  });
+  sidebar.classList.toggle("is-compact", compact);
+  sidebar.classList.toggle("is-settled", compact);
+  sidebar.classList.add("is-moving");
+  sidebar.style.width = `${fromWidth}px`;
+  void sidebar.offsetWidth;
+
+  list.forEach((node, index) => {
+    const now = node.getBoundingClientRect();
+    const dx = first[index].left - now.left;
+    const dy = first[index].top - now.top;
+    node.style.transform = Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5 ? "" : `translate(${dx}px, ${dy}px)`;
+  });
+
+  requestAnimationFrame(() => {
+    if (gen !== reorderGen) return;
+      sidebar.style.transition = `width ${SIDEBAR_MOTION_MS}ms ${SIDEBAR_EASE}`;
+      void sidebar.offsetWidth;
+      sidebar.style.width = compact ? "72px" : "220px";
+    list.forEach((node) => {
+      if (!node.style.transform) return;
+      node.style.transition = `transform ${SIDEBAR_MOTION_MS}ms ${SIDEBAR_EASE}`;
+      node.style.transform = "";
+    });
+  });
+
+  window.clearTimeout(settleTimer);
+  settleTimer = window.setTimeout(() => {
+    if (gen !== reorderGen) return;
+    sidebar.style.transition = "";
+    sidebar.style.width = "";
+    sidebar.classList.remove("is-moving");
+    list.forEach((node) => {
+      node.style.transition = "";
+      node.style.transform = "";
+    });
+    syncNavFade();
+  }, SIDEBAR_MOTION_MS + 40);
+}
+
 document.querySelector("#sidebar-toggle").addEventListener("click", () => {
   ui.compact = !ui.compact;
-  sidebar.classList.toggle("is-compact", ui.compact);
-  document.querySelector("#sidebar-toggle").setAttribute("aria-pressed", ui.compact ? "true" : "false");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  sidebarToggle.setAttribute("aria-pressed", ui.compact ? "true" : "false");
+  sidebarToggle.setAttribute("aria-label", ui.compact ? "Expandir el menú" : "Contraer el menú");
+  closeFloaters();
+  if (reduceMotion) {
+    reorderGen += 1;
+    window.clearTimeout(settleTimer);
+    sidebar.style.transition = "";
+    sidebar.style.width = "";
+    sidebar.classList.remove("is-moving");
+    sidebar.classList.toggle("is-compact", ui.compact);
+    sidebar.classList.toggle("is-settled", ui.compact);
+    sidebarSlots().forEach((node) => {
+      node.style.transition = "";
+      node.style.transform = "";
+    });
+  } else {
+    playSidebar(ui.compact);
+  }
   syncNavFade();
 });
 
@@ -2828,28 +2870,9 @@ sedeList?.addEventListener("click", (event) => {
 renderSedes();
 syncSedeLabel();
 
-globalSearch.addEventListener("input", renderPalette);
-globalSearch.addEventListener("focus", renderPalette);
-globalSearch.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    const first = paletteList.querySelector("a");
-    if (first) location.hash = first.getAttribute("href");
-  }
-  if (event.key === "Escape") palette.hidden = true;
-});
-
-document.addEventListener("keydown", (event) => {
-  if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
-    event.preventDefault();
-    globalSearch.focus();
-    globalSearch.select();
-  }
-});
-
 document.addEventListener("click", (event) => {
   if (!noticePanel.hidden && !noticePanel.contains(event.target) && !noticeToggle.contains(event.target)) closeLayer(noticePanel, noticeToggle);
   if (!sedePanel.hidden && !sedePanel.contains(event.target) && !sedeToggle.contains(event.target)) closeLayer(sedePanel, sedeToggle);
-  if (!palette.hidden && !palette.contains(event.target) && event.target !== globalSearch) palette.hidden = true;
   if (!event.target.closest("[data-menu]") && !event.target.closest("[data-menu-panel]")) {
     main.querySelectorAll("[data-menu-panel]").forEach((panel) => {
       panel.hidden = true;
