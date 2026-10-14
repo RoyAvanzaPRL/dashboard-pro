@@ -1,28 +1,29 @@
 <div id="tabla7" class="relative flex h-full min-h-0 flex-col gap-6 overflow-hidden bg-[#f3f4f6] px-4 py-6">
   <section class="relative flex shrink-0 flex-col gap-5 rounded-2xl bg-white px-5 py-5 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
-    <div class="flex items-end justify-between gap-4">
-      <div>
+    <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+      <div class="min-w-0">
         <h1 class="text-lg font-semibold">Tabla 7</h1>
         <p class="text-sm text-mute">Recursos contenciosos</p>
-      </div>
-      <div class="flex items-center gap-4">
         <p id="tabla7-count" aria-live="polite" class="text-sm text-mute">18 recursos</p>
-        <button type="button" id="tabla7-add" class="h-9 rounded-lg bg-ink px-3 text-sm font-semibold text-white">Añadir</button>
       </div>
-    </div>
-
-    <div class="flex items-center gap-2">
-      <form id="tabla7-search" class="relative min-w-0 flex-1">
-        <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
-        <label class="sr-only" for="tabla7-q">Buscar en cualquier dato</label>
-        <input id="tabla7-q" type="search" placeholder="Buscar" autocomplete="off" class="h-9 w-full rounded-lg border border-line bg-white pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-ink" />
-      </form>
-      <div class="relative shrink-0">
-        <button type="button" id="tabla7-cols-btn" data-t7-keep data-t7-toggle="columnas" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-cols">
-          <span>Columnas</span>
-          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
-        </button>
-        <div id="tabla7-pop-cols" data-t7-keep data-t7-pop="columnas" hidden class="absolute right-0 z-30 mt-2 w-48 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+      <div class="flex min-w-0 flex-wrap items-center justify-end gap-2">
+        <div id="tabla7-search-wrap" class="t7-search shrink-0">
+          <button type="button" id="tabla7-search-btn" class="t7-search-btn" aria-expanded="false" aria-controls="tabla7-q" aria-label="Buscar">
+            <svg viewBox="0 0 24 24" class="line size-4"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+          </button>
+          <form id="tabla7-search" class="t7-search-form">
+            <label class="sr-only" for="tabla7-q">Buscar en cualquier dato</label>
+            <input id="tabla7-q" type="text" placeholder="Buscar" autocomplete="off" tabindex="-1" />
+          </form>
+        </div>
+        <button type="button" id="tabla7-add" class="h-9 rounded-lg bg-ink px-3 text-sm font-semibold text-white">Añadir</button>
+        <div class="relative shrink-0">
+          <button type="button" id="tabla7-cols-btn" data-t7-keep data-t7-toggle="columnas" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-cols">
+            <span>Columnas</span>
+            <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+          <div id="tabla7-pop-cols" data-t7-keep data-t7-pop="columnas" hidden class="absolute right-0 z-30 mt-2 w-48 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+        </div>
       </div>
     </div>
   </section>
