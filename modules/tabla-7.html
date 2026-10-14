@@ -18,46 +18,43 @@
         <input id="tabla7-q" type="search" placeholder="Buscar" autocomplete="off" class="h-9 w-full rounded-lg border border-line bg-white pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-ink" />
       </form>
       <div class="relative shrink-0">
-        <button type="button" id="tabla7-filter-btn" data-t7-keep data-t7-toggle="filtrar" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-filter">
-          <span id="tabla7-filter-label">Filtrar</span>
-          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
-        </button>
-        <div id="tabla7-pop-filter" data-t7-keep data-t7-pop="filtrar" hidden class="absolute left-0 z-30 mt-2 w-72 rounded-xl border border-line bg-white p-2 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
-      </div>
-      <div class="relative shrink-0">
-        <button type="button" id="tabla7-sort-btn" data-t7-keep data-t7-toggle="orden" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-sort">
-          <span id="tabla7-sort-label">Orden</span>
-          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
-        </button>
-        <div id="tabla7-pop-sort" data-t7-keep data-t7-pop="orden" hidden class="absolute right-0 z-30 mt-2 w-56 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
-      </div>
-      <div class="relative shrink-0">
         <button type="button" id="tabla7-cols-btn" data-t7-keep data-t7-toggle="columnas" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-cols">
           <span>Columnas</span>
           <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
         </button>
         <div id="tabla7-pop-cols" data-t7-keep data-t7-pop="columnas" hidden class="absolute right-0 z-30 mt-2 w-48 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
       </div>
-      <div class="relative shrink-0">
-        <button type="button" id="tabla7-size-btn" data-t7-keep data-t7-toggle="tamano" class="inline-flex h-9 items-center gap-1.5 rounded-lg border border-line bg-white px-3 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-size">
-          <span id="tabla7-size-label">10 por página</span>
-          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
-        </button>
-        <div id="tabla7-pop-size" data-t7-keep data-t7-pop="tamano" hidden class="absolute right-0 z-30 mt-2 w-44 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
-      </div>
     </div>
   </section>
 
   <section class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl bg-white px-4 pb-6 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
-    <div id="tabla7-context" class="flex h-12 shrink-0 items-center gap-3 overflow-hidden text-sm" aria-live="polite"></div>
+    <div id="tabla7-context" class="relative z-20 flex min-h-12 shrink-0 flex-wrap items-center gap-x-3 gap-y-2 text-sm" aria-live="polite"></div>
     <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-line">
-      <div id="tabla7-scroll" class="min-h-0 flex-1 overflow-x-auto overflow-y-auto">
-        <table id="tabla7-table" class="w-full table-fixed border-separate border-spacing-0 text-sm">
+      <div id="tabla7-head-clip" class="shrink-0 overflow-hidden border-b border-line bg-[#f7f8f9]">
+        <table class="w-full table-fixed border-separate border-spacing-0 text-sm">
+          <colgroup id="tabla7-head-cols"></colgroup>
           <thead id="tabla7-head"></thead>
+        </table>
+      </div>
+      <div id="tabla7-body-scroll" class="min-h-0 flex-1 overflow-x-hidden overflow-y-auto">
+        <table id="tabla7-table" class="w-full table-fixed border-separate border-spacing-0 text-sm">
+          <colgroup id="tabla7-body-cols"></colgroup>
           <tbody id="tabla7-body"></tbody>
         </table>
       </div>
-      <div id="tabla7-foot" class="flex flex-wrap items-center justify-between gap-3 border-t border-line bg-white px-4 py-4"></div>
+      <div id="tabla7-foot" class="flex flex-wrap items-center justify-between gap-3 border-t border-line bg-white px-4 py-4">
+        <div class="flex min-w-0 items-center gap-3">
+          <p class="text-sm text-mute">Mostrando</p>
+          <div class="relative">
+            <button type="button" id="tabla7-size-btn" data-t7-keep data-t7-toggle="tamano" class="inline-flex h-8 items-center gap-1.5 rounded-lg border border-line bg-white px-2.5 text-sm font-medium" aria-expanded="false" aria-controls="tabla7-pop-size" aria-label="10 por página">
+              <span id="tabla7-size-label">10</span>
+              <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div id="tabla7-pop-size" data-t7-keep data-t7-pop="tamano" hidden class="absolute bottom-10 left-0 z-30 w-28 rounded-xl border border-line bg-white p-1 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+          </div>
+          <p class="text-sm text-mute">de 18</p>
+        </div>
+      </div>
     </div>
   </section>
 

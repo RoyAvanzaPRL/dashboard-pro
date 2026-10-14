@@ -1,0 +1,82 @@
+<div id="foro" class="relative flex h-full min-h-0 flex-col gap-4 overflow-hidden bg-[#f3f4f6] px-4 py-6">
+  <header class="flex shrink-0 items-end justify-between gap-4 rounded-2xl bg-white px-5 py-4 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+    <div class="min-w-0">
+      <h1 class="text-lg font-semibold">Foro</h1>
+      <p class="text-sm text-mute">Conversaciones del despacho</p>
+    </div>
+    <div class="flex shrink-0 items-center gap-2">
+      <label class="relative hidden sm:block">
+        <span class="sr-only">Buscar en el foro</span>
+        <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+        <input id="foro-search" type="search" placeholder="Buscar" class="h-9 w-44 rounded-lg border border-line bg-white pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-ink" />
+      </label>
+      <button type="button" data-forum-compose="category" class="hidden rounded-lg border border-line px-3 py-2 text-sm font-medium hover:bg-[#f6f7f8] sm:inline-flex">Crear categoría</button>
+      <button type="button" data-forum-compose="thread" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white hover:bg-[#0f9f91]">Nueva conversación</button>
+    </div>
+  </header>
+
+  <div class="grid min-h-0 flex-1 grid-cols-[minmax(8rem,0.6fr)_minmax(13rem,1.4fr)] gap-4 xl:grid-cols-3">
+    <section class="min-h-0 min-w-0 overflow-y-auto rounded-2xl bg-white p-3 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <div class="flex items-center justify-between px-2 pb-2">
+        <h2 class="text-sm font-semibold">Categorías</h2>
+        <button type="button" data-forum-compose="category" class="grid size-7 place-items-center rounded-lg text-lg text-mute hover:bg-[#f6f7f8] hover:text-ink" aria-label="Crear categoría">+</button>
+      </div>
+      <div id="forum-categories" class="space-y-1"></div>
+    </section>
+
+    <section class="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <div class="flex shrink-0 items-center justify-between gap-3 border-b border-line px-5 py-4">
+        <div class="min-w-0">
+          <h2 id="forum-category-title" class="truncate text-[15px] font-semibold"></h2>
+          <p id="forum-category-description" class="mt-0.5 truncate text-xs text-mute"></p>
+        </div>
+        <p id="forum-thread-count" class="shrink-0 text-xs text-mute"></p>
+      </div>
+      <div id="forum-threads" class="min-h-0 flex-1 overflow-y-auto px-5"></div>
+    </section>
+
+    <aside id="forum-thread-panel" class="hidden min-h-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)] xl:flex">
+      <div class="flex shrink-0 items-center justify-between gap-3 border-b border-line px-5 py-4">
+        <p class="text-xs font-semibold uppercase tracking-wide text-mute">Hilo de conversación</p>
+        <button type="button" data-forum-close-thread class="grid size-7 place-items-center rounded-lg text-mute hover:bg-[#f6f7f8] hover:text-ink xl:hidden" aria-label="Cerrar hilo">×</button>
+      </div>
+      <div id="forum-thread" class="min-h-0 flex-1 overflow-y-auto px-5 py-4"></div>
+      <form id="forum-reply" class="shrink-0 border-t border-line px-4 py-3">
+        <label class="sr-only" for="forum-reply-input">Responder en la conversación</label>
+        <textarea id="forum-reply-input" rows="2" placeholder="Escribe una respuesta..." class="w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none placeholder:text-mute focus:border-tide"></textarea>
+        <button type="submit" class="mt-2 w-full rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white">Responder</button>
+      </form>
+    </aside>
+  </div>
+
+  <div id="forum-compose" hidden class="absolute inset-0 z-30 grid place-items-center bg-ink/20 p-4">
+    <form id="forum-compose-form" class="w-full max-w-md rounded-2xl bg-white p-5 shadow-[0_24px_60px_rgba(20,24,28,0.18)]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h2 id="forum-compose-title" class="text-lg font-semibold">Nueva conversación</h2>
+          <p id="forum-compose-help" class="mt-1 text-sm text-mute">El contenido es solo una simulación visual.</p>
+        </div>
+        <button type="button" data-forum-close-compose class="grid size-8 place-items-center rounded-lg text-mute hover:bg-[#f6f7f8] hover:text-ink" aria-label="Cerrar">×</button>
+      </div>
+      <label class="mt-5 block text-xs font-medium text-mute" for="forum-compose-name">Título</label>
+      <input id="forum-compose-name" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="¿De qué quieres hablar?" />
+      <label class="mt-3 block text-xs font-medium text-mute" for="forum-compose-body">Descripción</label>
+      <textarea id="forum-compose-body" rows="4" class="mt-1 w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Añade algo de contexto..."></textarea>
+      <div class="mt-5 flex justify-end gap-3">
+        <button type="button" data-forum-close-compose class="text-sm font-medium">Cancelar</button>
+        <button type="submit" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>
+<style>
+  @media (max-width: 1279px) {
+    #foro .forum-mobile-open {
+      position: absolute;
+      inset: 1rem 1rem 1rem auto;
+      z-index: 20;
+      display: flex;
+      width: min(26rem, calc(100% - 2rem));
+    }
+  }
+</style>

@@ -1,91 +1,80 @@
 const NAV = {
   resumen: "Inicio",
-  expedientes: "Expedientes",
-  agenda: "Inicio 2",
+  foro: "Foro",
+  agenda: "Tablón de noticias",
   equipo: "Equipo",
-  "tabla-1": "Tabla 1",
   "tabla-2": "Tabla 2",
-  "tabla-4": "Tabla 4",
-  "tabla-5": "Tabla 5",
   "tabla-7": "Tabla 7",
   bandeja: "Bandeja",
-  archivo: "Archivo",
-  senalamientos: "Señalamientos",
-  minutas: "Minutas",
-  tasaciones: "Tasaciones",
-  partes: "Partes",
-  facturas: "Facturas",
   "bandeja-recibidos": "Recibidos",
   "bandeja-pendientes": "Pendientes",
   "bandeja-hechos": "Hechos",
-  "archivo-cerrados": "Cerrados",
-  "archivo-escrituras": "Escrituras",
-  "archivo-cliente": "Por cliente",
-  "senalamientos-semana": "Esta semana",
-  "senalamientos-manana": "Mañana",
-  "senalamientos-sala": "Salas",
-  "senalamientos-vistas": "Vistas",
-  "senalamientos-pasadas": "Pasadas",
-  "senalamientos-aplazadas": "Aplazadas",
-  "minutas-borradores": "Borradores",
-  "minutas-firmadas": "Firmadas",
-  "minutas-compartidas": "Compartidas",
-  "minutas-actas": "Actas",
+  "bases-datos": "Bases de datos",
+  "convenios-ccaa": "Convenios AEAT y CCAA",
+  "foro-tecnico": "Foro técnico",
+  "informacion-complementaria": "Información complementaria",
+  circulares: "Circulares",
+  "valor-anadido": "Servicios de valor añadido",
+  "servicios-especificos": "Servicios específicos",
+  "servicios-utilidades": "Servicios y utilidades",
+  acuerdos: "Acuerdos",
+  emprende: "Emprende",
+  software: "Software",
+  "comunicaciones-internas": "Comunicaciones internas",
+  "gestion-procesos": "Gestión de procesos",
+  biblioteca: "Biblioteca",
+  videos: "Vídeos",
+  oficinas: "Oficinas",
+  profesionales: "Profesionales",
+  usuarios: "Usuarios",
+  "soporte-interno": "Soporte interno",
+  blog: "Blog",
+  roles: "Roles",
 };
 
 const MATERIAS_PARENT = {
   "bandeja-recibidos": "bandeja",
   "bandeja-pendientes": "bandeja",
   "bandeja-hechos": "bandeja",
-  "archivo-cerrados": "archivo",
-  "senalamientos-semana": "senalamientos",
-  "senalamientos-manana": "senalamientos",
-  "senalamientos-sala": "senalamientos",
-  "senalamientos-vistas": "senalamientos",
-  "senalamientos-pasadas": "senalamientos",
-  "senalamientos-aplazadas": "senalamientos",
-  "minutas-borradores": "minutas",
-  "minutas-firmadas": "minutas",
-  "minutas-compartidas": "minutas",
-  "minutas-actas": "minutas",
 };
 
-const ASSET_V = "50";
+const ASSET_V = "56";
 
 const MODULES = {
   resumen: "modules/resumen.html",
-  expedientes: "modules/expedientes.html",
+  foro: "modules/foro.html",
+  expedientes: "modules/foro.html",
   agenda: "modules/agenda.html",
+  noticia: "modules/noticia.html",
   equipo: "modules/equipo.html",
   expediente: "modules/expediente.html",
-  "tabla-1": "modules/tabla-1.html",
   "tabla-2": "modules/tabla-2.html",
-  "tabla-4": "modules/tabla-4.html",
-  "tabla-5": "modules/tabla-5.html",
   "tabla-7": "modules/tabla-7.html",
   bandeja: "modules/bandeja.html",
-  archivo: "modules/archivo.html",
-  senalamientos: "modules/senalamientos.html",
-  minutas: "modules/minutas.html",
-  tasaciones: "modules/tasaciones.html",
-  partes: "modules/partes.html",
-  facturas: "modules/facturas.html",
   "bandeja-recibidos": "modules/bandeja-recibidos.html",
   "bandeja-pendientes": "modules/bandeja-pendientes.html",
   "bandeja-hechos": "modules/bandeja-hechos.html",
-  "archivo-cerrados": "modules/archivo-cerrados.html",
-  "archivo-escrituras": "modules/archivo-escrituras.html",
-  "archivo-cliente": "modules/archivo-cliente.html",
-  "senalamientos-semana": "modules/senalamientos-semana.html",
-  "senalamientos-manana": "modules/senalamientos-manana.html",
-  "senalamientos-sala": "modules/senalamientos-sala.html",
-  "senalamientos-vistas": "modules/senalamientos-vistas.html",
-  "senalamientos-pasadas": "modules/senalamientos-pasadas.html",
-  "senalamientos-aplazadas": "modules/senalamientos-aplazadas.html",
-  "minutas-borradores": "modules/minutas-borradores.html",
-  "minutas-firmadas": "modules/minutas-firmadas.html",
-  "minutas-compartidas": "modules/minutas-compartidas.html",
-  "minutas-actas": "modules/minutas-actas.html",
+  "bases-datos": "modules/bases-datos.html",
+  "convenios-ccaa": "modules/convenios-ccaa.html",
+  "foro-tecnico": "modules/foro-tecnico.html",
+  "informacion-complementaria": "modules/informacion-complementaria.html",
+  circulares: "modules/circulares.html",
+  "valor-anadido": "modules/valor-anadido.html",
+  "servicios-especificos": "modules/servicios-especificos.html",
+  "servicios-utilidades": "modules/servicios-utilidades.html",
+  acuerdos: "modules/acuerdos.html",
+  emprende: "modules/emprende.html",
+  software: "modules/software.html",
+  "comunicaciones-internas": "modules/comunicaciones-internas.html",
+  "gestion-procesos": "modules/gestion-procesos.html",
+  biblioteca: "modules/biblioteca.html",
+  videos: "modules/videos.html",
+  oficinas: "modules/oficinas.html",
+  profesionales: "modules/profesionales.html",
+  usuarios: "modules/usuarios.html",
+  "soporte-interno": "modules/soporte-interno.html",
+  blog: "modules/blog.html",
+  roles: "modules/roles.html",
 };
 
 const STATUS = {
@@ -459,7 +448,7 @@ const NEWS = [
     source: "Albor · Formación interna",
     title: "Lectura semanal del BOE: ritual de 15 minutos",
     summary: "Cada lunes, Marina o Jordi filtran lo relevante para mercantil y contencioso.",
-    body: "Ritual acordado: 15 minutos los lunes, filtro por palabras clave (terraza, sanción, tasa, silencio, mercantil), y un resumen de tres viñetas en el canal del despacho.\n\nQuien lea marca la noticia como leída en Inicio 2 para que el resto sepa qué ya está cubierto.",
+    body: "Ritual acordado: 15 minutos los lunes, filtro por palabras clave (terraza, sanción, tasa, silencio, mercantil), y un resumen de tres viñetas en el canal del despacho.\n\nQuien lea marca la noticia como leída en el tablón de noticias para que el resto sepa qué ya está cubierto.",
     unread: false,
     featured: false,
   },
@@ -494,6 +483,114 @@ const newsUi = {
   q: "",
   active: "n1",
   week: 0,
+};
+
+const FORUM_CATEGORIES = [
+  { id: "general", name: "General", description: "Noticias, avisos y temas del día a día", tone: "bg-[#e7f8f3] text-[#0f766e]" },
+  { id: "litigacion", name: "Litigación", description: "Criterios, escritos y estrategia procesal", tone: "bg-[#e8f2ff] text-[#24527a]" },
+  { id: "clientes", name: "Clientes y asuntos", description: "Conversaciones ligadas a un asunto concreto", tone: "bg-[#fff0e4] text-[#8a4b2a]" },
+  { id: "recursos", name: "Recursos y guías", description: "Plantillas, herramientas y buenas prácticas", tone: "bg-[#efe8ff] text-[#5b3d8a]" },
+];
+
+const FORUM_THREADS = [
+  {
+    id: "t1",
+    category: "general",
+    title: "¿Qué novedades compartimos esta semana?",
+    excerpt: "Abrimos el hilo para reunir los avisos que puedan afectar al despacho.",
+    author: "Marina Soler",
+    initials: "MS",
+    time: "Hace 35 min",
+    replies: 6,
+    pinned: true,
+    posts: [
+      { author: "Marina Soler", initials: "MS", role: "Socia", time: "Hoy · 08:42", body: "Dejo abierto este hilo para centralizar las novedades de la semana y decidir qué merece una reunión breve." },
+      { author: "Jordi Palau", initials: "JP", role: "Socio", time: "Hoy · 09:10", body: "Por mi parte, destacaría el cambio de plazos de subsanación y la nueva doctrina sobre reposición." },
+      { author: "Clara Nieto", initials: "CN", role: "Asociada senior", time: "Hoy · 09:24", body: "Lo recojo para preparar una nota corta antes del viernes." },
+    ],
+  },
+  {
+    id: "t2",
+    category: "general",
+    title: "Organizamos la reunión del lunes",
+    excerpt: "Propuestas de orden del día y asuntos que necesitan decisión.",
+    author: "Laia Ferrer",
+    initials: "LF",
+    time: "Ayer",
+    replies: 3,
+    pinned: false,
+    posts: [
+      { author: "Laia Ferrer", initials: "LF", role: "Gestión", time: "Ayer · 16:20", body: "¿Qué puntos queréis llevar a la reunión del lunes? Puedo preparar el orden del día." },
+      { author: "Adrià Bosch", initials: "AB", role: "Asociado", time: "Ayer · 17:02", body: "Incluiría la previsión de señalamientos y la revisión de las terrazas." },
+    ],
+  },
+  {
+    id: "t3",
+    category: "litigacion",
+    title: "Estrategia para las alegaciones de Braseria del Port",
+    excerpt: "Compartimos argumentos antes de cerrar el escrito.",
+    author: "Adrià Bosch",
+    initials: "AB",
+    time: "Hace 2 h",
+    replies: 8,
+    pinned: false,
+    posts: [
+      { author: "Adrià Bosch", initials: "AB", role: "Asociado", time: "Hoy · 07:55", body: "He subido un primer esquema de argumentos. Me interesa especialmente vuestra opinión sobre la motivación del aforo." },
+      { author: "Marina Soler", initials: "MS", role: "Socia", time: "Hoy · 08:18", body: "Reforzaría la falta de proporcionalidad y dejaría el cálculo económico para un apartado separado." },
+    ],
+  },
+  {
+    id: "t4",
+    category: "litigacion",
+    title: "Criterio del Supremo sobre el silencio en reposición",
+    excerpt: "¿Lo aplicamos ya en los asuntos pendientes?",
+    author: "Jordi Palau",
+    initials: "JP",
+    time: "Lun",
+    replies: 4,
+    pinned: true,
+    posts: [
+      { author: "Jordi Palau", initials: "JP", role: "Socio", time: "Lun · 12:40", body: "La sentencia puede cambiar cómo estamos contando el plazo en varios expedientes." },
+      { author: "Marina Soler", initials: "MS", role: "Socia", time: "Lun · 13:05", body: "Sí. Abramos una lista de asuntos afectados y revisémosla esta semana." },
+    ],
+  },
+  {
+    id: "t5",
+    category: "clientes",
+    title: "Nou Transport: próximos pasos",
+    excerpt: "Seguimiento de la contestación y documentación pendiente.",
+    author: "Marina Soler",
+    initials: "MS",
+    time: "Hoy",
+    replies: 5,
+    pinned: false,
+    posts: [
+      { author: "Marina Soler", initials: "MS", role: "Socia", time: "Hoy · 08:05", body: "Necesitamos cerrar la contestación y confirmar quién revisa el informe pericial." },
+      { author: "Clara Nieto", initials: "CN", role: "Asociada senior", time: "Hoy · 08:30", body: "Puedo revisar el informe antes de las 12 y dejar comentarios en este hilo." },
+    ],
+  },
+  {
+    id: "t6",
+    category: "recursos",
+    title: "Plantilla para anotar un BOE",
+    excerpt: "He dejado una versión breve para usar desde el expediente.",
+    author: "Laia Ferrer",
+    initials: "LF",
+    time: "Vie",
+    replies: 2,
+    pinned: false,
+    posts: [
+      { author: "Laia Ferrer", initials: "LF", role: "Gestión", time: "Vie · 11:30", body: "La plantilla tiene cuatro pasos: fuente, extracto, impacto y responsable." },
+      { author: "Jordi Palau", initials: "JP", role: "Socio", time: "Vie · 12:10", body: "Muy útil. La enlazaría también desde Guías." },
+    ],
+  },
+];
+
+const forumUi = {
+  category: "general",
+  thread: "t1",
+  q: "",
+  compose: "",
 };
 
 const main = document.querySelector("#main");
@@ -541,10 +638,6 @@ function renderSedes(query = "") {
 function syncSedeLabel() {
   sedeLabel.textContent = sedeById(ui.sede).name;
 }
-const inviteToggle = document.querySelector("#invite-toggle");
-const invitePanel = document.querySelector("#invite-panel");
-const tutorialsToggle = document.querySelector("#tutorials-toggle");
-const tutorialsPanel = document.querySelector("#tutorials-panel");
 const palette = document.querySelector("#palette");
 const paletteList = palette.querySelector("div");
 const globalSearch = document.querySelector("#q-global");
@@ -562,7 +655,8 @@ function parseRoute() {
 }
 
 function navKey(name) {
-  if (name === "expediente") return "expedientes";
+  if (name === "expediente" || name === "expedientes") return "foro";
+  if (name === "noticia") return "agenda";
   return name;
 }
 
@@ -596,8 +690,6 @@ function closeLayer(panel, toggle) {
 function closeFloaters() {
   closeLayer(noticePanel, noticeToggle);
   closeLayer(sedePanel, sedeToggle);
-  closeLayer(invitePanel, inviteToggle);
-  closeLayer(tutorialsPanel, tutorialsToggle);
   palette.hidden = true;
 }
 
@@ -743,7 +835,188 @@ function applyPanel() {
   }
 }
 
+const cardUi = { open: "", dialog: "", opener: "" };
+
+function cardBtn(kind) {
+  const base = "inline-flex h-8 items-center justify-center rounded-lg px-3 text-sm font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
+  if (kind === "solid") return `${base} bg-ink text-white`;
+  return `${base} border border-line bg-white text-ink hover:bg-[#f7f8f9]`;
+}
+
+function cardLeave(name) {
+  return `<span class="sr-only">, ${esc(name)}, se abre en una pestaña nueva</span>`;
+}
+
+function cardShell() {
+  return "flex h-full flex-col rounded-2xl bg-white p-4 shadow-[0_1px_2px_rgba(20,24,28,0.04)]";
+}
+
+function cardActions(html) {
+  return `<div class="mt-auto flex flex-wrap gap-2 pt-4">${html}</div>`;
+}
+
+function renderPortalCard(item, openId) {
+  const title = `<h2 class="text-sm font-semibold leading-snug">${esc(item.title)}</h2>`;
+  if (item.type === "acceso") {
+    return `<li class="overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <a href="${esc(item.href)}" class="flex h-full flex-col focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+        <span class="grid h-28 place-items-center bg-[#e7f8f3] text-tide" aria-hidden="true"><svg viewBox="0 0 24 24" class="line size-8"><path d="M7 3.5h7l4 4V20a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1Z"></path><path d="M14 3.5V8h4.5"></path><path d="M9 13h6M9 16.5h4"></path></svg></span>
+        <span class="px-4 py-3">${title}</span>
+      </a>
+    </li>`;
+  }
+  if (item.type === "base") {
+    return `<li class="${cardShell()}">${title}${cardActions(`<a class="${cardBtn("solid")}" href="${esc(item.href)}" target="_blank" rel="noopener noreferrer">Acceder${cardLeave(item.title)}</a><button type="button" class="${cardBtn()}" data-card-dialog="crear" data-card-opener="crear" data-card-id="${esc(item.id || "")}">Crear</button>`)}</li>`;
+  }
+  if (item.type === "leer") {
+    return `<li class="${cardShell()}">${title}${cardActions(`<a class="${cardBtn("solid")}" href="${esc(item.href)}">Leer más</a>`)}</li>`;
+  }
+  if (item.type === "circular") {
+    return `<li class="${cardShell()}">
+      <button type="button" class="flex h-full w-full flex-col text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink" data-card-dialog="circular" data-card-opener="circular" data-card-id="${esc(item.id || "")}">
+        ${title}
+        <span class="mt-2 text-sm text-mute">Fecha: ${esc(item.date)}</span>
+      </button>
+    </li>`;
+  }
+  if (item.type === "prescriptor") {
+    return `<li class="${cardShell()}">${title}<p class="mt-3 text-2xl font-semibold tabular-nums leading-none">${esc(item.percent)}</p><p class="mt-1 text-xs text-mute">Cuantía prescriptor</p>${cardActions(`<a class="${cardBtn("solid")}" href="${esc(item.href)}">Acerca de</a>`)}</li>`;
+  }
+  if (item.type === "ir") {
+    return `<li class="${cardShell()}">${title}${cardActions(`<a class="${cardBtn("solid")}" href="${esc(item.href)}" target="_blank" rel="noopener noreferrer">Ír${cardLeave(item.title)}</a>`)}</li>`;
+  }
+  if (item.type === "ver") {
+    return `<li class="${cardShell()}">${title}${cardActions(`<button type="button" class="${cardBtn("solid")}" data-card-dialog="calculos" data-card-opener="calculos" data-card-id="${esc(item.id || "")}">Ver</button>`)}</li>`;
+  }
+  if (item.type === "acuerdo") {
+    const open = openId === item.id;
+    const rows = item.pdfs
+      .map((pdf) => `<li class="flex items-baseline justify-between gap-3 border-t border-line py-2 text-sm"><span>${esc(pdf)}</span><span class="shrink-0 text-xs text-mute">PDF</span></li>`)
+      .join("");
+    return `<li class="${cardShell()}">${title}${cardActions(`<button type="button" class="${cardBtn()}" data-card-toggle="${esc(item.id)}" data-card-opener="acuerdo" aria-expanded="${open ? "true" : "false"}" aria-controls="acuerdo-pdfs">Mostrar convenios</button><button type="button" class="${cardBtn()}" data-card-convenio="${esc(item.id)}" data-card-opener="convenio">Convenio</button><a class="${cardBtn()}" href="${esc(item.href)}" target="_blank" rel="noopener noreferrer">Web${cardLeave(item.title)}</a>`)}${open ? `<ul id="acuerdo-pdfs" class="mt-2">${rows}</ul>` : ""}</li>`;
+  }
+  if (item.type === "web") {
+    return `<li class="${cardShell()}">${title}${cardActions(`<a class="${cardBtn("solid")}" href="${esc(item.href)}" target="_blank" rel="noopener noreferrer">Ver sitio web${cardLeave(item.title)}</a>`)}</li>`;
+  }
+  return `<li class="${cardShell()}">${title}<p class="mt-2 text-sm text-[#3c424a]">${esc(item.office)}</p><a class="mt-1 text-sm text-tide" href="mailto:${esc(item.email)}">${esc(item.email)}</a><p class="mt-3 text-sm text-mute">${esc(item.kind)}</p></li>`;
+}
+
+function cardDialog(kind, item) {
+  if (!kind) return "";
+  let body = "";
+  if (kind === "crear") {
+    body = `<h2 id="card-dialog-title" class="text-base font-semibold">Crear base</h2>
+      <form data-card-form class="mt-4">
+        <label class="block text-sm">Nombre<input name="nombre" required class="mt-1 h-9 w-full rounded-lg border border-line px-3 text-sm outline-none focus:border-ink" /></label>
+        <div class="mt-4 flex gap-2"><button type="submit" class="${cardBtn("solid")}">Crear</button><button type="button" class="${cardBtn()}" data-card-close>Cancelar</button></div>
+      </form>`;
+  } else if (kind === "circular") {
+    const title = item?.title || "Aplazamiento de VeriFactu";
+    const date = item?.date || "08/10/2026";
+    const extra = item?.body ? `<p class="mt-4 text-sm leading-relaxed text-[#3c424a]">${esc(item.body)}</p>` : "";
+    body = `<h2 id="card-dialog-title" class="text-base font-semibold">${esc(title)}</h2>
+      <p class="mt-2 text-sm text-mute">Fecha: ${esc(date)}</p>
+      <p class="mt-4 text-xs tracking-wide text-mute">LOGO · NOMBRE · DIRECCION · TELF · FAX · EMAIL</p>
+      ${extra}
+      <button type="button" class="${cardBtn()} mt-4" data-card-close>Cerrar</button>`;
+  } else if (kind === "productos") {
+    const rows = ["LaLeyDigital360", "CISS Fiscal", "CISS Laboral", "CISS Contable Mercantil"]
+      .map((name) => `<li class="border-t border-line py-2 text-sm">${esc(name)}</li>`)
+      .join("");
+    body = `<h2 id="card-dialog-title" class="text-base font-semibold">La Ley</h2><ul class="mt-3">${rows}</ul><button type="button" class="${cardBtn()} mt-4" data-card-close>Cerrar</button>`;
+  } else {
+    const rows = ["Intereses judiciales", "Tasas judiciales", "Embargo de salario", "Pensión alimenticia", "Actualización de rentas", "Indemnización por despido"]
+      .map((name) => `<li class="border-t border-line py-2 text-sm">${esc(name)}</li>`)
+      .join("");
+    body = `<h2 id="card-dialog-title" class="text-base font-semibold">Herramientas de cálculo</h2><ul class="mt-3">${rows}</ul><button type="button" class="${cardBtn()} mt-4" data-card-close>Cerrar</button>`;
+  }
+  return `<div class="fixed inset-0 z-50 grid place-items-center bg-[rgba(20,24,28,0.32)] p-4" data-card-backdrop><div role="dialog" aria-modal="true" aria-labelledby="card-dialog-title" data-card-dialog class="w-full max-w-md rounded-2xl bg-white p-5 shadow-[0_16px_40px_rgba(20,24,28,0.16)]">${body}</div></div>`;
+}
+
+function renderCardGrid(items, state) {
+  const current = state.itemId ? items.find((item) => item.id === state.itemId) : undefined;
+  return `<ul class="grid list-none grid-cols-2 items-stretch gap-4 lg:grid-cols-3 xl:grid-cols-4">${items.map((item) => renderPortalCard(item, state.open)).join("")}</ul>${cardDialog(state.dialog, current)}`;
+}
+
+function homeCards() {
+  return [
+    { id: "acceso", type: "acceso", title: "Circulares", href: "#/circulares" },
+    { id: "base", type: "base", title: "Aranzadi", href: "https://www.aranzadi.es" },
+    { id: "leer", type: "leer", title: "Colaboración social con la AEAT", href: "#/convenios-ccaa" },
+    { id: "circular", type: "circular", title: "Aplazamiento de VeriFactu", date: "08/10/2026" },
+    { id: "prescriptor", type: "prescriptor", title: "Protección de datos", percent: "15 %", href: "#/valor-anadido" },
+    { id: "ir", type: "ir", title: "Códigos electrónicos BOE", href: "https://www.boe.es/biblioteca_juridica/codigos/" },
+    { id: "ver", type: "ver", title: "Herramientas de cálculo" },
+    {
+      id: "aeat",
+      type: "acuerdo",
+      title: "AEAT",
+      href: "https://sede.agenciatributaria.gob.es",
+      pdfs: ["Convenio", "Renovación", "Modelo de adhesión", "Publicación en boletín oficial"],
+    },
+    { id: "web", type: "web", title: "DAFO", href: "https://www.ipyme.org" },
+    { id: "profesional", type: "profesional", title: "Marina Soler", office: "Barcelona", email: "marina.soler@albor.example", kind: "Socia" },
+  ];
+}
+
 function bindResumen() {
+  const grid = main.querySelector("#home-cards");
+  if (grid) {
+    cardUi.open = "";
+    cardUi.dialog = "";
+    cardUi.opener = "";
+    const shut = () => {
+      const opener = cardUi.opener;
+      cardUi.dialog = "";
+      cardUi.opener = "";
+      draw();
+      if (opener) grid.querySelector(`[data-card-opener="${CSS.escape(opener)}"]`)?.focus();
+    };
+    const draw = () => {
+      grid.innerHTML = renderCardGrid(homeCards(), cardUi);
+      grid.querySelectorAll("[data-card-toggle]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.dataset.cardToggle;
+          cardUi.open = cardUi.open === id ? "" : id;
+          draw();
+          grid.querySelector(`[data-card-toggle="${CSS.escape(id)}"]`)?.focus();
+        });
+      });
+      grid.querySelectorAll("[data-card-convenio]").forEach((button) => {
+        button.addEventListener("click", () => {
+          cardUi.open = button.dataset.cardConvenio;
+          draw();
+          grid.querySelector("#acuerdo-pdfs li")?.focus?.();
+          grid.querySelector(`[data-card-convenio="${CSS.escape(button.dataset.cardConvenio)}"]`)?.focus();
+        });
+      });
+      grid.querySelectorAll("[data-card-dialog]").forEach((button) => {
+        if (button.getAttribute("role") === "dialog") return;
+        button.addEventListener("click", () => {
+          cardUi.dialog = button.dataset.cardDialog;
+          cardUi.opener = button.dataset.cardOpener || "";
+          draw();
+          const field = grid.querySelector("[data-card-dialog] input, [data-card-dialog] [data-card-close]");
+          field?.focus();
+        });
+      });
+      grid.querySelector("[data-card-backdrop]")?.addEventListener("click", (event) => {
+        if (event.target === event.currentTarget) shut();
+      });
+      grid.querySelectorAll("[data-card-close]").forEach((button) => {
+        button.addEventListener("click", shut);
+      });
+      grid.querySelector("[data-card-form]")?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        shut();
+      });
+    };
+    grid.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && cardUi.dialog) shut();
+    });
+    draw();
+    return;
+  }
   const weekSelect = main.querySelector("#week");
   if (weekSelect) weekSelect.value = ui.week;
   syncSpan();
@@ -1916,7 +2189,7 @@ const tabla7 = {
   ],
 };
 
-const TABLA7_WEIGHT = { asunto: 1.2, organo: 2.15, acto: 1.22, plazo: 1.9, letrado: 1.9, estado: 1.7, cuantia: 1.45 };
+const TABLA7_WEIGHT = { asunto: 2.6, organo: 1.6, acto: 1.15, plazo: 1.0, letrado: 1.35, estado: 1.05, cuantia: 1.1 };
 
 function tabla7Visible() {
   return TABLA7_COLS.filter((col) => tabla7.cols[col.key]);
@@ -1940,10 +2213,10 @@ function tabla7Text(col, row) {
 }
 
 function tabla7Tone(value) {
-  if (value === "Vencido") return "text-hot";
-  if (value === "Resuelto") return "text-good";
-  if (value === "Suspendido") return "text-[#8a6232]";
-  return "text-[#0f766e]";
+  if (value === "Vencido") return "bg-[#fde8e8] text-hot";
+  if (value === "Resuelto") return "bg-mint text-good";
+  if (value === "Suspendido") return "bg-[#f3f4f6] text-[#5c6570]";
+  return "bg-mint text-[#0f766e]";
 }
 
 function tabla7ActiveFilters() {
@@ -1981,8 +2254,16 @@ function tabla7MenuButton(on, marked) {
   return `inline-flex h-9 items-center gap-1.5 rounded-lg border px-3 text-sm font-medium ${on || marked ? "border-ink bg-[#f4f5f6]" : "border-line bg-white"}`;
 }
 
-function tabla7CheckIcon(light) {
-  return `<svg viewBox="0 0 24 24" class="line size-3.5 ${light ? "" : "text-ink"}" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>`;
+function tabla7SyncGutter(root) {
+  const body = root.querySelector("#tabla7-body-scroll");
+  const head = root.querySelector("#tabla7-head-clip");
+  if (!body || !head) return;
+  const gap = body.offsetWidth - body.clientWidth;
+  head.style.paddingRight = gap ? `${gap}px` : "";
+}
+
+function tabla7CheckIcon() {
+  return `<svg viewBox="0 0 24 24" class="line size-3.5 text-ink" aria-hidden="true"><path d="m5 12 5 5L20 7"></path></svg>`;
 }
 
 function drawTabla7() {
@@ -1999,15 +2280,10 @@ function drawTabla7() {
   root.querySelector("#tabla7-count").textContent = rows.length === tabla7.rows.length ? `${rows.length} ${rows.length === 1 ? "recurso" : "recursos"}` : `${rows.length} de ${tabla7.rows.length} ${noun}`;
   const search = root.querySelector("#tabla7-q");
   if (search.value !== tabla7.q) search.value = tabla7.q;
-  root.querySelector("#tabla7-size-label").textContent = `${tabla7.pageSize} por página`;
-  root.querySelector("#tabla7-filter-label").textContent = active.length ? `Filtrar · ${active.length}` : "Filtrar";
-  const sortCol = TABLA7_COLS.find((col) => col.key === tabla7.sort);
-  root.querySelector("#tabla7-sort-label").textContent = `Orden · ${sortCol.label} ${tabla7.dir === "asc" ? "↑" : "↓"}`;
+  const hiddenCols = TABLA7_COLS.filter((col) => !tabla7.cols[col.key]).length;
+  root.querySelector("#tabla7-cols-btn span").textContent = hiddenCols ? `Columnas · ${hiddenCols}` : "Columnas";
   [
-    ["#tabla7-filter-btn", "filtrar", active.length > 0],
-    ["#tabla7-sort-btn", "orden", false],
-    ["#tabla7-cols-btn", "columnas", false],
-    ["#tabla7-size-btn", "tamano", false],
+    ["#tabla7-cols-btn", "columnas", hiddenCols > 0],
   ].forEach(([selector, name, marked]) => {
     const button = root.querySelector(selector);
     const on = tabla7.open === name;
@@ -2015,46 +2291,17 @@ function drawTabla7() {
     button.className = tabla7MenuButton(on, marked);
   });
 
-  root.querySelector("#tabla7-pop-filter").hidden = tabla7.open !== "filtrar";
-  root.querySelector("#tabla7-pop-filter").innerHTML = TABLA7_COLS.filter((col) => col.filter)
-    .map((col) => {
-      const picked = tabla7.filters[col.key] || "";
-      const open = tabla7.pick === col.key;
-      const options = [{ value: "", label: "Todos" }].concat(uniqueSorted(tabla7.rows.map((row) => row[col.key])).map((value) => ({ value, label: value })));
-      const list = open
-        ? `<div class="mt-1 max-h-44 overflow-y-auto rounded-lg border border-line p-1">${options
-            .map((item) => {
-              const on = item.value === picked;
-              return `<button type="button" data-t7-choice="${col.key}" data-t7-value="${esc(item.value)}" class="flex w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-sm ${on ? "bg-[#f3f4f6] font-semibold" : "hover:bg-[#f6f7f8]"}" aria-pressed="${on ? "true" : "false"}"><span class="truncate">${esc(item.label)}</span>${on ? tabla7CheckIcon(false) : ""}</button>`;
-            })
-            .join("")}</div>`
-        : "";
-      return `<div class="mb-2 last:mb-0"><p class="px-1 pb-1 text-[11px] font-semibold uppercase tracking-wide text-mute">${esc(col.label)}</p><button type="button" data-t7-pick="${col.key}" class="flex h-9 w-full items-center justify-between gap-2 rounded-lg border bg-white px-2.5 text-sm ${open ? "border-ink" : "border-line"}" aria-expanded="${open ? "true" : "false"}"><span class="truncate">${esc(picked || "Todos")}</span><svg viewBox="0 0 24 24" class="line size-3.5 shrink-0 text-mute"><path d="m6 9 6 6 6-6"></path></svg></button>${list}</div>`;
-    })
-    .join("");
-
-  root.querySelector("#tabla7-pop-size").hidden = tabla7.open !== "tamano";
-  root.querySelector("#tabla7-pop-size").innerHTML = [5, 10, 20]
-    .map((n) => {
-      const on = tabla7.pageSize === n;
-      return `<button type="button" data-t7-size="${n}" class="flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-left text-sm ${on ? "bg-ink font-medium text-white" : "hover:bg-[#f6f7f8]"}" aria-pressed="${on ? "true" : "false"}">${n} por página${on ? tabla7CheckIcon(true) : ""}</button>`;
-    })
-    .join("");
-
-  root.querySelector("#tabla7-pop-sort").hidden = tabla7.open !== "orden";
-  root.querySelector("#tabla7-pop-sort").innerHTML = `${TABLA7_COLS.map((col) => {
-    const on = tabla7.sort === col.key;
-    return `<button type="button" data-t7-sort="${col.key}" class="flex w-full items-center justify-between rounded-lg px-2 py-1.5 text-left text-sm hover:bg-[#f6f7f8] ${on ? "font-semibold" : ""}">${esc(col.label)}<span class="text-[10px]">${on ? (tabla7.dir === "asc" ? "↑" : "↓") : ""}</span></button>`;
-  }).join("")}
-    <div class="mt-2 flex gap-1 border-t border-line pt-2">
-      <button type="button" data-t7-dir="asc" class="flex-1 rounded-md px-2 py-1.5 text-xs font-medium ${tabla7.dir === "asc" ? "bg-ink text-white" : "text-[#5c6570] hover:bg-[#f6f7f8]"}" aria-pressed="${tabla7.dir === "asc" ? "true" : "false"}">Ascendente</button>
-      <button type="button" data-t7-dir="desc" class="flex-1 rounded-md px-2 py-1.5 text-xs font-medium ${tabla7.dir === "desc" ? "bg-ink text-white" : "text-[#5c6570] hover:bg-[#f6f7f8]"}" aria-pressed="${tabla7.dir === "desc" ? "true" : "false"}">Descendente</button>
-    </div>`;
-
   root.querySelector("#tabla7-pop-cols").hidden = tabla7.open !== "columnas";
   root.querySelector("#tabla7-pop-cols").innerHTML = TABLA7_COLS.map((col) => `<label class="flex items-center gap-2 rounded-lg px-2 py-1.5 text-sm hover:bg-[#f6f7f8] ${col.lock ? "text-mute" : ""}"><input data-t7-col="${col.key}" type="checkbox" class="accent-ink" ${tabla7.cols[col.key] ? "checked" : ""} ${col.lock ? "disabled" : ""} />${esc(col.label)}</label>`).join("");
 
-  const headCell = "sticky top-0 z-10 border-b border-line bg-[#f7f8f9] font-medium";
+  const colgroup = [`<col style="width:${tabla7Width("check")}">`]
+    .concat(visible.map((col) => `<col style="width:${tabla7Width(col.key)}">`))
+    .concat(`<col style="width:${tabla7Width("actions")}">`)
+    .join("");
+  root.querySelector("#tabla7-head-cols").innerHTML = colgroup;
+  root.querySelector("#tabla7-body-cols").innerHTML = colgroup;
+
+  const headCell = "bg-[#f7f8f9] font-medium";
   root.querySelector("#tabla7-head").innerHTML = `<tr>
     <th class="${headCell} px-2 text-center" scope="col" style="width:${tabla7Width("check")}"><input data-t7-check="page" type="checkbox" class="size-4 align-middle accent-ink" aria-label="Seleccionar esta página" /></th>
     ${visible
@@ -2063,8 +2310,10 @@ function drawTabla7() {
         const mark = on ? (tabla7.dir === "asc" ? "↑" : "↓") : "";
         const align = col.kind === "money" ? "justify-end text-right" : "text-left";
         const pad = col.key === "estado" ? "pl-2 pr-1" : "px-2";
-        const labelClip = "truncate";
-        return `<th class="${headCell}" scope="col" style="width:${tabla7Width(col.key)}"><button type="button" data-t7-sort="${col.key}" class="flex w-full min-w-0 items-center gap-1 ${pad} py-3 text-xs font-medium ${align} ${on ? "text-ink" : "text-[#5c6570]"}"><span class="${labelClip}">${esc(col.label)}</span><span class="text-[10px]">${mark}</span></button></th>`;
+        const hide = col.lock
+          ? ""
+          : `<button type="button" data-t7-hide="${col.key}" aria-label="Ocultar ${esc(col.label)}" class="grid size-0 shrink-0 place-items-center overflow-hidden rounded text-[#5c6570] opacity-0 hover:bg-[#eceef0] hover:text-ink focus-visible:mr-1 focus-visible:size-5 focus-visible:opacity-100 group-hover:mr-1 group-hover:size-5 group-hover:opacity-100 group-focus-within:mr-1 group-focus-within:size-5 group-focus-within:opacity-100"><svg viewBox="0 0 24 24" class="line size-3" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg></button>`;
+        return `<th class="group ${headCell}" scope="col" style="width:${tabla7Width(col.key)}"><div class="flex w-full min-w-0 items-center ${align}"><button type="button" data-t7-sort="${col.key}" class="inline-flex min-w-0 items-center gap-1 ${pad} py-3 text-xs font-medium ${align} ${on ? "text-ink" : "text-[#5c6570]"}"><span class="truncate">${esc(col.label)}</span><span class="text-[10px]">${mark}</span></button>${hide}</div></th>`;
       })
       .join("")}
     <th class="${headCell}" scope="col" style="width:${tabla7Width("actions")}"><span class="flex items-center justify-center px-1 py-3 text-xs font-medium text-[#5c6570]">Acciones</span></th>
@@ -2085,7 +2334,7 @@ function drawTabla7() {
               const weight = col.key === "asunto" ? "font-medium text-ink" : "text-[#3c424a]";
               const clip = "truncate";
               const pad = col.key === "estado" ? "pl-2 pr-1" : "px-2";
-              const body = !text ? `<span class="text-mute">—</span>` : col.kind === "status" ? `<span class="font-medium ${tabla7Tone(text)}">${esc(text)}</span>` : esc(text);
+              const body = !text ? `<span class="text-mute">—</span>` : col.kind === "status" ? `<span class="rounded-full px-2 py-0.5 text-xs font-medium ${tabla7Tone(text)}">${esc(text)}</span>` : esc(text);
               return `<td class="${pad} py-3 ${clip} ${align} ${weight}" ${text ? `title="${esc(text)}"` : ""}>${body}</td>`;
             })
             .join("");
@@ -2114,27 +2363,54 @@ function drawTabla7() {
 
   const context = root.querySelector("#tabla7-context");
   const selectedCount = tabla7.selected.size;
-  const chipsHtml = active.length
-    ? `<div class="flex min-w-0 flex-1 items-center gap-2 overflow-hidden">${active
-        .map(
-          (col) => `<button type="button" data-t7-chip="${col.key}" class="inline-flex h-8 shrink-0 items-center gap-1.5 rounded-full bg-[#f3f4f6] pl-3 pr-2.5 text-sm font-medium">${esc(col.label)}: ${esc(tabla7.filters[col.key])}<span aria-hidden="true">×</span><span class="sr-only">Quitar</span></button>`,
-        )
-        .join("")}<button type="button" data-t7-clear class="shrink-0 px-1 text-xs font-medium text-[#5c6570] hover:text-ink">Quitar filtros</button></div>`
-    : "";
+  const filtersHtml = TABLA7_COLS.filter((col) => col.filter)
+    .map((col) => {
+      const picked = tabla7.filters[col.key] || "";
+      const open = tabla7.pick === col.key;
+      const options = [{ value: "", label: "Todos" }].concat(uniqueSorted(tabla7.rows.map((row) => row[col.key])).map((value) => ({ value, label: value })));
+      const list = open
+        ? `<div data-t7-keep class="absolute left-0 top-full z-30 mt-1 max-h-44 w-full min-w-[11rem] overflow-y-auto rounded-xl border border-line bg-white p-1 shadow-[0_16px_40px_rgba(20,24,28,0.12)]">${options
+            .map((item) => {
+              const on = item.value === picked;
+              return `<button type="button" data-t7-choice="${col.key}" data-t7-value="${esc(item.value)}" class="flex w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-sm ${on ? "bg-[#f3f4f6] font-semibold" : "hover:bg-[#f6f7f8]"}" aria-pressed="${on ? "true" : "false"}"><span class="truncate">${esc(item.label)}</span>${on ? tabla7CheckIcon() : ""}</button>`;
+            })
+            .join("")}</div>`
+        : "";
+      return `<div class="flex shrink-0 items-center gap-1.5"><span class="text-xs font-medium text-mute">${esc(col.label)}</span><div data-t7-keep class="relative"><button type="button" data-t7-keep data-t7-pick="${col.key}" class="flex h-8 w-32 items-center justify-between gap-2 rounded-lg border bg-white px-2.5 text-sm ${open ? "border-ink" : "border-line"}" aria-expanded="${open ? "true" : "false"}"><span class="truncate">${esc(picked || "Todos")}</span><svg viewBox="0 0 24 24" class="line size-3.5 shrink-0 text-mute" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>${list}</div></div>`;
+    })
+    .join("");
+  const clearHtml = active.length ? `<button type="button" data-t7-clear class="shrink-0 px-1 text-xs font-medium text-[#5c6570] hover:text-ink">Quitar filtros</button>` : "";
   const selectHtml = selectedCount
-    ? `<div class="flex h-8 ${active.length ? "shrink-0" : "w-full"} items-center gap-3 rounded-lg bg-[#f4f6f8] px-4"><span class="font-medium">${selectedCount === 1 ? "1 seleccionado" : `${selectedCount} seleccionados`}</span><button type="button" data-t7-bulk-remove class="ml-auto font-medium text-hot">Borrar</button><button type="button" data-t7-bulk-clear class="font-medium text-[#5c6570]">Anular</button></div>`
+    ? `<div class="ml-auto flex h-8 shrink-0 items-center gap-3 rounded-lg bg-[#f4f6f8] px-4"><span class="font-medium">${selectedCount === 1 ? "1 seleccionado" : `${selectedCount} seleccionados`}</span><button type="button" data-t7-bulk-remove class="font-medium text-hot">Borrar</button><button type="button" data-t7-bulk-clear class="font-medium text-[#5c6570]">Anular</button></div>`
     : "";
-  context.innerHTML = chipsHtml || selectHtml ? `${chipsHtml}${selectHtml}` : "";
+  context.innerHTML = `<div class="flex shrink-0 items-center gap-3">${filtersHtml}${clearHtml}</div>${selectHtml}`;
 
-  const from = rows.length ? start + 1 : 0;
-  const to = start + pageRows.length;
   const idle = rows.length === 0;
-  root.querySelector("#tabla7-foot").innerHTML = `<p class="text-sm text-mute">Mostrando ${from}–${to} de ${rows.length}</p>
+  const sizeOpen = tabla7.open === "tamano";
+  root.querySelector("#tabla7-foot").innerHTML = `<div class="flex min-w-0 items-center gap-3">
+      <p class="text-sm text-mute">Mostrando</p>
+      <div class="relative">
+        <button type="button" id="tabla7-size-btn" data-t7-keep data-t7-toggle="tamano" class="inline-flex h-8 items-center gap-1.5 rounded-lg border bg-white px-2.5 text-sm font-medium ${sizeOpen ? "border-ink" : "border-line"}" aria-expanded="${sizeOpen ? "true" : "false"}" aria-controls="tabla7-pop-size" aria-label="${tabla7.pageSize} por página">
+          <span id="tabla7-size-label">${tabla7.pageSize}</span>
+          <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        <div id="tabla7-pop-size" data-t7-keep data-t7-pop="tamano" hidden class="absolute bottom-10 left-0 z-30 w-28 rounded-xl border border-line bg-white p-1 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+      </div>
+      <p class="text-sm text-mute">de ${rows.length}</p>
+    </div>
     <div class="flex items-center gap-3">
       <button type="button" data-t7-step="-1" class="rounded-lg px-2 py-1 text-sm text-[#5c6570] hover:bg-[#f6f7f8] disabled:opacity-40" ${tabla7.page === 1 ? "disabled" : ""}>Anterior</button>
       <span class="min-w-12 text-center text-sm tabular-nums text-[#5c6570]">${idle ? "0 / 0" : `${tabla7.page} / ${pages}`}</span>
       <button type="button" data-t7-step="1" class="rounded-lg px-2 py-1 text-sm text-[#5c6570] hover:bg-[#f6f7f8] disabled:opacity-40" ${idle || tabla7.page === pages ? "disabled" : ""}>Siguiente</button>
     </div>`;
+
+  root.querySelector("#tabla7-pop-size").hidden = !sizeOpen;
+  root.querySelector("#tabla7-pop-size").innerHTML = [5, 10, 20]
+    .map((n) => {
+      const on = tabla7.pageSize === n;
+      return `<button type="button" data-t7-size="${n}" class="flex w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-sm ${on ? "bg-[#f3f4f6] font-semibold" : "hover:bg-[#f6f7f8]"}" aria-pressed="${on ? "true" : "false"}" aria-label="${n} por página"><span>${n}</span>${on ? tabla7CheckIcon() : ""}</button>`;
+    })
+    .join("");
 
   const menu = root.querySelector("#tabla7-row-menu");
   const menuRow = tabla7.rows.find((row) => row.id === tabla7.menu);
@@ -2156,11 +2432,14 @@ function drawTabla7() {
 
   root.querySelector("#tabla7-sheet-title").textContent = tabla7.editing ? "Editar recurso" : "Nuevo recurso";
   root.querySelector("#tabla7-sheet").hidden = !tabla7.sheet;
+  tabla7SyncGutter(root);
 }
 
 function bindTabla7() {
   const root = main.querySelector("#tabla7");
   if (!root) return;
+  const bodyScroll = root.querySelector("#tabla7-body-scroll");
+  if (bodyScroll) new ResizeObserver(() => tabla7SyncGutter(root)).observe(bodyScroll);
   const search = root.querySelector("#tabla7-q");
   const sheet = root.querySelector("#tabla7-sheet");
   const fields = root.querySelector("#tabla7-fields");
@@ -2204,6 +2483,7 @@ function bindTabla7() {
   }
 
   root.addEventListener("click", (event) => {
+    if (tabla7.pick && !event.target.closest("[data-t7-keep]")) tabla7.pick = "";
     const more = event.target.closest("[data-t7-more]");
     if (more) {
       const row = tabla7.rows.find((item) => item.id === tabla7.menu);
@@ -2240,6 +2520,8 @@ function bindTabla7() {
     const pick = event.target.closest("[data-t7-pick]");
     if (pick) {
       tabla7.pick = tabla7.pick === pick.dataset.t7Pick ? "" : pick.dataset.t7Pick;
+      tabla7.open = "";
+      tabla7.menu = "";
       drawTabla7();
       return;
     }
@@ -2268,8 +2550,16 @@ function bindTabla7() {
     if (toggle) {
       const name = toggle.dataset.t7Toggle;
       tabla7.open = tabla7.open === name ? "" : name;
-      if (tabla7.open !== "filtrar") tabla7.pick = "";
+      tabla7.pick = "";
       tabla7.menu = "";
+      drawTabla7();
+      return;
+    }
+    const hideCol = event.target.closest("[data-t7-hide]");
+    if (hideCol) {
+      const key = hideCol.dataset.t7Hide;
+      const spec = TABLA7_COLS.find((item) => item.key === key);
+      if (spec && !spec.lock) tabla7.cols[key] = false;
       drawTabla7();
       return;
     }
@@ -2278,22 +2568,6 @@ function bindTabla7() {
       const key = sort.dataset.t7Sort;
       tabla7.dir = tabla7.sort === key && tabla7.dir === "asc" ? "desc" : "asc";
       tabla7.sort = key;
-      tabla7.page = 1;
-      tabla7.fresh = "";
-      drawTabla7();
-      return;
-    }
-    const dir = event.target.closest("[data-t7-dir]");
-    if (dir) {
-      tabla7.dir = dir.dataset.t7Dir;
-      tabla7.page = 1;
-      tabla7.fresh = "";
-      drawTabla7();
-      return;
-    }
-    const chip = event.target.closest("[data-t7-chip]");
-    if (chip) {
-      delete tabla7.filters[chip.dataset.t7Chip];
       tabla7.page = 1;
       tabla7.fresh = "";
       drawTabla7();
@@ -2416,7 +2690,7 @@ document.addEventListener("click", (event) => {
     tabla7.menu = "";
     dirty = true;
   }
-  if (tabla7.open && !target.closest("[data-t7-keep]")) {
+  if ((tabla7.open || tabla7.pick) && !target.closest("[data-t7-keep]")) {
     tabla7.open = "";
     tabla7.pick = "";
     dirty = true;
@@ -2428,7 +2702,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
   const sheet5 = main.querySelector("#tabla5-sheet");
   if (sheet5 && !sheet5.hidden) sheet5.hidden = true;
-  if (main.querySelector("#tabla7") && (tabla7.open || tabla7.sheet || tabla7.menu)) {
+  if (main.querySelector("#tabla7") && (tabla7.open || tabla7.pick || tabla7.sheet || tabla7.menu)) {
     tabla7.open = "";
     tabla7.pick = "";
     tabla7.menu = "";
@@ -2508,33 +2782,18 @@ function renderNewsControls() {
   }
 }
 
-function renderNewsAssistant() {
-  const box = main.querySelector("#news-assistant");
-  if (!box) return;
-  const week = currentNewsWeek();
-  const inWeek = NEWS.filter((item) => newsWeekDates(week).has(item.date));
-  const unreadWeek = inWeek.filter((item) => item.unread).length;
-  const unreadAll = NEWS.filter((item) => item.unread).length;
-  box.innerHTML = `<svg viewBox="0 0 24 24" class="line size-4 shrink-0 text-tide"><path d="M12 3l1.6 4.2L18 9l-4.4 1.8L12 15l-1.6-4.2L6 9l4.4-1.8L12 3Z"></path><path d="M18 14l.7 1.8L20.5 16.5 18.7 17.2 18 19l-.7-1.8L15.5 16.5l1.8-.7L18 14Z"></path></svg>
-    <p class="text-sm text-[#24584e]">Asistente · ${unreadWeek} sin leer en ${esc(week.short.toLowerCase())} · ${unreadAll} en total. Usa las flechas para ir semana atrás.</p>`;
-}
-
 function renderNewsDetail() {
   const box = main.querySelector("#news-detail");
-  const mark = main.querySelector("#news-mark");
   if (!box) return;
   const item = newsById(newsUi.active);
   const cat = NEWS_CATS[item.cat];
+  const preview = item.body.split(/\n\n+/)[0];
   box.innerHTML = `
     <span class="inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
     <h2 class="mt-3 text-lg font-semibold leading-snug">${esc(item.title)}</h2>
     <p class="mt-2 text-xs text-mute">${esc(newsWhen(item))} · ${esc(item.source)}</p>
     <p class="mt-4 text-sm leading-relaxed text-[#3c424a]">${esc(item.summary)}</p>
-    <div class="mt-4 space-y-3 text-sm leading-relaxed text-[#3c424a]">${item.body
-      .split(/\n\n+/)
-      .map((para) => `<p>${esc(para).replace(/\n/g, "<br>")}</p>`)
-      .join("")}</div>`;
-  if (mark) mark.textContent = item.unread ? "Marcar leída" : "Marcar sin leer";
+    <p class="mt-4 text-sm leading-relaxed text-[#3c424a]">${esc(preview)}</p>`;
 }
 
 function newsRow(item, { compact = false } = {}) {
@@ -2580,32 +2839,14 @@ function renderNewsFeed() {
       : "Sin piezas en este periodo";
   }
 
-  const hero = newsUi.week === 0 ? rows.find((item) => item.featured) || rows[0] : null;
-
-  if (hero) {
-    const cat = NEWS_CATS[hero.cat];
-    featured.innerHTML = `
-      <button type="button" data-news-open="${esc(hero.id)}" class="w-full rounded-xl border border-line p-3.5 text-left hover:border-[#d5d8e0] ${newsUi.active === hero.id ? "is-active" : ""} ${hero.unread ? "" : "is-read"}">
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
-          ${hero.unread ? '<span class="rounded-md bg-mint px-2 py-0.5 text-[11px] font-semibold text-tide">Nueva</span>' : ""}
-          <span class="text-xs text-mute">${esc(newsWhen(hero))}</span>
-        </div>
-        <p class="news-title mt-1.5 text-[15px] font-semibold leading-snug">${esc(hero.title)}</p>
-        <p class="mt-1.5 text-sm text-mute">${esc(hero.summary)}</p>
-        <p class="mt-2 text-xs font-medium text-tide">${esc(hero.source)} · Abrir lectura</p>
-      </button>`;
-  } else if (!rows.length) {
+  featured.innerHTML = "";
+  if (!rows.length) {
     featured.innerHTML = `<div class="rounded-xl border border-dashed border-line px-4 py-6 text-center text-sm text-mute">No hay novedades en esta semana.</div>`;
-  } else {
-    featured.innerHTML = "";
   }
 
-  const rest = hero ? rows.filter((item) => item.id !== hero.id) : rows;
-
-  if (rest.length) {
+  if (rows.length) {
     const byDay = new Map();
-    rest.forEach((item) => {
+    rows.forEach((item) => {
       if (!byDay.has(item.date)) byDay.set(item.date, []);
       byDay.get(item.date).push(item);
     });
@@ -2619,8 +2860,6 @@ function renderNewsFeed() {
         </div>`;
       })
       .join("");
-  } else if (hero) {
-    list.innerHTML = `<p class="border-t border-line py-4 text-sm text-mute">No hay más piezas en esta semana.</p>`;
   } else {
     list.innerHTML = "";
   }
@@ -2632,7 +2871,6 @@ function drawNews() {
     newsUi.active = rows[0]?.id || NEWS[0].id;
   }
   renderNewsControls();
-  renderNewsAssistant();
   renderNewsFeed();
   renderNewsDetail();
 }
@@ -2675,35 +2913,1233 @@ function bindInicio2() {
       drawNews();
       return;
     }
-    if (event.target.closest?.("#news-mark")) {
-      const item = newsById(newsUi.active);
-      item.unread = !item.unread;
-      drawNews();
-      return;
-    }
-    if (event.target.closest?.("#news-next")) {
-      const next = NEWS.find((item) => item.unread && item.id !== newsUi.active) || NEWS.find((item) => item.unread);
-      if (next) {
-        next.unread = false;
-        newsUi.filter = "todas";
-        newsUi.q = "";
-        if (search) search.value = "";
-        jumpToNewsItem(next);
-        drawNews();
-      }
+    if (event.target.closest?.("#news-enter")) {
+      location.hash = `#/noticia/${encodeURIComponent(newsUi.active)}`;
     }
   });
+  root.querySelector("#news-panel")?.addEventListener("dblclick", () => {
+    location.hash = `#/noticia/${encodeURIComponent(newsUi.active)}`;
+  });
+}
+
+function forumCategory(id) {
+  return FORUM_CATEGORIES.find((category) => category.id === id) || FORUM_CATEGORIES[0];
+}
+
+function forumThread(id) {
+  return FORUM_THREADS.find((thread) => thread.id === id) || null;
+}
+
+function forumThreadList() {
+  const q = forumUi.q.trim().toLowerCase();
+  return FORUM_THREADS.filter((thread) => {
+    if (thread.category !== forumUi.category) return false;
+    if (!q) return true;
+    return [thread.title, thread.excerpt, thread.author].join(" ").toLowerCase().includes(q);
+  });
+}
+
+function drawForo() {
+  const root = main.querySelector("#foro");
+  if (!root) return;
+  const category = forumCategory(forumUi.category);
+  const threads = forumThreadList();
+  if (!threads.some((thread) => thread.id === forumUi.thread)) forumUi.thread = threads[0]?.id || "";
+
+  root.querySelector("#forum-categories").innerHTML = FORUM_CATEGORIES.map((item) => {
+    const active = item.id === forumUi.category;
+    const count = FORUM_THREADS.filter((thread) => thread.category === item.id).length;
+    return `<button type="button" data-forum-category="${item.id}" class="w-full rounded-xl p-3 text-left ${active ? "bg-[#e7f8f3]" : "hover:bg-[#f6f7f8]"}">
+      <span class="flex items-start justify-between gap-2">
+        <span class="flex min-w-0 items-center gap-2">
+          <span class="grid size-7 shrink-0 place-items-center rounded-lg ${item.tone} text-xs font-semibold">${esc(item.name.slice(0, 1))}</span>
+          <span class="truncate text-sm font-medium ${active ? "text-[#0f766e]" : "text-ink"}">${esc(item.name)}</span>
+        </span>
+        <span class="text-xs text-mute">${count}</span>
+      </span>
+      <span class="mt-1 block truncate pl-9 text-xs text-mute">${esc(item.description)}</span>
+    </button>`;
+  }).join("");
+
+  root.querySelector("#forum-category-title").textContent = category.name;
+  root.querySelector("#forum-category-description").textContent = category.description;
+  root.querySelector("#forum-thread-count").textContent = `${threads.length} ${threads.length === 1 ? "conversación" : "conversaciones"}`;
+  root.querySelector("#forum-threads").innerHTML = threads.length
+    ? threads
+        .map(
+          (thread) => `<button type="button" data-forum-thread="${thread.id}" class="block w-full border-b border-line py-4 text-left ${forumUi.thread === thread.id ? "bg-[#f6fbfa] -mx-2 rounded-xl px-2" : ""}">
+            <div class="flex items-start gap-3">
+              <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[10px] font-semibold text-[#1d4ed8]">${esc(thread.initials)}</span>
+              <span class="min-w-0 flex-1">
+                <span class="flex flex-wrap items-center gap-2">
+                  <span class="truncate text-sm font-semibold">${esc(thread.title)}</span>
+                  ${thread.pinned ? '<span class="rounded bg-[#f3f4f6] px-1.5 py-0.5 text-[10px] font-medium text-mute">Fijada</span>' : ""}
+                </span>
+                <span class="mt-1 block text-xs leading-relaxed text-mute">${esc(thread.excerpt)}</span>
+                <span class="mt-2 flex flex-wrap gap-x-2 text-[11px] text-mute"><span>${esc(thread.author)}</span><span>·</span><span>${esc(thread.time)}</span><span>·</span><span>${thread.replies} respuestas</span></span>
+              </span>
+            </div>
+          </button>`,
+        )
+        .join("")
+    : `<div class="px-2 py-10 text-center text-sm text-mute">No hay conversaciones que coincidan.</div>`;
+
+  const panel = root.querySelector("#forum-thread-panel");
+  const thread = forumThread(forumUi.thread);
+  if (!thread) {
+    root.querySelector("#forum-thread").innerHTML = `<div class="py-10 text-center text-sm text-mute">Selecciona una conversación para ver el hilo.</div>`;
+    panel?.classList.remove("forum-mobile-open");
+    return;
+  }
+  const threadCategory = forumCategory(thread.category);
+  root.querySelector("#forum-thread").innerHTML = `
+    <span class="inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${threadCategory.tone}">${esc(threadCategory.name)}</span>
+    <h2 class="mt-3 text-lg font-semibold leading-snug">${esc(thread.title)}</h2>
+    <p class="mt-2 text-xs text-mute">${esc(thread.author)} · ${esc(thread.time)} · ${thread.replies} respuestas</p>
+    <div class="mt-5 space-y-4">
+      ${thread.posts
+        .map(
+          (post, index) => `<article class="${index ? "border-t border-line pt-4" : ""}">
+            <div class="flex items-center gap-2">
+              <span class="grid size-7 place-items-center rounded-full bg-[#e6defa] text-[10px] font-semibold text-[#5b3d8a]">${esc(post.initials)}</span>
+              <span class="min-w-0">
+                <span class="block text-xs font-semibold">${esc(post.author)}</span>
+                <span class="block text-[11px] text-mute">${esc(post.role)} · ${esc(post.time)}</span>
+              </span>
+            </div>
+            <p class="mt-2 text-sm leading-relaxed text-[#3c424a]">${esc(post.body)}</p>
+          </article>`,
+        )
+        .join("")}
+    </div>`;
+  panel?.classList.toggle("hidden", !thread);
+  panel?.classList.toggle("forum-mobile-open", Boolean(thread));
+}
+
+function bindForo() {
+  const root = main.querySelector("#foro");
+  if (!root) return;
+  const search = root.querySelector("#foro-search");
+  if (search) search.value = forumUi.q;
+  drawForo();
+
+  search?.addEventListener("input", () => {
+    forumUi.q = search.value;
+    drawForo();
+  });
+
+  root.addEventListener("click", (event) => {
+    const category = event.target.closest?.("[data-forum-category]");
+    if (category) {
+      forumUi.category = category.dataset.forumCategory;
+      forumUi.q = "";
+      if (search) search.value = "";
+      drawForo();
+      return;
+    }
+    const thread = event.target.closest?.("[data-forum-thread]");
+    if (thread) {
+      forumUi.thread = thread.dataset.forumThread;
+      drawForo();
+      return;
+    }
+    const compose = event.target.closest?.("[data-forum-compose]");
+    if (compose) {
+      forumUi.compose = compose.dataset.forumCompose;
+      root.querySelector("#forum-compose-title").textContent = forumUi.compose === "category" ? "Crear categoría" : "Nueva conversación";
+      root.querySelector("#forum-compose-name").placeholder = forumUi.compose === "category" ? "Nombre de la categoría" : "¿De qué quieres hablar?";
+      root.querySelector("#forum-compose").hidden = false;
+      root.querySelector("#forum-compose-name").focus();
+      return;
+    }
+    if (event.target.closest?.("[data-forum-close-compose]") || event.target.id === "forum-compose") {
+      root.querySelector("#forum-compose").hidden = true;
+      return;
+    }
+    if (event.target.closest?.("[data-forum-close-thread]")) {
+      const panel = root.querySelector("#forum-thread-panel");
+      panel.classList.add("hidden");
+      panel.classList.remove("forum-mobile-open");
+    }
+  });
+
+  root.querySelector("#forum-compose-form")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    root.querySelector("#forum-compose").hidden = true;
+    event.currentTarget.reset();
+  });
+  root.querySelector("#forum-reply")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    event.currentTarget.reset();
+  });
+}
+
+function bindNoticia(id) {
+  const root = main.querySelector("#news-article");
+  if (!root) return;
+  const item = newsById(id);
+  const cat = NEWS_CATS[item.cat];
+  root.querySelector("#news-article-category").className = `inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${cat.tone}`;
+  root.querySelector("#news-article-category").textContent = cat.label;
+  root.querySelector("#news-article-title").textContent = item.title;
+  root.querySelector("#news-article-meta").textContent = `${newsWhen(item)} · ${item.source}`;
+  root.querySelector("#news-article-summary").textContent = item.summary;
+  root.querySelector("#news-article-body").innerHTML = item.body
+    .split(/\n\n+/)
+    .map((para) => `<p>${esc(para).replace(/\n/g, "<br>")}</p>`)
+    .join("");
+}
+
+const INTRANET_NAMES = new Set([
+  "bases-datos",
+  "convenios-ccaa",
+  "foro-tecnico",
+  "informacion-complementaria",
+  "circulares",
+  "valor-anadido",
+  "servicios-especificos",
+  "servicios-utilidades",
+  "acuerdos",
+  "emprende",
+  "software",
+  "comunicaciones-internas",
+  "gestion-procesos",
+  "biblioteca",
+  "videos",
+  "oficinas",
+  "profesionales",
+  "usuarios",
+  "soporte-interno",
+  "blog",
+  "roles",
+]);
+
+const intranetUi = { open: "", dialog: "", opener: "", itemId: "", kind: "", province: "" };
+const intranetForum = {};
+const intranetRows = {};
+
+function inetDoc(id, title, summary, body, action) {
+  return { id, title, summary, body, action: action || "" };
+}
+
+function inetCount(count, one, many) {
+  return `${count} ${count === 1 ? one : many}`;
+}
+
+function inetTabs(tabs) {
+  if (!tabs?.length) return "";
+  return `<div class="mt-3 flex flex-wrap gap-4 text-sm">${tabs
+    .map((tab) => `<a href="${esc(tab.href)}" class="${tab.on ? "font-semibold text-ink" : "text-mute hover:text-ink"}">${esc(tab.label)}</a>`)
+    .join("")}</div>`;
+}
+
+function inetChips(label, key, values, current) {
+  const all = [{ value: "", label: "Todos" }].concat(values.map((value) => ({ value, label: value })));
+  return `<div class="mb-4 flex flex-wrap items-center gap-2"><span class="text-xs font-medium text-mute">${esc(label)}</span>${all
+    .map((item) => {
+      const on = current === item.value;
+      return `<button type="button" data-inet-filter="${key}" data-inet-value="${esc(item.value)}" class="rounded-full px-2.5 py-1 text-xs font-medium ${on ? "bg-ink text-white" : "bg-white text-ink"}" aria-pressed="${on ? "true" : "false"}">${esc(item.label)}</button>`;
+    })
+    .join("")}</div>`;
+}
+
+const BLOG_TABS = [
+  { href: "#/blog", label: "Entradas" },
+  { href: "#/blog/categorias", label: "Categorías" },
+  { href: "#/blog/tipos", label: "Tipos" },
+  { href: "#/blog/sitios", label: "Sitios" },
+];
+
+function blogTabs(on) {
+  return BLOG_TABS.map((tab) => ({ ...tab, on: tab.href === on }));
+}
+
+const INTRANET_ARTICLES = {
+  "convenios-ccaa": [
+    inetDoc("aeat", "Convenio: AEAT", "Colaborador social, firma en nombre de terceros.", "Cómo ser colaborador social: la firma en nombre de terceros se solicita desde la sede de la AEAT.\n\nLos pasos son identificarse, adherirse al convenio de ADADE y comprobar el estado. Si el botón de enviar falla, la guía pide revisar el certificado y repetir el envío.\n\nQuien ya colabora con otra asociación puede cambiar la adhesión a ADADE desde el mismo trámite."),
+    inetDoc("andalucia", "Convenio: Andalucía", "Guía de adhesión ante la hacienda andaluza.", "El artículo resume los pasos para firmar en nombre de terceros ante la Junta de Andalucía.\n\nConviene guardar el resguardo de la adhesión y comprobar después que el despacho figura como colaborador social."),
+    inetDoc("cataluna", "Convenio: Cataluña", "Guía de adhesión ante la ATC.", "La ficha recoge el trámite ante la Agencia Tributaria de Cataluña y las comprobaciones posteriores.\n\nNo sustituye al PDF firmado: ese archivo está en Acuerdos."),
+    inetDoc("madrid", "Convenio: Madrid", "Guía de adhesión ante la hacienda madrileña.", "Pasos para darse de alta como colaborador social en Madrid y preguntas habituales del cambio de asociación.\n\nAl terminar, el despacho comprueba el estado en la sede de la comunidad."),
+    inetDoc("valencia", "Convenio: Valencia", "Guía de adhesión ante la hacienda valenciana.", "La guía enumera la identificación, la adhesión al convenio y la comprobación del alta.\n\nSi el envío no termina, se revisa el certificado antes de repetirlo."),
+    inetDoc("navarra", "Convenio: Navarra", "Guía de adhesión ante la hacienda foral.", "Pasos para la firma en nombre de terceros en Navarra.\n\nLa hacienda foral puede no tener el PDF cargado en Acuerdos: esta pantalla es solo la guía."),
+    inetDoc("bizkaia", "Convenio: Bizkaia", "Guía de adhesión ante la hacienda foral.", "El artículo explica el alta como colaborador social en Bizkaia y cómo comprobar que ya figura.\n\nEl archivo firmado, si existe, se consulta en Acuerdos."),
+    inetDoc("galicia", "Convenio: Galicia", "Guía de adhesión ante la hacienda gallega.", "Pasos de adhesión y comprobación del estado de colaborador social en Galicia.\n\nLa muestra se queda en el texto de la guía."),
+  ],
+  "valor-anadido": [
+    inetDoc("certificados", "Servicio: Emisión de certificados digitales", "Cuantía prescriptor 0 %.", "Emisión de certificados para el despacho y sus clientes.\n\nLa cuantía de prescriptor de esta muestra es 0 %.", "Solicitar"),
+    inetDoc("igualdad", "Servicio: Planes de igualdad", "Cuantía prescriptor 20 %.", "El grupo prepara el plan de igualdad y el despacho lo prescribe a sus clientes.\n\nLa cuantía de prescriptor de esta muestra es 20 %.", "Solicitar"),
+    inetDoc("canal", "Servicio: Canal ético de denuncias", "Cuantía prescriptor 20 %.", "Canal interno de denuncias para cumplir la obligación de las organizaciones obligadas.\n\nLa cuantía de prescriptor de esta muestra es 20 %.", "Solicitar"),
+    inetDoc("auditoria", "Servicio: Auditoría de cuentas", "Cuantía prescriptor 20 %.", "Auditoría de cuentas a través del servicio del grupo.\n\nLa cuantía de prescriptor de esta muestra es 20 %.", "Solicitar"),
+    inetDoc("proteccion", "Servicio: Protección de datos", "Cuantía prescriptor 15 %.", "Adaptación y seguimiento en protección de datos.\n\nLa cuantía de prescriptor de esta muestra es 15 %.", "Solicitar"),
+    inetDoc("blanqueo", "Servicio: Prevención de blanqueo de capitales", "Cuantía prescriptor 20 %.", "Manual, formación y seguimiento del cumplimiento en blanqueo.\n\nLa cuantía de prescriptor de esta muestra es 20 %.", "Solicitar"),
+    inetDoc("europreven", "Servicio: Europreven correduría de seguros", "Cuantía prescriptor 50 %.", "Correduría del grupo para los seguros que el despacho prescribe.\n\nLa cuantía de prescriptor de esta muestra es 50 %.", "Solicitar"),
+    inetDoc("prl", "Servicio: Prevención de riesgos laborales", "Cuantía prescriptor 20 %.", "Servicio de prevención para los clientes del despacho.\n\nLa cuantía de prescriptor de esta muestra es 20 %.", "Solicitar"),
+  ],
+  "servicios-especificos": [
+    inetDoc("marcas", "Servicio específico: Gestión de marcas", "Colaborador externo para el registro y la vigilancia.", "El despacho deriva la gestión de marcas al colaborador del grupo.\n\nLas condiciones del acuerdo están en el módulo Acuerdos.", "Solicita este servicio"),
+    inetDoc("subvenciones", "Servicio específico: Subvenciones", "Acuerdo con el colaborador de ayudas.", "Búsqueda y tramitación de subvenciones para el cliente del despacho.\n\nEl texto remite a Acuerdos para las condiciones con el colaborador.", "Solicita este servicio"),
+    inetDoc("rc", "Servicio específico: Seguro de RC", "Póliza de responsabilidad civil del despacho.", "Contratación del seguro de responsabilidad civil a través del colaborador.\n\nLa ficha no adjunta la póliza: es una muestra del texto.", "Solicita este servicio"),
+    inetDoc("deh", "Servicio específico: DEH Online", "Notificaciones electrónicas.", "Acceso a las notificaciones electrónicas mediante el colaborador DEH.\n\nEl alta se simula con el botón de solicitud.", "Solicita este servicio"),
+    inetDoc("periciales", "Servicio específico: Informes periciales informáticos", "Peritos para el procedimiento.", "Informes periciales informáticos cuando el asunto lo necesita.\n\nLa solicitud queda anotada solo en esta pantalla.", "Solicita este servicio"),
+    inetDoc("tasacion", "Servicio específico: Valoración y tasación de bienes", "Tasación para el cliente.", "Valoración y tasación de bienes a través del colaborador del grupo.\n\nLas condiciones se consultan en Acuerdos.", "Solicita este servicio"),
+  ],
+  emprende: [
+    inetDoc("forma-juridica", "Elección de la forma jurídica", "La única ficha interna de Emprende.", "El resto de herramientas abre el sitio externo. Esta entrada resume qué tener en cuenta al elegir la forma jurídica.\n\nSociedad, autónomo o comunidad de bienes cambian la responsabilidad, el impuesto y los trámites de alta."),
+  ],
+  software: [
+    inetDoc("diagram", "Software: Diagram", "Soluciones en la nube y gestión a medida.", "Diagram presenta software de gestión en la nube y desarrollos a medida para el despacho.\n\nNo hay más productos en esta muestra.", "Solicita este software"),
+  ],
+  biblioteca: [
+    inetDoc("iee", "Competitividad fiscal IEE", "Helena Torren · julio 2026", "Informe de competitividad fiscal del IEE archivado en la categoría única Biblioteca.\n\nLa ficha termina en el nombre del documento. No hay hilo de respuestas.", "Abrir documento"),
+    inetDoc("ceoe", "Panorama económico CEOE", "Helena Torren · julio 2026", "Panorama económico de CEOE, en la misma lista plana de la biblioteca.\n\nAbrir el documento es una simulación: no hay PDF.", "Abrir documento"),
+    inetDoc("cge", "Observatorio financiero CGE", "Helena Torren · julio 2026", "Observatorio financiero del CGE.\n\nLa fila de la tabla lleva hasta esta ficha y aquí se acaba.", "Abrir documento"),
+    inetDoc("aranzadi", "Dosier Aranzadi ReformIA", "Helena Torren · julio 2026", "Dosier de Aranzadi sobre la reforma.\n\nEl archivo no se descarga en esta muestra.", "Abrir documento"),
+    inetDoc("wolters", "Barómetro de la asesoría", "Helena Torren · julio 2026", "Barómetro de la asesoría de Wolters Kluwer.\n\nAutoría visible de la muestra: Helena Torren.", "Abrir documento"),
+    inetDoc("reaf", "Revista REAF", "Helena Torren · julio 2026", "Número de la revista REAF incluido en la biblioteca.\n\nNo hay editor de comentarios en la ficha.", "Abrir documento"),
+  ],
+  videos: [
+    inetDoc("sociedades", "Webinar del Impuesto sobre Sociedades 2025", "Fecha 12/03/2026 · 186 visualizaciones", "Sesión sobre el Impuesto sobre Sociedades 2025.\n\nLa ficha muestra título, fecha y texto. No hay reproductor.", "Reproducir"),
+    inetDoc("renta", "Campaña de renta 2025", "Fecha 02/04/2026 · 240 visualizaciones", "Resumen de la campaña de renta 2025 para el despacho.\n\nEl botón simula la reproducción.", "Reproducir"),
+    inetDoc("avalon", "Next Avalon Subvenciones", "Fecha 18/05/2026 · 96 visualizaciones", "Presentación del servicio de subvenciones.\n\nEl vídeo no se carga: es la ficha de la muestra.", "Reproducir"),
+    inetDoc("dijit", "Digitalización de facturas con Dijit.app", "Fecha 09/06/2026 · 128 visualizaciones", "Cómo digitalizar facturas con la herramienta del acuerdo.\n\nSin archivo de vídeo.", "Reproducir"),
+    inetDoc("aessae", "Jornadas AESAE", "Fecha 21/09/2026 · 74 visualizaciones", "Resumen en vídeo de las jornadas AESAE.\n\nLa muestra se queda en este texto.", "Reproducir"),
+  ],
+  oficinas: [
+    inetDoc("barcelona", "ADADE Barcelona", "barcelona@example.com · 930 000 001", "Calle de ejemplo, 12\n08001 Barcelona\nBarcelona · España\n\nTeléfono 930 000 001. La ficha no incluye mapa."),
+    inetDoc("madrid", "ADADE Madrid", "madrid@example.com · 910 000 002", "Calle de ejemplo, 8\n28001 Madrid\nMadrid · España\n\nTeléfono 910 000 002. La ficha no incluye mapa."),
+    inetDoc("valencia", "ADADE Valencia", "valencia@example.com · 960 000 003", "Calle de ejemplo, 4\n46001 Valencia\nValencia · España\n\nTeléfono 960 000 003. La ficha no incluye mapa."),
+    inetDoc("zaragoza", "ADADE Zaragoza", "zaragoza@example.com · 976 000 004", "Calle de ejemplo, 2\n50001 Zaragoza\nZaragoza · España\n\nTeléfono 976 000 004. La ficha no incluye mapa."),
+  ],
+};
+
+const INTRANET_CARDS = {
+  "bases-datos": {
+    title: "Bases de datos",
+    lede: "Accesos a bases jurídicas de terceros.",
+    items: [
+      { id: "laley", type: "ver", title: "La Ley" },
+      { id: "aranzadi", type: "base", title: "Aranzadi", href: "https://www.aranzadi.es" },
+      { id: "lefebvre", type: "base", title: "Lefebvre", href: "https://www.lefebvre.es" },
+      { id: "tirant", type: "base", title: "Tirant lo Blanch", href: "https://www.tirantonline.com" },
+      { id: "vlex", type: "base", title: "vLex", href: "https://vlex.es" },
+    ],
+  },
+  circulares: {
+    title: "Circulares",
+    lede: "Boletín de novedades, sin categorías.",
+    items: [
+      { id: "vivienda", type: "circular", title: "Medidas de vivienda", date: "08/10/2026", body: "Resumen de las medidas de vivienda publicadas en la circular del 8 de octubre." },
+      { id: "verifactu", type: "circular", title: "Aplazamiento de VeriFactu", date: "08/10/2026", body: "La circular explica el aplazamiento de VeriFactu y a quién afecta en esta muestra." },
+      { id: "jubilacion", type: "circular", title: "Informe de edad de jubilación", date: "01/10/2026", body: "Nota sobre el informe de edad de jubilación incluido en el boletín del 1 de octubre." },
+      { id: "capital", type: "circular", title: "Reducción de capital por pérdidas", date: "01/10/2026", body: "Criterio de la circular sobre la reducción de capital por pérdidas." },
+      { id: "factura", type: "circular", title: "Factura electrónica", date: "01/10/2026", body: "Calendario orientativo de la factura electrónica, tal como lo resume la circular." },
+      { id: "despido", type: "circular", title: "Despido disciplinario", date: "01/10/2026", body: "Apunte de la circular sobre despido disciplinario y motivación." },
+    ],
+  },
+  "valor-anadido": {
+    title: "Servicios de valor añadido",
+    lede: "Servicios que el despacho puede prescribir.",
+    items: [
+      ["certificados", "Emisión de certificados digitales", "0 %"],
+      ["igualdad", "Planes de igualdad", "20 %"],
+      ["canal", "Canal ético de denuncias", "20 %"],
+      ["auditoria", "Auditoría de cuentas", "20 %"],
+      ["proteccion", "Protección de datos", "15 %"],
+      ["blanqueo", "Prevención de blanqueo de capitales", "20 %"],
+      ["europreven", "Europreven correduría de seguros", "50 %"],
+      ["prl", "Prevención de riesgos laborales", "20 %"],
+    ].map(([id, title, percent]) => ({ id, type: "prescriptor", title, percent, href: `#/valor-anadido/${id}` })),
+  },
+  "servicios-especificos": {
+    title: "Servicios específicos",
+    lede: "Colaboradores externos, sin porcentaje.",
+    items: [
+      ["marcas", "Gestión de marcas"],
+      ["subvenciones", "Subvenciones"],
+      ["rc", "Seguro de RC"],
+      ["deh", "DEH Online"],
+      ["periciales", "Informes periciales informáticos"],
+      ["tasacion", "Valoración y tasación de bienes"],
+    ].map(([id, title]) => ({ id, type: "leer", title, href: `#/servicios-especificos/${id}` })),
+  },
+  "servicios-utilidades": {
+    title: "Servicios y utilidades",
+    lede: "Herramientas y sedes. Calcular se queda dentro.",
+    items: [
+      { id: "licitaciones", type: "ir", title: "Licitaciones", href: "https://contrataciondelestado.es" },
+      { id: "boe", type: "ir", title: "Códigos electrónicos BOE", href: "https://www.boe.es" },
+      { id: "sepe", type: "ir", title: "SEPE", href: "https://www.sepe.es" },
+      { id: "aeat", type: "ir", title: "Novedades AEAT", href: "https://sede.agenciatributaria.gob.es" },
+      { id: "cendoj", type: "ir", title: "CENDOJ", href: "https://www.poderjudicial.es" },
+      { id: "red", type: "ir", title: "Sistema RED", href: "https://www.seg-social.es" },
+      { id: "cnae", type: "ir", title: "CNAE 2025", href: "https://www.ine.es" },
+      { id: "calculos", type: "ver", title: "Herramientas de cálculo" },
+    ],
+  },
+  acuerdos: {
+    title: "Acuerdos",
+    lede: "Archivo de convenios firmados, una tarjeta por entidad.",
+    items: [
+      { id: "aeat", type: "acuerdo", title: "AEAT", href: "https://sede.agenciatributaria.gob.es", pdfs: ["Convenio", "Renovación", "Modelo de adhesión", "Publicación en boletín oficial"] },
+      { id: "andalucia", type: "acuerdo", title: "Andalucía", href: "https://www.juntadeandalucia.es", pdfs: ["Convenio", "Modelo de adhesión"] },
+      { id: "cataluna", type: "acuerdo", title: "Cataluña", href: "https://atc.gencat.cat", pdfs: ["Convenio", "Renovación"] },
+      { id: "wolters", type: "acuerdo", title: "Wolters Kluwer", href: "https://www.wolterskluwer.com", pdfs: ["Convenio", "Anexo"] },
+      { id: "sabadell", type: "acuerdo", title: "Banco Sabadell", href: "https://www.bancsabadell.com", pdfs: ["Convenio"] },
+      { id: "uanataca", type: "acuerdo", title: "Uanataca", href: "https://www.uanataca.com", pdfs: ["Convenio"] },
+      { id: "navarra", type: "acuerdo", title: "Navarra", href: "https://www.navarra.es", pdfs: [] },
+    ],
+  },
+  emprende: {
+    title: "Emprende",
+    lede: "Autodiagnóstico para pymes. Casi todo sale fuera.",
+    items: [
+      { id: "actitudes", type: "web", title: "Autodiagnóstico de actitudes emprendedoras", href: "https://www.ipyme.org" },
+      { id: "plan", type: "web", title: "Plan de empresa", href: "https://www.ipyme.org" },
+      { id: "dafo", type: "web", title: "DAFO", href: "https://www.ipyme.org" },
+      { id: "lienzo", type: "web", title: "Lienzo de modelo de negocio", href: "https://www.ipyme.org" },
+      { id: "pyme", type: "web", title: "¿Soy una pyme?", href: "https://www.ipyme.org" },
+      { id: "ciber", type: "web", title: "Ciberseguridad", href: "https://www.ipyme.org" },
+      { id: "forma-juridica", type: "leer", title: "Elección forma jurídica", href: "#/emprende/forma-juridica" },
+    ],
+  },
+  software: {
+    title: "Software",
+    lede: "Un solo producto.",
+    items: [{ id: "diagram", type: "leer", title: "Diagram", href: "#/software/diagram" }],
+  },
+  "convenios-ccaa": {
+    title: "Convenios AEAT y CCAA",
+    lede: "Guías para ser colaborador social. El PDF firmado está en Acuerdos.",
+    items: [
+      ["aeat", "AEAT"],
+      ["andalucia", "Andalucía"],
+      ["cataluna", "Cataluña"],
+      ["madrid", "Madrid"],
+      ["valencia", "Valencia"],
+      ["navarra", "Navarra"],
+      ["bizkaia", "Bizkaia"],
+      ["galicia", "Galicia"],
+    ].map(([id, title]) => ({ id, type: "leer", title, href: `#/convenios-ccaa/${id}` })),
+  },
+  profesionales: {
+    title: "Profesionales",
+    lede: "Directorio de contacto. Los tipos están en su tabla.",
+    links: [{ href: "#/profesionales/tipos", label: "Tipos de profesionales" }],
+    kinds: ["Gerente", "Asesor fiscal-contable", "Asesor laboral", "Abogado", "Graduado social", "Oficina central"],
+    provinces: ["Barcelona", "Madrid", "Valencia"],
+    items: [
+      { id: "nuria", type: "profesional", title: "Nuria Pellicer", office: "Barcelona", province: "Barcelona", email: "nuria.pellicer@example.com", kind: "Gerente" },
+      { id: "pol", type: "profesional", title: "Pol Serra", office: "Barcelona", province: "Barcelona", email: "pol.serra@example.com", kind: "Asesor fiscal-contable" },
+      { id: "elena", type: "profesional", title: "Elena Vives", office: "Madrid", province: "Madrid", email: "elena.vives@example.com", kind: "Asesor laboral" },
+      { id: "marc", type: "profesional", title: "Marc Ribas", office: "Valencia", province: "Valencia", email: "marc.ribas@example.com", kind: "Abogado" },
+      { id: "joana", type: "profesional", title: "Joana Pujol", office: "Barcelona", province: "Barcelona", email: "joana.pujol@example.com", kind: "Graduado social" },
+      { id: "andres", type: "profesional", title: "Andrés Molina", office: "Madrid", province: "Madrid", email: "andres.molina@example.com", kind: "Oficina central" },
+      { id: "hugo", type: "profesional", title: "Hugo Beltrán", office: "Valencia", province: "Valencia", email: "hugo.beltran@example.com", kind: "Asesor fiscal-contable" },
+    ],
+  },
+};
+
+const INTRANET_TABLES = {
+  "gestion-procesos": {
+    title: "Gestión de procesos",
+    lede: "Cuatro ficheros de procedimiento.",
+    add: "Añadir proceso",
+    columns: [
+      { key: "nombre", label: "Nombre" },
+      { key: "fecha", label: "Fecha" },
+    ],
+    rows: [
+      { id: "laboral", nombre: "Procedimiento asesoría laboral", fecha: "21/11/2024" },
+      { id: "mercantil", nombre: "Procedimiento asesoría mercantil", fecha: "21/11/2024" },
+      { id: "contable", nombre: "Procedimiento asesoría contable", fecha: "21/11/2024" },
+      { id: "presupuesto", nombre: "Modelo presupuesto asesoría", fecha: "21/11/2024" },
+    ],
+  },
+  biblioteca: {
+    title: "Biblioteca",
+    lede: "Una sola categoría. La ficha no abre un hilo.",
+    add: "Añadir tema",
+    link: "biblioteca",
+    columns: [
+      { key: "titulo", label: "Título" },
+      { key: "autor", label: "Autor" },
+      { key: "fecha", label: "Fecha de creación" },
+    ],
+    rows: [
+      { id: "iee", titulo: "Competitividad fiscal IEE", autor: "Helena Torren", fecha: "07/2026" },
+      { id: "ceoe", titulo: "Panorama económico CEOE", autor: "Helena Torren", fecha: "07/2026" },
+      { id: "cge", titulo: "Observatorio financiero CGE", autor: "Helena Torren", fecha: "07/2026" },
+      { id: "aranzadi", titulo: "Dosier Aranzadi ReformIA", autor: "Helena Torren", fecha: "07/2026" },
+      { id: "wolters", titulo: "Barómetro de la asesoría", autor: "Helena Torren", fecha: "07/2026" },
+      { id: "reaf", titulo: "Revista REAF", autor: "Helena Torren", fecha: "07/2026" },
+    ],
+  },
+  videos: {
+    title: "Vídeos",
+    lede: "Categoría General. La ficha es texto, sin reproductor.",
+    add: "Añadir vídeo",
+    link: "videos",
+    columns: [
+      { key: "titulo", label: "Título" },
+      { key: "fecha", label: "Fecha" },
+      { key: "visitas", label: "Visualizaciones" },
+    ],
+    rows: [
+      { id: "sociedades", titulo: "Webinar del Impuesto sobre Sociedades 2025", fecha: "12/03/2026", visitas: "186" },
+      { id: "renta", titulo: "Campaña de renta 2025", fecha: "02/04/2026", visitas: "240" },
+      { id: "avalon", titulo: "Next Avalon Subvenciones", fecha: "18/05/2026", visitas: "96" },
+      { id: "dijit", titulo: "Digitalización de facturas con Dijit.app", fecha: "09/06/2026", visitas: "128" },
+      { id: "aessae", titulo: "Jornadas AESAE", fecha: "21/09/2026", visitas: "74" },
+    ],
+  },
+  oficinas: {
+    title: "Oficinas",
+    lede: "Directorio de despachos. La ficha no lleva mapa.",
+    add: "Crear",
+    link: "oficinas",
+    columns: [
+      { key: "despacho", label: "Despacho" },
+      { key: "direccion", label: "Dirección" },
+      { key: "ciudad", label: "Ciudad" },
+      { key: "cp", label: "C.P." },
+    ],
+    rows: [
+      { id: "barcelona", despacho: "ADADE Barcelona", direccion: "Calle de ejemplo, 12", ciudad: "Barcelona", cp: "08001" },
+      { id: "madrid", despacho: "ADADE Madrid", direccion: "Calle de ejemplo, 8", ciudad: "Madrid", cp: "28001" },
+      { id: "valencia", despacho: "ADADE Valencia", direccion: "Calle de ejemplo, 4", ciudad: "Valencia", cp: "46001" },
+      { id: "zaragoza", despacho: "ADADE Zaragoza", direccion: "Calle de ejemplo, 2", ciudad: "Zaragoza", cp: "50001" },
+    ],
+  },
+  usuarios: {
+    title: "Usuarios",
+    lede: "Cuentas de acceso de la muestra.",
+    add: "Crear",
+    columns: [
+      { key: "nombre", label: "Nombre" },
+      { key: "correo", label: "Correo electrónico" },
+      { key: "oficina", label: "Oficina" },
+      { key: "rol", label: "Rol" },
+    ],
+    rows: [
+      { id: "u1", nombre: "Nuria Pellicer", correo: "nuria.pellicer@example.com", oficina: "Barcelona", rol: "Superadmin" },
+      { id: "u2", nombre: "Pol Serra", correo: "pol.serra@example.com", oficina: "Barcelona", rol: "Asociado ADADE" },
+      { id: "u3", nombre: "Elena Vives", correo: "elena.vives@example.com", oficina: "Madrid", rol: "Trabajador ADADE" },
+      { id: "u4", nombre: "Marc Ribas", correo: "marc.ribas@example.com", oficina: "Valencia", rol: "Asociado E-consulting" },
+      { id: "u5", nombre: "Joana Pujol", correo: "joana.pujol@example.com", oficina: "Barcelona", rol: "Trabajador E-Consulting" },
+    ],
+  },
+  blog: {
+    title: "Blog",
+    lede: "Notas para las webs del grupo.",
+    add: "Crear",
+    tabs: blogTabs("#/blog"),
+    columns: [
+      { key: "titulo", label: "Título" },
+      { key: "fecha", label: "Fecha" },
+    ],
+    rows: [
+      { id: "b1", titulo: "La Audiencia Nacional precisa el plazo de reposición", fecha: "08/10/2026" },
+      { id: "b2", titulo: "Criterio del TEAC sobre la motivación", fecha: "01/10/2026" },
+      { id: "b3", titulo: "El Supremo revisa una sanción de aforo", fecha: "24/09/2026" },
+      { id: "b4", titulo: "Nota sobre factura electrónica", fecha: "17/09/2026" },
+    ],
+  },
+  roles: {
+    title: "Roles",
+    lede: "Papeles con los que se monta el menú.",
+    add: "Crear",
+    columns: [{ key: "nombre", label: "Nombre" }],
+    rows: [
+      { id: "r1", nombre: "Administrador nivel 2" },
+      { id: "r2", nombre: "Asociado ADADE" },
+      { id: "r3", nombre: "Asociado E-consulting" },
+      { id: "r4", nombre: "Superadmin" },
+      { id: "r5", nombre: "Trabajador ADADE" },
+      { id: "r6", nombre: "Trabajador E-Consulting" },
+    ],
+  },
+};
+
+const INTRANET_AUX = {
+  "profesionales:tipos": {
+    title: "Tipos de profesionales",
+    lede: "Catálogo del filtro.",
+    add: "Crear",
+    back: { href: "#/profesionales", label: "Volver a profesionales" },
+    columns: [{ key: "nombre", label: "Nombre" }],
+    rows: ["Abogado", "Asesor fiscal-contable", "Asesor laboral", "Gerente", "Graduado social", "Oficina central"].map((nombre, index) => ({ id: `t${index}`, nombre })),
+  },
+  "soporte:areas": {
+    title: "Áreas de soporte",
+    lede: "Cada área tiene su buzón.",
+    add: "Crear",
+    back: { href: "#/soporte-interno", label: "Volver al formulario" },
+    columns: [
+      { key: "area", label: "Área" },
+      { key: "buzon", label: "Buzón" },
+    ],
+    rows: [
+      { id: "email", area: "Email", buzon: "info@e-consulting.org" },
+      { id: "intranet", area: "Intranet", buzon: "info@e-consulting.org" },
+      { id: "publicaciones", area: "Publicaciones-noticias", buzon: "info@e-consulting.org" },
+      { id: "web", area: "Web", buzon: "info@e-consulting.org" },
+    ],
+  },
+  "blog:categorias": {
+    title: "Categorías del blog",
+    lede: "Tabla auxiliar.",
+    add: "Crear",
+    tabs: blogTabs("#/blog/categorias"),
+    columns: [
+      { key: "nombre", label: "Nombre" },
+      { key: "slug", label: "Slug" },
+    ],
+    rows: [{ id: "c1", nombre: "categoria", slug: "categoria" }],
+  },
+  "blog:tipos": {
+    title: "Tipos de entrada",
+    lede: "Tabla auxiliar.",
+    add: "Crear",
+    tabs: blogTabs("#/blog/tipos"),
+    columns: [{ key: "nombre", label: "Nombre" }],
+    rows: [{ id: "ty1", nombre: "Blog" }],
+  },
+  "blog:sitios": {
+    title: "Sitios",
+    lede: "Webs del grupo que publican el blog.",
+    add: "Crear",
+    tabs: blogTabs("#/blog/sitios"),
+    columns: [{ key: "nombre", label: "Nombre" }],
+    rows: ["ADADE", "E-CONSULTING", "ICARIA", "Iurispreven"].map((nombre, index) => ({ id: `s${index}`, nombre })),
+  },
+};
+
+function inetPost(author, initials, role, time, body) {
+  return { author, initials, role, time, body };
+}
+
+function inetThread(id, category, title, excerpt, author, initials, time, replies, posts, pinned) {
+  return { id, category, title, excerpt, author, initials, time, replies, posts, pinned: Boolean(pinned) };
+}
+
+const INTRANET_FORUMS = {
+  "foro-tecnico": {
+    title: "Foro técnico",
+    lede: "Consultas por materia.",
+    one: "conversación",
+    many: "conversaciones",
+    panel: "Hilo de conversación",
+    categories: [
+      { id: "fiscal", name: "Fiscal - Contable", description: "Consultas y boletines fiscales", tone: "bg-[#e7f8f3] text-[#0f766e]" },
+      { id: "laboral", name: "Laboral", description: "Consultas de laboral", tone: "bg-[#e8f2ff] text-[#24527a]" },
+      { id: "juridico", name: "Jurídico", description: "Consultas jurídicas", tone: "bg-[#fff0e4] text-[#8a4b2a]" },
+      { id: "general", name: "General", description: "Temas que no encajan en un área", tone: "bg-[#efe8ff] text-[#5b3d8a]" },
+      { id: "datos", name: "Protección de datos", description: "Privacidad y encargados", tone: "bg-[#fde8e8] text-[#9f1239]" },
+    ],
+    threads: [
+      inetThread("f1", "fiscal", "Boletín semanal de información fiscal", "Publicación del grupo, sin respuestas.", "Helena Torren", "HT", "08/10/2026", 0, [inetPost("Helena Torren", "HT", "Grupo", "08/10/2026", "Boletín semanal de información fiscal. En la muestra no lleva respuestas.")], true),
+      inetThread("f2", "fiscal", "Liquidación IVA socio profesional", "Consulta con una nota de la AEAT.", "Nuria Pellicer", "NP", "02/10/2026", 1, [inetPost("Nuria Pellicer", "NP", "Gerente", "02/10/2026", "Adjunto la nota de la AEAT y la consulta vinculante. En la muestra el PDF no se descarga."), inetPost("Pol Serra", "PS", "Asesor fiscal-contable", "02/10/2026", "La nota encaja con el criterio que estábamos usando en la liquidación.")]),
+      inetThread("l1", "laboral", "Boletín semanal de información laboral", "Publicación del grupo.", "Helena Torren", "HT", "08/10/2026", 0, [inetPost("Helena Torren", "HT", "Grupo", "08/10/2026", "Boletín semanal de información laboral.")], true),
+      inetThread("l2", "laboral", "Despido disciplinario y motivación", "¿Exigimos carta más detallada?", "Elena Vives", "EV", "Ayer", 1, [inetPost("Elena Vives", "EV", "Asesor laboral", "Ayer", "La carta que usamos se queda corta si el Supremo pide más hechos."), inetPost("Joana Pujol", "JP", "Graduado social", "Ayer", "Puedo pasar un modelo ampliado esta semana.")]),
+      inetThread("j1", "juridico", "Cláusula suelo en una novación", "¿Seguimos el modelo de demanda?", "Marc Ribas", "MR", "Lun", 1, [inetPost("Marc Ribas", "MR", "Abogado", "Lun", "Quiero contrastar si el modelo de demanda cubre la novación posterior.")]),
+      inetThread("d1", "datos", "Encargado del tratamiento", "Contrato con el colaborador de nóminas.", "Andrés Molina", "AM", "Hoy", 1, [inetPost("Andrés Molina", "AM", "Oficina central", "Hoy", "Hay que actualizar el contrato de encargado antes de fin de mes.")]),
+    ],
+  },
+  "informacion-complementaria": {
+    title: "Información complementaria",
+    lede: "Las mismas áreas, con documentos en lugar de un tablón.",
+    one: "documento",
+    many: "documentos",
+    panel: "Documento",
+    categories: [
+      { id: "fiscal", name: "Fiscal - Contable", description: "Modelos y notas fiscales", tone: "bg-[#e7f8f3] text-[#0f766e]" },
+      { id: "laboral", name: "Laboral", description: "Modelos laborales", tone: "bg-[#e8f2ff] text-[#24527a]" },
+      { id: "juridico", name: "Jurídico", description: "Demandas y guías", tone: "bg-[#fff0e4] text-[#8a4b2a]" },
+      { id: "general", name: "General", description: "Piezas que sirven a varias áreas", tone: "bg-[#efe8ff] text-[#5b3d8a]" },
+      { id: "suelo", name: "Cláusulas suelo", description: "Demandas, costas y sentencias", tone: "bg-[#fde8e8] text-[#9f1239]" },
+    ],
+    threads: [
+      inetThread("c1", "suelo", "Modelo de demanda de cláusula suelo", "Autor Helena Torren · 12/03/2026", "Helena Torren", "HT", "12/03/2026", 0, [inetPost("Helena Torren", "HT", "Grupo", "12/03/2026", "Modelo de demanda para reutilizar. La ficha es el documento, no un tablón.")]),
+      inetThread("c2", "suelo", "Guía de cláusulas abusivas", "Autor Helena Torren · 04/02/2026", "Helena Torren", "HT", "04/02/2026", 1, [inetPost("Helena Torren", "HT", "Grupo", "04/02/2026", "Guía breve de cláusulas abusivas."), inetPost("Marc Ribas", "MR", "Abogado", "05/02/2026", "Añado una sentencia del Supremo que encaja con el apartado de transparencia.")]),
+      inetThread("c3", "fiscal", "Nota de la consulta vinculante", "Autor Pol Serra · 18/09/2026", "Pol Serra", "PS", "18/09/2026", 0, [inetPost("Pol Serra", "PS", "Asesor fiscal-contable", "18/09/2026", "Nota reutilizable sobre la consulta vinculante. No es el hilo de la consulta.")]),
+      inetThread("c4", "laboral", "Modelo de carta de despido", "Autor Elena Vives · 11/09/2026", "Elena Vives", "EV", "11/09/2026", 0, [inetPost("Elena Vives", "EV", "Asesor laboral", "11/09/2026", "Modelo de carta con un relato de hechos más largo.")]),
+      inetThread("c5", "juridico", "Escrito de costas", "Autor Marc Ribas · 22/06/2026", "Marc Ribas", "MR", "22/06/2026", 0, [inetPost("Marc Ribas", "MR", "Abogado", "22/06/2026", "Escrito de costas para reutilizar en cláusulas y en consumo.")]),
+      inetThread("c6", "general", "Índice de modelos del mes", "Autor Helena Torren · 01/10/2026", "Helena Torren", "HT", "01/10/2026", 0, [inetPost("Helena Torren", "HT", "Grupo", "01/10/2026", "Lista corta de los modelos añadidos este mes.")]),
+    ],
+  },
+  "comunicaciones-internas": {
+    title: "Comunicaciones internas",
+    lede: "Avisos del grupo, sin áreas temáticas.",
+    one: "aviso",
+    many: "avisos",
+    panel: "Mensaje",
+    categories: [{ id: "internas", name: "Comunicaciones internas", description: "Jornadas, renovaciones y notas del grupo", tone: "bg-[#e7f8f3] text-[#0f766e]" }],
+    threads: [
+      inetThread("m1", "internas", "Programa de las XXXIV Jornadas", "Granada, 23–25 sep 2026.", "Helena Torren", "HT", "12/09/2026", 1, [inetPost("Helena Torren", "HT", "Grupo", "12/09/2026", "Programa de las jornadas. En la muestra el PDF del programa no se adjunta."), inetPost("Nuria Pellicer", "NP", "Gerente", "13/09/2026", "Confirmo asistencia de Barcelona.")], true),
+      inetThread("m2", "internas", "Renovación Qmementix 2026", "Aviso de renovación.", "Helena Torren", "HT", "03/09/2026", 0, [inetPost("Helena Torren", "HT", "Grupo", "03/09/2026", "Recordatorio de la renovación Qmementix 2026.")]),
+      inetThread("m3", "internas", "Integración de Supralaboris", "Nota de incorporación.", "Helena Torren", "HT", "28/08/2026", 1, [inetPost("Helena Torren", "HT", "Grupo", "28/08/2026", "Supralaboris pasa a formar parte del grupo. Este aviso no está clasificado por materia.")]),
+      inetThread("m4", "internas", "Sedes de los foros presenciales", "Calendario del trimestre.", "Helena Torren", "HT", "15/08/2026", 0, [inetPost("Helena Torren", "HT", "Grupo", "15/08/2026", "Sedes previstas para los foros presenciales del trimestre.")]),
+    ],
+  },
+};
+
+function intranetFindArticle(name, id) {
+  return (INTRANET_ARTICLES[name] || []).find((item) => item.id === id) || null;
+}
+
+function intranetRowsFor(key, source) {
+  if (!intranetRows[key]) intranetRows[key] = source.map((row) => ({ ...row }));
+  return intranetRows[key];
+}
+
+function intranetRefocus(root, pos) {
+  const input = root.querySelector("#inet-q");
+  if (!input) return;
+  input.focus();
+  if (pos != null) input.setSelectionRange(pos, pos);
+}
+
+function intranetCards(root, spec) {
+  intranetUi.open = "";
+  intranetUi.dialog = "";
+  intranetUi.opener = "";
+  intranetUi.itemId = "";
+  intranetUi.kind = "";
+  intranetUi.province = "";
+  const links = (spec.links || []).map((link) => `<a class="text-sm font-medium text-tide" href="${esc(link.href)}">${esc(link.label)}</a>`).join("");
+  root.innerHTML = `<div class="flex h-full min-h-0 flex-col overflow-hidden bg-[#f3f4f6] px-4 py-6">
+    <header class="shrink-0 pb-4">
+      <h1 class="text-lg font-semibold">${esc(spec.title)}</h1>
+      <p class="mt-1 text-sm text-mute">${esc(spec.lede)}</p>
+      ${links ? `<div class="mt-3">${links}</div>` : ""}
+    </header>
+    <div id="intranet-cards" class="min-h-0 flex-1 overflow-y-auto"></div>
+  </div>`;
+  const grid = root.querySelector("#intranet-cards");
+  const shut = () => {
+    const opener = intranetUi.opener;
+    intranetUi.dialog = "";
+    intranetUi.opener = "";
+    intranetUi.itemId = "";
+    draw();
+    if (opener) grid.querySelector(`[data-card-opener="${CSS.escape(opener)}"]`)?.focus();
+  };
+  const draw = () => {
+    const items = spec.items.filter((item) => {
+      if (intranetUi.kind && item.kind !== intranetUi.kind) return false;
+      if (intranetUi.province && item.province !== intranetUi.province) return false;
+      return true;
+    });
+    const chips = `${spec.kinds ? inetChips("Tipo", "kind", spec.kinds, intranetUi.kind) : ""}${spec.provinces ? inetChips("Provincia", "province", spec.provinces, intranetUi.province) : ""}`;
+    const body = items.length ? renderCardGrid(items, intranetUi) : `<p class="px-1 py-8 text-sm text-mute">Nadie coincide con este filtro.</p>`;
+    grid.innerHTML = chips + body;
+    grid.querySelectorAll("[data-inet-filter]").forEach((button) => {
+      button.addEventListener("click", () => {
+        intranetUi[button.dataset.inetFilter] = button.dataset.inetValue || "";
+        draw();
+      });
+    });
+    grid.querySelectorAll("[data-card-toggle]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const id = button.dataset.cardToggle;
+        intranetUi.open = intranetUi.open === id ? "" : id;
+        draw();
+        grid.querySelector(`[data-card-toggle="${CSS.escape(id)}"]`)?.focus();
+      });
+    });
+    grid.querySelectorAll("[data-card-convenio]").forEach((button) => {
+      button.addEventListener("click", () => {
+        intranetUi.open = button.dataset.cardConvenio;
+        draw();
+        grid.querySelector(`[data-card-convenio="${CSS.escape(button.dataset.cardConvenio)}"]`)?.focus();
+      });
+    });
+    grid.querySelectorAll("[data-card-dialog]").forEach((button) => {
+      if (button.getAttribute("role") === "dialog") return;
+      button.addEventListener("click", () => {
+        intranetUi.itemId = button.dataset.cardId || "";
+        intranetUi.dialog = intranetUi.itemId === "laley" ? "productos" : button.dataset.cardDialog;
+        intranetUi.opener = button.dataset.cardOpener || "";
+        draw();
+        const field = grid.querySelector("[data-card-dialog] input, [data-card-dialog] [data-card-close]");
+        field?.focus();
+      });
+    });
+    grid.querySelector("[data-card-backdrop]")?.addEventListener("click", (event) => {
+      if (event.target === event.currentTarget) shut();
+    });
+    grid.querySelectorAll("[data-card-close]").forEach((button) => button.addEventListener("click", shut));
+    grid.querySelector("[data-card-form]")?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      shut();
+    });
+  };
+  grid.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && intranetUi.dialog) shut();
+  });
+  draw();
+}
+
+function intranetTable(root, spec, key) {
+  const rows = intranetRowsFor(key, spec.rows);
+  const state = { q: "", sheet: false, editing: "" };
+  const draw = () => {
+    const q = state.q.trim().toLowerCase();
+    const visible = rows.filter((row) => !q || spec.columns.some((col) => String(row[col.key] ?? "").toLowerCase().includes(q)));
+    const editing = rows.find((row) => row.id === state.editing);
+    const fields = spec.columns
+      .map((col, index) => `<label class="block text-xs font-medium text-mute" for="inet-field-${esc(col.key)}">${esc(col.label)}<input id="inet-field-${esc(col.key)}" name="${esc(col.key)}" ${index === 0 ? "required" : ""} value="${esc(editing?.[col.key] ?? "")}" class="mt-1 h-9 w-full rounded-lg border border-line bg-white px-3 text-sm outline-none focus:border-ink" /></label>`)
+      .join("");
+    const body = visible.length
+      ? visible
+          .map((row) => {
+            const cells = spec.columns
+              .map((col, index) => {
+                const text = String(row[col.key] ?? "");
+                if (index === 0 && spec.link) return `<td class="px-3 py-3"><a class="font-medium hover:text-tide" href="#/${esc(spec.link)}/${encodeURIComponent(row.id)}">${esc(text)}</a></td>`;
+                return `<td class="px-3 py-3 ${index === 0 ? "font-medium" : ""}">${esc(text)}</td>`;
+              })
+              .join("");
+            return `<tr class="border-t border-line">
+              ${cells}
+              <td class="px-2 py-3">
+                <div class="flex items-center justify-end gap-0.5">
+                  <button type="button" data-inet-edit="${esc(row.id)}" class="grid size-7 place-items-center rounded-md text-mute hover:bg-[#eef0f2] hover:text-ink" aria-label="Editar ${esc(row[spec.columns[0].key])}"><svg viewBox="0 0 24 24" class="line size-4"><path d="M4 20h4L18 10l-4-4L4 16v4Z"></path><path d="m12.5 7.5 4 4"></path></svg></button>
+                  <button type="button" data-inet-remove="${esc(row.id)}" class="grid size-7 place-items-center rounded-md text-mute hover:bg-[#eef0f2] hover:text-hot" aria-label="Borrar ${esc(row[spec.columns[0].key])}"><svg viewBox="0 0 24 24" class="line size-4"><path d="M5 7h14M9 7V5h6v2M8 7l1 13h6l1-13"></path></svg></button>
+                </div>
+              </td>
+            </tr>`;
+          })
+          .join("")
+      : `<tr><td colspan="${spec.columns.length + 1}" class="px-3 py-12 text-center text-sm text-mute">Nada coincide con esta búsqueda.</td></tr>`;
+    root.innerHTML = `<div class="relative flex h-full min-h-0 flex-col gap-6 overflow-hidden bg-[#f3f4f6] px-4 py-6">
+      <section class="flex shrink-0 flex-col gap-4 rounded-2xl bg-white px-5 py-5 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+        <div class="flex items-end justify-between gap-4">
+          <div class="min-w-0">
+            <h1 class="text-lg font-semibold">${esc(spec.title)}</h1>
+            <p class="text-sm text-mute">${esc(spec.lede)}</p>
+            ${spec.back ? `<a class="mt-2 inline-block text-sm font-medium text-tide" href="${esc(spec.back.href)}">${esc(spec.back.label)}</a>` : ""}
+            ${inetTabs(spec.tabs)}
+          </div>
+          <div class="flex shrink-0 items-center gap-4">
+            <p class="text-sm text-mute">${visible.length} de ${rows.length}</p>
+            <button type="button" data-inet-add class="h-9 rounded-lg bg-ink px-3 text-sm font-semibold text-white">${esc(spec.add || "Añadir")}</button>
+          </div>
+        </div>
+        <form id="inet-search" class="relative">
+          <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+          <label class="sr-only" for="inet-q">Buscar</label>
+          <input id="inet-q" type="search" value="${esc(state.q)}" placeholder="Buscar" autocomplete="off" class="h-9 w-full rounded-lg border border-line bg-white pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-ink" />
+        </form>
+      </section>
+      <section class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+        <div class="min-h-0 flex-1 overflow-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-[#f7f8f9] text-left text-xs font-semibold text-mute">
+              <tr>
+                ${spec.columns.map((col) => `<th class="px-3 py-3 font-semibold">${esc(col.label)}</th>`).join("")}
+                <th class="px-3 py-3 text-right font-semibold">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>${body}</tbody>
+          </table>
+        </div>
+        <div class="border-t border-line px-4 py-4 text-sm text-mute">Mostrando ${visible.length} de ${rows.length}</div>
+      </section>
+      <div id="inet-sheet" ${state.sheet ? "" : "hidden"} class="absolute inset-0 z-20 flex justify-end bg-ink/20">
+        <form id="inet-sheet-form" class="flex h-full w-full max-w-sm flex-col bg-white shadow-[-12px_0_40px_rgba(20,24,28,0.08)]">
+          <div class="flex items-center justify-between border-b border-line px-5 py-4">
+            <h2 class="text-base font-semibold">${state.editing ? "Editar" : esc(spec.add || "Añadir")}</h2>
+            <button type="button" data-inet-close class="grid size-8 place-items-center rounded-lg text-mute hover:bg-[#f6f7f8] hover:text-ink" aria-label="Cerrar"><svg viewBox="0 0 24 24" class="line size-4"><path d="m7 7 10 10M17 7 7 17"></path></svg></button>
+          </div>
+          <div class="min-h-0 flex-1 space-y-3 overflow-y-auto px-5 py-4">${fields}</div>
+          <div class="flex justify-end gap-3 border-t border-line px-5 py-4">
+            <button type="button" data-inet-close class="text-sm font-medium">Cancelar</button>
+            <button type="submit" class="rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>`;
+  };
+  root.addEventListener("input", (event) => {
+    if (event.target.id !== "inet-q") return;
+    state.q = event.target.value;
+    const pos = event.target.selectionStart;
+    draw();
+    intranetRefocus(root, pos);
+  });
+  root.addEventListener("submit", (event) => {
+    if (event.target.id === "inet-search") {
+      event.preventDefault();
+      return;
+    }
+    if (event.target.id !== "inet-sheet-form") return;
+    event.preventDefault();
+    if (state.editing) {
+      const row = rows.find((item) => item.id === state.editing);
+      if (row) {
+        const data = new FormData(event.target);
+        spec.columns.forEach((col) => {
+          row[col.key] = String(data.get(col.key) ?? "");
+        });
+      }
+    }
+    state.sheet = false;
+    state.editing = "";
+    draw();
+  });
+  root.addEventListener("click", (event) => {
+    if (event.target.closest("[data-inet-add]")) {
+      state.editing = "";
+      state.sheet = true;
+      draw();
+      root.querySelector("#inet-sheet input")?.focus();
+      return;
+    }
+    const edit = event.target.closest("[data-inet-edit]");
+    if (edit) {
+      state.editing = edit.dataset.inetEdit;
+      state.sheet = true;
+      draw();
+      root.querySelector("#inet-sheet input")?.focus();
+      return;
+    }
+    const remove = event.target.closest("[data-inet-remove]");
+    if (remove) {
+      const index = rows.findIndex((row) => row.id === remove.dataset.inetRemove);
+      if (index >= 0) rows.splice(index, 1);
+      draw();
+      return;
+    }
+    if (event.target.closest("[data-inet-close]") || event.target.id === "inet-sheet") {
+      state.sheet = false;
+      state.editing = "";
+      draw();
+    }
+  });
+  draw();
+}
+
+function intranetForumView(root, name, spec) {
+  if (!intranetForum[name]) intranetForum[name] = { category: spec.categories[0].id, thread: "", q: "", compose: "", dismissed: false };
+  const state = intranetForum[name];
+  const draw = () => {
+    if (!spec.categories.some((item) => item.id === state.category)) state.category = spec.categories[0].id;
+    const q = state.q.trim().toLowerCase();
+    const threads = spec.threads.filter((thread) => thread.category === state.category && (!q || [thread.title, thread.excerpt, thread.author].join(" ").toLowerCase().includes(q)));
+    if (!threads.some((thread) => thread.id === state.thread)) state.thread = threads[0]?.id || "";
+    const category = spec.categories.find((item) => item.id === state.category) || spec.categories[0];
+    const thread = spec.threads.find((item) => item.id === state.thread) || null;
+    const panelClass = `${thread && !state.dismissed ? "flex forum-mobile-open" : "hidden"} min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)] xl:flex`;
+    root.innerHTML = `<div class="relative flex h-full min-h-0 flex-col gap-4 overflow-hidden bg-[#f3f4f6] px-4 py-6">
+      <header class="flex shrink-0 items-end justify-between gap-4 rounded-2xl bg-white px-5 py-4 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+        <div class="min-w-0">
+          <h1 class="text-lg font-semibold">${esc(spec.title)}</h1>
+          <p class="text-sm text-mute">${esc(spec.lede)}</p>
+        </div>
+        <div class="flex shrink-0 items-center gap-2">
+          <label class="relative hidden sm:block">
+            <span class="sr-only">Buscar</span>
+            <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+            <input id="inet-q" type="search" value="${esc(state.q)}" placeholder="Buscar" class="h-9 w-44 rounded-lg border border-line bg-white pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-ink" />
+          </label>
+          <button type="button" data-inet-compose="category" class="hidden rounded-lg border border-line px-3 py-2 text-sm font-medium hover:bg-[#f6f7f8] sm:inline-flex">Crear categoría</button>
+          <button type="button" data-inet-compose="thread" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white hover:bg-[#0f9f91]">Nueva conversación</button>
+        </div>
+      </header>
+      <div class="grid min-h-0 flex-1 grid-cols-[minmax(8rem,0.6fr)_minmax(13rem,1.4fr)] gap-4 xl:grid-cols-3">
+        <section class="min-h-0 min-w-0 overflow-y-auto rounded-2xl bg-white p-3 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+          <div class="flex items-center justify-between px-2 pb-2">
+            <h2 class="text-sm font-semibold">Categorías</h2>
+            <button type="button" data-inet-compose="category" class="grid size-7 place-items-center rounded-lg text-lg text-mute hover:bg-[#f6f7f8] hover:text-ink" aria-label="Crear categoría">+</button>
+          </div>
+          <div class="space-y-1">
+            ${spec.categories
+              .map((item) => {
+                const active = item.id === state.category;
+                const count = spec.threads.filter((entry) => entry.category === item.id).length;
+                return `<button type="button" data-inet-category="${esc(item.id)}" class="w-full rounded-xl p-3 text-left ${active ? "bg-[#e7f8f3]" : "hover:bg-[#f6f7f8]"}">
+                  <span class="flex items-start justify-between gap-2">
+                    <span class="flex min-w-0 items-center gap-2">
+                      <span class="grid size-7 shrink-0 place-items-center rounded-lg ${item.tone} text-xs font-semibold">${esc(item.name.slice(0, 1))}</span>
+                      <span class="truncate text-sm font-medium ${active ? "text-[#0f766e]" : "text-ink"}">${esc(item.name)}</span>
+                    </span>
+                    <span class="text-xs text-mute">${count}</span>
+                  </span>
+                  <span class="mt-1 block truncate pl-9 text-xs text-mute">${esc(item.description)}</span>
+                </button>`;
+              })
+              .join("")}
+          </div>
+        </section>
+        <section class="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+          <div class="flex shrink-0 items-center justify-between gap-3 border-b border-line px-5 py-4">
+            <div class="min-w-0">
+              <h2 class="truncate text-[15px] font-semibold">${esc(category.name)}</h2>
+              <p class="mt-0.5 truncate text-xs text-mute">${esc(category.description)}</p>
+            </div>
+            <p class="shrink-0 text-xs text-mute">${esc(inetCount(threads.length, spec.one, spec.many))}</p>
+          </div>
+          <div class="min-h-0 flex-1 overflow-y-auto px-5">
+            ${
+              threads.length
+                ? threads
+                    .map(
+                      (item) => `<button type="button" data-inet-thread="${esc(item.id)}" class="block w-full border-b border-line py-4 text-left ${state.thread === item.id ? "bg-[#f6fbfa] -mx-2 rounded-xl px-2" : ""}">
+                        <span class="flex items-start gap-3">
+                          <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[10px] font-semibold text-[#1d4ed8]">${esc(item.initials)}</span>
+                          <span class="min-w-0 flex-1">
+                            <span class="flex flex-wrap items-center gap-2">
+                              <span class="text-sm font-semibold">${esc(item.title)}</span>
+                              ${item.pinned ? '<span class="rounded bg-[#f3f4f6] px-1.5 py-0.5 text-[10px] font-medium text-mute">Fijada</span>' : ""}
+                            </span>
+                            <span class="mt-1 block text-xs leading-relaxed text-mute">${esc(item.excerpt)}</span>
+                            <span class="mt-2 flex flex-wrap gap-x-2 text-[11px] text-mute"><span>${esc(item.author)}</span><span>·</span><span>${esc(item.time)}</span><span>·</span><span>${item.replies} respuestas</span></span>
+                          </span>
+                        </span>
+                      </button>`,
+                    )
+                    .join("")
+                : `<div class="px-2 py-10 text-center text-sm text-mute">No hay resultados.</div>`
+            }
+          </div>
+        </section>
+        <aside class="${panelClass}">
+          <div class="flex shrink-0 items-center justify-between gap-3 border-b border-line px-5 py-4">
+            <p class="text-xs font-semibold uppercase tracking-wide text-mute">${esc(spec.panel)}</p>
+            <button type="button" data-inet-close-thread class="grid size-7 place-items-center rounded-lg text-mute hover:bg-[#f6f7f8] hover:text-ink xl:hidden" aria-label="Cerrar">×</button>
+          </div>
+          <div class="min-h-0 flex-1 overflow-y-auto px-5 py-4">
+            ${
+              thread
+                ? `<span class="inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${category.tone}">${esc(category.name)}</span>
+                  <h2 class="mt-3 text-lg font-semibold leading-snug">${esc(thread.title)}</h2>
+                  <p class="mt-2 text-xs text-mute">${esc(thread.author)} · ${esc(thread.time)} · ${thread.replies} respuestas</p>
+                  <div class="mt-5 space-y-4">
+                    ${thread.posts
+                      .map(
+                        (post, index) => `<article class="${index ? "border-t border-line pt-4" : ""}">
+                          <div class="flex items-center gap-2">
+                            <span class="grid size-7 place-items-center rounded-full bg-[#e6defa] text-[10px] font-semibold text-[#5b3d8a]">${esc(post.initials)}</span>
+                            <span class="min-w-0">
+                              <span class="block text-xs font-semibold">${esc(post.author)}</span>
+                              <span class="block text-[11px] text-mute">${esc(post.role)} · ${esc(post.time)}</span>
+                            </span>
+                          </div>
+                          <p class="mt-2 text-sm leading-relaxed text-[#3c424a]">${esc(post.body)}</p>
+                        </article>`,
+                      )
+                      .join("")}
+                  </div>`
+                : `<div class="py-10 text-center text-sm text-mute">Selecciona un elemento para verlo.</div>`
+            }
+          </div>
+          <form id="inet-reply" class="shrink-0 border-t border-line px-4 py-3">
+            <label class="sr-only" for="inet-reply-input">Responder</label>
+            <textarea id="inet-reply-input" rows="2" placeholder="Escribe una respuesta..." class="w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none placeholder:text-mute focus:border-tide"></textarea>
+            <button type="submit" class="mt-2 w-full rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white">Responder</button>
+          </form>
+        </aside>
+      </div>
+      <div id="inet-compose" ${state.compose ? "" : "hidden"} class="absolute inset-0 z-30 grid place-items-center bg-ink/20 p-4">
+        <form id="inet-compose-form" class="w-full max-w-md rounded-2xl bg-white p-5 shadow-[0_24px_60px_rgba(20,24,28,0.18)]">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-lg font-semibold">${state.compose === "category" ? "Crear categoría" : "Nueva conversación"}</h2>
+              <p class="mt-1 text-sm text-mute">El contenido es solo una simulación visual.</p>
+            </div>
+            <button type="button" data-inet-close-compose class="grid size-8 place-items-center rounded-lg text-mute hover:bg-[#f6f7f8] hover:text-ink" aria-label="Cerrar">×</button>
+          </div>
+          <label class="mt-5 block text-xs font-medium text-mute" for="inet-compose-name">Título</label>
+          <input id="inet-compose-name" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="${state.compose === "category" ? "Nombre de la categoría" : "¿De qué quieres hablar?"}" />
+          <label class="mt-3 block text-xs font-medium text-mute" for="inet-compose-body">Descripción</label>
+          <textarea id="inet-compose-body" rows="4" class="mt-1 w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Añade algo de contexto..."></textarea>
+          <div class="mt-5 flex justify-end gap-3">
+            <button type="button" data-inet-close-compose class="text-sm font-medium">Cancelar</button>
+            <button type="submit" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">Crear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <style>
+      @media (max-width: 1279px) {
+        #intranet .forum-mobile-open { position: absolute; inset: 1rem 1rem 1rem auto; z-index: 20; display: flex; width: min(26rem, calc(100% - 2rem)); }
+      }
+    </style>`;
+  };
+  root.addEventListener("input", (event) => {
+    if (event.target.id !== "inet-q") return;
+    state.q = event.target.value;
+    const pos = event.target.selectionStart;
+    draw();
+    intranetRefocus(root, pos);
+  });
+  root.addEventListener("submit", (event) => {
+    if (event.target.id === "inet-reply") {
+      event.preventDefault();
+      event.target.reset();
+      return;
+    }
+    if (event.target.id === "inet-compose-form") {
+      event.preventDefault();
+      state.compose = "";
+      draw();
+    }
+  });
+  root.addEventListener("click", (event) => {
+    const category = event.target.closest("[data-inet-category]");
+    if (category) {
+      state.category = category.dataset.inetCategory;
+      state.q = "";
+      state.thread = "";
+      state.dismissed = false;
+      draw();
+      return;
+    }
+    const picked = event.target.closest("[data-inet-thread]");
+    if (picked) {
+      state.thread = picked.dataset.inetThread;
+      state.dismissed = false;
+      draw();
+      return;
+    }
+    const compose = event.target.closest("[data-inet-compose]");
+    if (compose) {
+      state.compose = compose.dataset.inetCompose;
+      draw();
+      root.querySelector("#inet-compose-name")?.focus();
+      return;
+    }
+    if (event.target.closest("[data-inet-close-compose]") || event.target.id === "inet-compose") {
+      state.compose = "";
+      draw();
+      return;
+    }
+    if (event.target.closest("[data-inet-close-thread]")) {
+      state.dismissed = true;
+      draw();
+    }
+  });
+  draw();
+}
+
+function intranetArticle(root, name, article) {
+  const paragraphs = article.body
+    .split(/\n\n+/)
+    .map((paragraph) => `<p>${esc(paragraph).replaceAll("\n", "<br>")}</p>`)
+    .join("");
+  root.innerHTML = `<div class="h-full overflow-y-auto bg-[#f3f4f6] px-4 py-6">
+    <article class="mx-auto max-w-3xl rounded-2xl bg-white px-6 py-7 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <a href="#/${esc(name)}" class="inline-flex items-center gap-1.5 text-sm font-medium text-tide"><span aria-hidden="true">←</span> Volver</a>
+      <h1 class="mt-6 text-2xl font-semibold leading-tight">${esc(article.title)}</h1>
+      <p class="mt-2 text-sm text-mute">${esc(article.summary)}</p>
+      <div class="mt-6 space-y-4 border-t border-line pt-6 text-[15px] leading-relaxed text-[#3c424a]">${paragraphs}</div>
+      ${article.action ? `<button type="button" data-inet-action class="mt-6 rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white">${esc(article.action)}</button><p id="inet-action-note" hidden class="mt-3 text-sm text-[#0f766e]">Anotado. Es una simulación.</p>` : ""}
+    </article>
+  </div>`;
+  root.querySelector("[data-inet-action]")?.addEventListener("click", () => {
+    const note = root.querySelector("#inet-action-note");
+    if (note) note.hidden = false;
+  });
+}
+
+function intranetMissing(root, name) {
+  root.innerHTML = `<div class="h-full overflow-y-auto bg-[#f3f4f6] px-4 py-6">
+    <div class="mx-auto max-w-xl rounded-2xl bg-white px-6 py-7 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <h1 class="text-lg font-semibold">Esta ficha no está en la muestra</h1>
+      <a class="mt-3 inline-block text-sm font-medium text-tide" href="#/${esc(name)}">Volver</a>
+    </div>
+  </div>`;
+}
+
+function intranetSupport(root) {
+  root.innerHTML = `<div class="h-full overflow-y-auto bg-[#f3f4f6] px-4 py-6">
+    <div class="mx-auto max-w-xl rounded-2xl bg-white px-6 py-7 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h1 class="text-lg font-semibold">Soporte interno</h1>
+          <p class="mt-1 text-sm text-mute">Enviar un mensaje al buzón del área.</p>
+        </div>
+        <a class="shrink-0 text-sm font-medium text-tide" href="#/soporte-interno/areas">Áreas</a>
+      </div>
+      <form id="inet-support" class="mt-6 space-y-3">
+        <label class="block text-xs font-medium text-mute" for="inet-area">Área
+          <select id="inet-area" name="area" class="mt-1 h-9 w-full rounded-lg border border-line bg-white px-3 text-sm">
+            <option>Email</option>
+            <option>Intranet</option>
+            <option>Publicaciones-noticias</option>
+            <option>Web</option>
+          </select>
+        </label>
+        <label class="block text-xs font-medium text-mute" for="inet-nombre">Nombre de contacto
+          <input id="inet-nombre" name="nombre" required class="mt-1 h-9 w-full rounded-lg border border-line px-3 text-sm outline-none focus:border-ink" />
+        </label>
+        <label class="block text-xs font-medium text-mute" for="inet-telefono">Teléfono de contacto
+          <input id="inet-telefono" name="telefono" class="mt-1 h-9 w-full rounded-lg border border-line px-3 text-sm outline-none focus:border-ink" />
+        </label>
+        <label class="block text-xs font-medium text-mute" for="inet-obs">Observaciones
+          <textarea id="inet-obs" name="obs" rows="5" required class="mt-1 w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-ink"></textarea>
+        </label>
+        <button type="submit" class="rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white">Enviar</button>
+        <p id="inet-support-note" hidden class="text-sm text-[#0f766e]">Mensaje anotado. Es una simulación.</p>
+      </form>
+    </div>
+  </div>`;
+  root.querySelector("#inet-support")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const note = root.querySelector("#inet-support-note");
+    if (note) note.hidden = false;
+    event.currentTarget.reset();
+  });
+}
+
+function bindIntranet(route) {
+  const root = main.querySelector("#intranet");
+  if (!root) return;
+  const name = route.name;
+  const param = route.param || "";
+  if (name === "profesionales" && param === "tipos") {
+    intranetTable(root, INTRANET_AUX["profesionales:tipos"], "profesionales:tipos");
+    return;
+  }
+  if (name === "soporte-interno" && param === "areas") {
+    intranetTable(root, INTRANET_AUX["soporte:areas"], "soporte:areas");
+    return;
+  }
+  if (name === "blog" && INTRANET_AUX[`blog:${param}`]) {
+    intranetTable(root, INTRANET_AUX[`blog:${param}`], `blog:${param}`);
+    return;
+  }
+  if (name === "soporte-interno" && !param) {
+    intranetSupport(root);
+    return;
+  }
+  if (param) {
+    const article = intranetFindArticle(name, param);
+    if (article) intranetArticle(root, name, article);
+    else intranetMissing(root, name);
+    return;
+  }
+  if (INTRANET_FORUMS[name]) {
+    intranetForumView(root, name, INTRANET_FORUMS[name]);
+    return;
+  }
+  if (INTRANET_TABLES[name]) {
+    intranetTable(root, INTRANET_TABLES[name], name);
+    return;
+  }
+  if (INTRANET_CARDS[name]) intranetCards(root, INTRANET_CARDS[name]);
 }
 
 function hydrate(route) {
   if (route.name === "resumen") bindResumen();
   if (route.name === "agenda") bindInicio2();
-  if (route.name === "expedientes" || route.name === "tabla-1") bindExpedientes(route);
+  if (route.name === "noticia") bindNoticia(route.param);
+  if (route.name === "foro" || route.name === "expedientes") bindForo();
   if (route.name === "expediente") bindMatter(route.param);
   if (route.name === "tabla-2") bindTabla2();
-  if (route.name === "tabla-4") bindTabla4();
-  if (route.name === "tabla-5") bindTabla5();
   if (route.name === "tabla-7") bindTabla7();
+  if (INTRANET_NAMES.has(route.name)) bindIntranet(route);
   bindChecks();
 }
 
@@ -2727,6 +4163,16 @@ document.addEventListener("pointerout", (event) => {
 
 const openBranches = new Set();
 
+const navScroll = document.querySelector(".nav-scroll");
+
+function syncNavFade() {
+  const remaining = navScroll.scrollHeight - navScroll.clientHeight - navScroll.scrollTop;
+  navScroll.classList.toggle("can-scroll-more", remaining > 8);
+}
+
+navScroll.addEventListener("scroll", syncNavFade, { passive: true });
+new ResizeObserver(syncNavFade).observe(navScroll);
+
 function syncMaterias(route, keepManual) {
   const parent = MATERIAS_PARENT[route.name] || "";
   if (parent && !keepManual) openBranches.add(parent);
@@ -2738,6 +4184,7 @@ function syncMaterias(route, keepManual) {
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     branch.classList.toggle("is-open", open);
   });
+  syncNavFade();
 }
 
 document.querySelectorAll("[data-branch] .nav-chevron").forEach((button) => {
@@ -2753,6 +4200,7 @@ document.querySelector("#sidebar-toggle").addEventListener("click", () => {
   ui.compact = !ui.compact;
   sidebar.classList.toggle("is-compact", ui.compact);
   document.querySelector("#sidebar-toggle").setAttribute("aria-pressed", ui.compact ? "true" : "false");
+  syncNavFade();
 });
 
 noticeToggle.addEventListener("click", (event) => {
@@ -2798,25 +4246,6 @@ sedeList?.addEventListener("click", (event) => {
 renderSedes();
 syncSedeLabel();
 
-inviteToggle.addEventListener("click", (event) => {
-  event.stopPropagation();
-  toggleLayer(invitePanel, inviteToggle);
-});
-
-tutorialsToggle.addEventListener("click", (event) => {
-  event.stopPropagation();
-  toggleLayer(tutorialsPanel, tutorialsToggle);
-});
-
-document.querySelector("#invite-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const email = document.querySelector("#invite-email").value.trim();
-  const note = document.querySelector("#invite-note");
-  note.hidden = false;
-  note.textContent = `Invitación anotada para ${email}. Laia la verá con las provisiones.`;
-  event.currentTarget.hidden = true;
-});
-
 globalSearch.addEventListener("input", renderPalette);
 globalSearch.addEventListener("focus", renderPalette);
 globalSearch.addEventListener("keydown", (event) => {
@@ -2838,8 +4267,6 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("click", (event) => {
   if (!noticePanel.hidden && !noticePanel.contains(event.target) && !noticeToggle.contains(event.target)) closeLayer(noticePanel, noticeToggle);
   if (!sedePanel.hidden && !sedePanel.contains(event.target) && !sedeToggle.contains(event.target)) closeLayer(sedePanel, sedeToggle);
-  if (!invitePanel.hidden && !invitePanel.contains(event.target) && !inviteToggle.contains(event.target)) closeLayer(invitePanel, inviteToggle);
-  if (!tutorialsPanel.hidden && !tutorialsPanel.contains(event.target) && !tutorialsToggle.contains(event.target)) closeLayer(tutorialsPanel, tutorialsToggle);
   if (!palette.hidden && !palette.contains(event.target) && event.target !== globalSearch) palette.hidden = true;
   if (!event.target.closest("[data-menu]") && !event.target.closest("[data-menu-panel]")) {
     main.querySelectorAll("[data-menu-panel]").forEach((panel) => {
