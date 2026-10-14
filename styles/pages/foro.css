@@ -1,0 +1,9 @@
+@media (max-width: 1279px) {
+    #foro .forum-mobile-open {
+      position: absolute;
+      inset: 1rem 1rem 1rem auto;
+      z-index: 20;
+      display: flex;
+      width: min(26rem, calc(100% - 2rem));
+    }
+  }

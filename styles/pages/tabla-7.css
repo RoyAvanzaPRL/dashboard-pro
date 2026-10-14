@@ -1,0 +1,77 @@
+#tabla7-body-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #b4bac3 transparent;
+}
+#tabla7-body-scroll::-webkit-scrollbar-thumb {
+  background: #b4bac3;
+}
+
+.t7-search {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 2.25rem;
+  height: 2.25rem;
+  overflow: hidden;
+  border: 1px solid #eceef1;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #5c6570;
+  transition:
+    width 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease,
+    box-shadow 280ms ease;
+}
+.t7-search.is-open {
+  width: 16rem;
+  border-color: #d8dbe1;
+}
+.t7-search:focus-within {
+  border-color: #b7ebe4;
+  box-shadow: 0 0 0 3px rgba(18, 181, 164, 0.14);
+}
+.t7-search-btn {
+  display: grid;
+  width: calc(2.25rem - 2px);
+  height: calc(2.25rem - 2px);
+  flex: none;
+  place-items: center;
+  color: inherit;
+  transition: color 200ms ease;
+}
+.t7-search-btn:hover {
+  color: #1c1e21;
+}
+.t7-search-btn:focus-visible,
+.t7-search input:focus-visible {
+  outline: none;
+}
+.t7-search-form {
+  min-width: 0;
+  flex: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+.t7-search.is-open .t7-search-form {
+  opacity: 1;
+  pointer-events: auto;
+}
+.t7-search-form input {
+  width: 100%;
+  height: calc(2.25rem - 2px);
+  border: 0;
+  background: transparent;
+  padding: 0 0.75rem 0 0;
+  color: #1c1e21;
+  font-size: 0.875rem;
+  outline: none;
+}
+.t7-search-form input::placeholder {
+  color: #8b919a;
+}
+@media (prefers-reduced-motion: reduce) {
+  .t7-search {
+    transition: none;
+  }
+}
