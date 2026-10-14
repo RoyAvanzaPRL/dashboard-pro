@@ -24,6 +24,10 @@ const SEDES = [
 ];
 
 const state = { compact: false, sede: "barcelona" };
+const SIDEBAR_MOTION_MS = 360;
+const SIDEBAR_EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+let settleTimer = 0;
+let reorderGen = 0;
 const openBranches = new Set();
 let elements;
 
@@ -130,6 +134,61 @@ export function syncNavigation(route) {
   syncBranches(route);
 }
 
+function sidebarSlots() {
+  return [...document.querySelectorAll("#sidebar-toggle, .brand-row > button:first-child, #sede-toggle, #notice-toggle, .nav-link, .foot-btn")];
+}
+
+function playSidebar(compact) {
+  const gen = ++reorderGen;
+  const sidebar = elements.sidebar;
+  const list = sidebarSlots();
+  const first = list.map((node) => node.getBoundingClientRect());
+  const fromWidth = sidebar.getBoundingClientRect().width;
+
+  sidebar.style.transition = "none";
+  list.forEach((node) => {
+    node.style.transition = "none";
+    node.style.transform = "";
+  });
+  sidebar.classList.toggle("is-compact", compact);
+  sidebar.classList.toggle("is-settled", compact);
+  sidebar.classList.add("is-moving");
+  sidebar.style.width = `${fromWidth}px`;
+  void sidebar.offsetWidth;
+
+  list.forEach((node, index) => {
+    const now = node.getBoundingClientRect();
+    const dx = first[index].left - now.left;
+    const dy = first[index].top - now.top;
+    node.style.transform = Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5 ? "" : `translate(${dx}px, ${dy}px)`;
+  });
+
+  requestAnimationFrame(() => {
+    if (gen !== reorderGen) return;
+    sidebar.style.transition = `width ${SIDEBAR_MOTION_MS}ms ${SIDEBAR_EASE}`;
+    void sidebar.offsetWidth;
+    sidebar.style.width = compact ? "72px" : "220px";
+    list.forEach((node) => {
+      if (!node.style.transform) return;
+      node.style.transition = `transform ${SIDEBAR_MOTION_MS}ms ${SIDEBAR_EASE}`;
+      node.style.transform = "";
+    });
+  });
+
+  window.clearTimeout(settleTimer);
+  settleTimer = window.setTimeout(() => {
+    if (gen !== reorderGen) return;
+    sidebar.style.transition = "";
+    sidebar.style.width = "";
+    sidebar.classList.remove("is-moving");
+    list.forEach((node) => {
+      node.style.transition = "";
+      node.style.transform = "";
+    });
+    syncNavFade();
+  }, SIDEBAR_MOTION_MS + 40);
+}
+
 export function initShell() {
   elements = {
     main: document.querySelector("#main"),
@@ -156,10 +215,28 @@ export function initShell() {
     });
   });
 
-  document.querySelector("#sidebar-toggle").addEventListener("click", () => {
+  const sidebarToggle = document.querySelector("#sidebar-toggle");
+  sidebarToggle.addEventListener("click", () => {
     state.compact = !state.compact;
-    elements.sidebar.classList.toggle("is-compact", state.compact);
-    document.querySelector("#sidebar-toggle").setAttribute("aria-pressed", state.compact ? "true" : "false");
+    sidebarToggle.setAttribute("aria-pressed", state.compact ? "true" : "false");
+    sidebarToggle.setAttribute("aria-label", state.compact ? "Expandir el menú" : "Contraer el menú");
+    closeFloaters();
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      reorderGen += 1;
+      window.clearTimeout(settleTimer);
+      elements.sidebar.style.transition = "";
+      elements.sidebar.style.width = "";
+      elements.sidebar.classList.remove("is-moving");
+      elements.sidebar.classList.toggle("is-compact", state.compact);
+      elements.sidebar.classList.toggle("is-settled", state.compact);
+      sidebarSlots().forEach((node) => {
+        node.style.transition = "";
+        node.style.transform = "";
+      });
+    } else {
+      playSidebar(state.compact);
+    }
     syncNavFade();
   });
 
