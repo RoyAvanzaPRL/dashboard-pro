@@ -21,7 +21,7 @@
 }
 .overflow-y-auto::-webkit-scrollbar-thumb {
   background: transparent;
-  border-radius: 999px;
+  border-radius: 10px;
 }
 .overflow-y-auto.is-over::-webkit-scrollbar-thumb {
   background: #b4bac3;
@@ -60,12 +60,12 @@
 }
 .seg {
   display: inline-flex;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #f3f4f6;
   padding: 2px;
 }
 .seg button {
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 4px 12px;
   color: #6b7280;
   font-size: 13px;

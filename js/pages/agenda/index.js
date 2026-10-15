@@ -279,13 +279,13 @@ function renderNewsDetail() {
   const cat = NEWS_CATS[item.cat];
   const preview = item.body.split(/\n\n+/)[0];
   const impact = item.impact
-    ? `<section class="mt-5 rounded-xl bg-mint px-3 py-3">
+    ? `<section class="mt-5 rounded-2xl bg-mint px-3 py-3">
         <p class="text-[11px] font-semibold tracking-wide text-tide">PARA EL DESPACHO</p>
         <p class="mt-1 text-sm leading-relaxed text-[#1f3d36]">${esc(item.impact)}</p>
       </section>`
     : "";
   box.innerHTML = `
-    <span class="inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
+    <span class="inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
     <h2 class="mt-3 text-lg font-semibold leading-snug">${esc(item.title)}</h2>
     <p class="mt-2 text-xs text-mute">${esc(newsWhen(item))} · ${esc(item.source)}</p>
     <p class="mt-4 text-sm leading-relaxed text-[#3c424a]">${esc(item.summary)}</p>
@@ -297,11 +297,11 @@ function newsRow(item, { compact = false } = {}) {
   const cat = NEWS_CATS[item.cat];
   const on = newsUi.active === item.id;
   if (compact) {
-    return `<button type="button" data-news-open="${esc(item.id)}" class="flex w-full gap-3 border-t border-line py-3 text-left first:border-t-0 ${on ? "is-active -mx-2 rounded-xl px-2" : ""} ${item.unread ? "" : "is-read"}">
+    return `<button type="button" data-news-open="${esc(item.id)}" class="flex w-full gap-3 border-t border-line py-3 text-left first:border-t-0 ${on ? "is-active -mx-2 rounded-lg px-2" : ""} ${item.unread ? "" : "is-read"}">
       <span class="mt-1 size-2 shrink-0 rounded-full ${item.unread ? "bg-tide" : "bg-[#d5d8e0]"}" aria-hidden="true"></span>
       <span class="min-w-0 flex-1">
         <span class="flex flex-wrap items-center gap-2">
-          <span class="inline-flex rounded-md px-1.5 py-0.5 text-[10px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
+          <span class="inline-flex rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
           <span class="text-xs text-mute">${esc(item.time)}</span>
         </span>
         <span class="news-title mt-1 block text-sm font-medium leading-snug">${esc(item.title)}</span>
@@ -309,11 +309,11 @@ function newsRow(item, { compact = false } = {}) {
       </span>
     </button>`;
   }
-  return `<button type="button" data-news-open="${esc(item.id)}" class="flex w-full gap-3 border-t border-line py-3.5 text-left first:border-t-0 ${on ? "is-active -mx-2 rounded-xl px-2" : ""} ${item.unread ? "" : "is-read"}">
+  return `<button type="button" data-news-open="${esc(item.id)}" class="flex w-full gap-3 border-t border-line py-3.5 text-left first:border-t-0 ${on ? "is-active -mx-2 rounded-lg px-2" : ""} ${item.unread ? "" : "is-read"}">
     <span class="mt-1 size-2 shrink-0 rounded-full ${item.unread ? "bg-tide" : "bg-[#d5d8e0]"}" aria-hidden="true"></span>
     <span class="min-w-0 flex-1">
       <span class="flex flex-wrap items-center gap-2">
-        <span class="inline-flex rounded-md px-1.5 py-0.5 text-[10px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
+        <span class="inline-flex rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
         <span class="text-xs text-mute">${esc(newsWhen(item))}</span>
       </span>
       <span class="news-title mt-1 block text-sm font-medium leading-snug">${esc(item.title)}</span>
@@ -338,7 +338,7 @@ function renderNewsFeed() {
 
   featured.innerHTML = "";
   if (!rows.length) {
-    featured.innerHTML = `<div class="rounded-xl border border-dashed border-line px-4 py-6 text-center text-sm text-mute">No hay novedades en esta semana.</div>`;
+    featured.innerHTML = `<div class="rounded-2xl border border-dashed border-line px-4 py-6 text-center text-sm text-mute">No hay novedades en esta semana.</div>`;
   }
 
   if (rows.length) {
@@ -445,7 +445,7 @@ function bindNoticia(id) {
   ]);
 
   const category = root.querySelector("#news-article-category");
-  category.className = `inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${cat.tone}`;
+  category.className = `inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold ${cat.tone}`;
   category.textContent = cat.label;
   root.querySelector("#news-article-source").textContent = item.source;
   root.querySelector("#news-article-title").textContent = item.title;

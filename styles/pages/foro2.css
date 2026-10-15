@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   border: 1px solid #eceef1;
   background: #f7f8f9;
   padding: 0.375rem 0.625rem;
@@ -10,22 +10,27 @@
   font-weight: 500;
 }
 
-.foro2-comment {
+.foro2-thread-tree > .foro2-comment + .foro2-comment {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
   border-top: 1px solid #eceef1;
-  padding-top: 1rem;
-  margin-top: 1rem;
 }
 
-.foro2-comment:first-child {
-  border-top: 0;
-  padding-top: 0;
-  margin-top: 0;
+.foro2-replies {
+  margin-top: 0.875rem;
+  margin-left: 0.35rem;
+  padding-left: 0.875rem;
+  border-left: 2px solid #e5e7eb;
+}
+
+.foro2-replies > .foro2-comment + .foro2-comment {
+  margin-top: 0.875rem;
 }
 
 .foro2-topic-btn {
   display: block;
   width: 100%;
-  border-radius: 0.75rem;
+  border-radius: 10px;
   padding: 0.625rem 0.75rem;
   text-align: left;
 }

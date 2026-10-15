@@ -1,30 +1,32 @@
-import { cardBtn, renderCard } from "./card.js";
+import { overlay, trapOverlay, inputClass, labelClass } from "../../components/overlay.js";
 import { esc } from "../../core/dom.js";
+import { renderCard } from "./card.js";
 
 const cardUi = { dialog: "", opener: "" };
 
 function cardDialog(kind) {
-  if (!kind) return "";
-  let body = "";
-  if (kind === "crear") {
-    body = `<h2 id="card-dialog-title" class="text-base font-semibold">Crear base</h2>
-      <form data-card-form class="mt-4">
-        <label class="block text-sm">Nombre<input name="nombre" required class="mt-1 h-9 w-full rounded-lg border border-line px-3 text-sm outline-none focus:border-ink" /></label>
-        <div class="mt-4 flex gap-2"><button type="submit" class="${cardBtn("solid")}">Crear</button><button type="button" class="${cardBtn()}" data-card-close>Cancelar</button></div>
-      </form>`;
-  } else if (kind === "productos") {
-    const rows = ["LaLeyDigital360", "CISS Fiscal", "CISS Laboral", "CISS Contable Mercantil"]
-      .map((name) => `<li class="border-t border-line py-2 text-sm">${esc(name)}</li>`)
-      .join("");
-    body = `<h2 id="card-dialog-title" class="text-base font-semibold">La Ley</h2><ul class="mt-3">${rows}</ul><button type="button" class="${cardBtn()} mt-4" data-card-close>Cerrar</button>`;
-  } else {
-    return "";
-  }
-  return `<div class="fixed inset-0 z-50 grid place-items-center bg-[rgba(20,24,28,0.32)] p-4" data-card-backdrop><div role="dialog" aria-modal="true" aria-labelledby="card-dialog-title" data-card-dialog class="w-full max-w-md rounded-2xl bg-white p-5 shadow-[0_16px_40px_rgba(20,24,28,0.16)]">${body}</div></div>`;
+  if (kind !== "crear" && kind !== "productos") return "";
+  const crear = kind === "crear";
+  const rows = ["LaLeyDigital360", "CISS Fiscal", "CISS Laboral", "CISS Contable Mercantil"]
+    .map((name) => `<li class="border-t border-line py-2 text-sm">${esc(name)}</li>`)
+    .join("");
+  return overlay({
+    id: "card-overlay",
+    hidden: false,
+    titleId: "card-dialog-title",
+    title: crear ? "Crear base" : "La Ley",
+    body: crear
+      ? `<label class="${labelClass}" for="card-nombre">Nombre<input id="card-nombre" name="nombre" required class="${inputClass}" /></label>`
+      : `<ul>${rows}</ul>`,
+    formAttrs: crear ? "data-card-form" : "",
+    closeAttr: "data-card-close",
+    cancelLabel: crear ? "Cancelar" : "Cerrar",
+    submitLabel: crear ? "Crear" : "",
+  });
 }
 
-function renderCardGrid(items, state) {
-  return `<ul class="grid list-none grid-cols-2 items-stretch gap-4 lg:grid-cols-3 xl:grid-cols-4">${items.map((item) => renderCard(item)).join("")}</ul>${cardDialog(state.dialog)}`;
+function renderCardGrid(items) {
+  return `<ul class="grid list-none grid-cols-2 items-stretch gap-4 lg:grid-cols-3 xl:grid-cols-4">${items.map((item) => renderCard(item)).join("")}</ul>`;
 }
 
 function picture(svg) {
@@ -70,44 +72,47 @@ function homeCards() {
 }
 
 export function mount(main) {
-  const grid = main.querySelector("#home-cards");
-  if (grid) {
+  const home = main.querySelector("#home");
+  const grid = home?.querySelector("#home-cards");
+  if (!home || !grid) return;
+  cardUi.dialog = "";
+  cardUi.opener = "";
+  const shut = () => {
+    const opener = cardUi.opener;
     cardUi.dialog = "";
     cardUi.opener = "";
-    const shut = () => {
-      const opener = cardUi.opener;
-      cardUi.dialog = "";
-      cardUi.opener = "";
-      draw();
-      if (opener) grid.querySelector(`[data-card-opener="${CSS.escape(opener)}"]`)?.focus();
-    };
-    const draw = () => {
-      grid.innerHTML = renderCardGrid(homeCards(), cardUi);
-      grid.querySelectorAll("[data-card-dialog]").forEach((button) => {
-        if (button.getAttribute("role") === "dialog") return;
-        button.addEventListener("click", () => {
-          cardUi.dialog = button.dataset.cardDialog;
-          cardUi.opener = button.dataset.cardOpener || "";
-          draw();
-          const field = grid.querySelector("[data-card-dialog] input, [data-card-dialog] [data-card-close]");
-          field?.focus();
-        });
-      });
-      grid.querySelector("[data-card-backdrop]")?.addEventListener("click", (event) => {
-        if (event.target === event.currentTarget) shut();
-      });
-      grid.querySelectorAll("[data-card-close]").forEach((button) => {
-        button.addEventListener("click", shut);
-      });
-      grid.querySelector("[data-card-form]")?.addEventListener("submit", (event) => {
-        event.preventDefault();
-        shut();
-      });
-    };
-    grid.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && cardUi.dialog) shut();
-    });
     draw();
-    return;
-  }
+    if (opener) grid.querySelector(`[data-card-opener="${CSS.escape(opener)}"]`)?.focus();
+  };
+  const draw = () => {
+    grid.innerHTML = renderCardGrid(homeCards());
+    home.querySelector("#card-overlay")?.remove();
+    const markup = cardDialog(cardUi.dialog);
+    if (markup) {
+      home.insertAdjacentHTML("beforeend", markup);
+      trapOverlay(home.querySelector("#card-overlay"));
+    }
+    grid.querySelectorAll("[data-card-dialog]").forEach((button) => {
+      button.addEventListener("click", () => {
+        cardUi.dialog = button.dataset.cardDialog;
+        cardUi.opener = button.dataset.cardOpener || "";
+        draw();
+      });
+    });
+  };
+  home.addEventListener("click", (event) => {
+    if (event.target.id === "card-overlay" || event.target.closest("[data-card-close]")) shut();
+  });
+  home.addEventListener("submit", (event) => {
+    if (!event.target.closest("[data-card-form]")) return;
+    event.preventDefault();
+    shut();
+  });
+  home.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && cardUi.dialog) {
+      event.preventDefault();
+      shut();
+    }
+  });
+  draw();
 }

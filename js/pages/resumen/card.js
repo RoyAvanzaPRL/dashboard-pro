@@ -134,7 +134,7 @@ function mediaBand(item, spec) {
   const image = typeof item.image === "string" ? item.image.trim() : "";
   const visual = image
     ? `<img src="${esc(image)}" alt="" class="absolute inset-0 size-full object-cover" />`
-    : `<span class="grid size-14 place-items-center rounded-2xl bg-white/85 ${tone.accent} shadow-[0_1px_2px_rgba(20,24,28,0.06)]">${spec.mark === "initials" ? `<span class="text-base font-semibold">${esc(initials(item.title))}</span>` : spec.icon}</span>`;
+    : `<span class="grid size-14 place-items-center ${spec.mark === "initials" ? "rounded-full" : "rounded-2xl"} bg-white/85 ${tone.accent} shadow-[0_1px_2px_rgba(20,24,28,0.06)]">${spec.mark === "initials" ? `<span class="text-base font-semibold">${esc(initials(item.title))}</span>` : spec.icon}</span>`;
   const chip = image ? "bg-white/90 text-ink" : tone.chip;
   return `<div class="relative grid h-28 shrink-0 place-items-center overflow-hidden ${image ? "bg-[#e8eef2]" : tone.band}">
     ${visual}

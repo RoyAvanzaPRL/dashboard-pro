@@ -14,7 +14,7 @@
   height: 2.25rem;
   overflow: hidden;
   border: 1px solid #eceef1;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   background: #fff;
   color: #5c6570;
   transition:
@@ -27,8 +27,8 @@
   border-color: #d8dbe1;
 }
 .t7-search:focus-within {
-  border-color: #b7ebe4;
-  box-shadow: 0 0 0 3px rgba(18, 181, 164, 0.14);
+  border-color: #1c1e21;
+  box-shadow: none;
 }
 .t7-search-btn {
   display: grid;
