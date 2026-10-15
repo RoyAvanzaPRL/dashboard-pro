@@ -22,7 +22,7 @@
             <span>Columnas</span>
             <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
           </button>
-          <div id="tabla7-pop-cols" data-t7-keep data-t7-pop="columnas" hidden class="absolute right-0 z-30 mt-2 w-48 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+          <div id="tabla7-pop-cols" data-t7-keep data-t7-pop="columnas" hidden class="absolute right-0 z-30 mt-2 w-48 rounded-2xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
 
   <section class="relative flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl bg-white px-4 pb-6 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
     <div id="tabla7-context" class="relative z-20 flex min-h-12 shrink-0 flex-wrap items-center gap-x-3 gap-y-2 text-sm" aria-live="polite"></div>
-    <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-line">
+    <div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-line">
       <div id="tabla7-head-clip" class="shrink-0 overflow-hidden border-b border-line bg-[#f7f8f9]">
         <table class="w-full table-fixed border-separate border-spacing-0 text-sm">
           <colgroup id="tabla7-head-cols"></colgroup>
@@ -51,7 +51,7 @@
               <span id="tabla7-size-label">10</span>
               <svg viewBox="0 0 24 24" class="line size-3.5 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
-            <div id="tabla7-pop-size" data-t7-keep data-t7-pop="tamano" hidden class="absolute bottom-10 left-0 z-30 w-28 rounded-xl border border-line bg-white p-1 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
+            <div id="tabla7-pop-size" data-t7-keep data-t7-pop="tamano" hidden class="absolute bottom-10 left-0 z-30 w-28 rounded-2xl border border-line bg-white p-1 shadow-[0_16px_40px_rgba(20,24,28,0.12)]"></div>
           </div>
           <p class="text-sm text-mute">de 18</p>
         </div>
@@ -59,21 +59,6 @@
     </div>
   </section>
 
-  <div id="tabla7-row-menu" data-t7-menu hidden class="fixed z-40 w-44 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.14)]"></div>
+  <div id="tabla7-row-menu" data-t7-menu hidden class="fixed z-40 w-44 rounded-2xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.14)]"></div>
 
-  <div id="tabla7-sheet" hidden class="absolute inset-0 z-20 flex justify-end bg-ink/20">
-    <form class="flex h-full w-full max-w-sm flex-col bg-white shadow-[-12px_0_40px_rgba(20,24,28,0.08)]">
-      <div class="flex items-center justify-between border-b border-line px-5 py-4">
-        <h2 id="tabla7-sheet-title" class="text-base font-semibold">Nuevo recurso</h2>
-        <button type="button" data-t7-close class="grid size-8 place-items-center rounded-lg text-mute hover:bg-[#f6f7f8] hover:text-ink" aria-label="Cerrar">
-          <svg viewBox="0 0 24 24" class="line size-4"><path d="m7 7 10 10M17 7 7 17"></path></svg>
-        </button>
-      </div>
-      <div id="tabla7-fields" class="min-h-0 flex-1 space-y-3 overflow-y-auto px-5 py-4"></div>
-      <div class="flex justify-end gap-3 border-t border-line px-5 py-4">
-        <button type="button" data-t7-close class="text-sm font-medium">Cancelar</button>
-        <button type="submit" class="rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white">Guardar</button>
-      </div>
-    </form>
-  </div>
 </div>

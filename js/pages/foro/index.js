@@ -1,4 +1,5 @@
 import { renderBreadcrumbs } from "../../components/breadcrumbs.js";
+import { areaClass, inputClass, labelClass, overlay, trapOverlay } from "../../components/overlay.js";
 import { esc } from "../../core/dom.js";
 
 let main;
@@ -149,7 +150,7 @@ function drawForumHome(root) {
           const preview = threads.find((thread) => thread.pinned) || threads[0];
           return `<button type="button" data-forum-category="${item.id}" class="flex h-full flex-col rounded-2xl bg-white p-5 text-left shadow-[0_1px_2px_rgba(20,24,28,0.04)] hover:ring-1 hover:ring-black/10">
             <span class="flex items-start justify-between gap-3">
-              <span class="grid size-10 shrink-0 place-items-center rounded-xl ${item.tone} text-sm font-semibold">${esc(item.name.slice(0, 1))}</span>
+              <span class="grid size-10 shrink-0 place-items-center rounded-full ${item.tone} text-sm font-semibold">${esc(item.name.slice(0, 1))}</span>
               <span class="text-xs text-mute">${esc(forumCountLabel(threads.length))}</span>
             </span>
             <span class="mt-4 text-base font-semibold">${esc(item.name)}</span>
@@ -194,13 +195,13 @@ function drawForo() {
   root.querySelector("#forum-threads").innerHTML = threads.length
     ? threads
         .map(
-          (thread) => `<button type="button" data-forum-thread="${thread.id}" class="block w-full border-b border-line py-4 text-left ${forumUi.thread === thread.id ? "bg-[#f6fbfa] -mx-2 rounded-xl px-2" : ""}">
+          (thread) => `<button type="button" data-forum-thread="${thread.id}" class="block w-full border-b border-line py-4 text-left ${forumUi.thread === thread.id ? "bg-[#f6fbfa] -mx-2 rounded-lg px-2" : ""}">
             <div class="flex items-start gap-3">
               <span class="grid size-8 shrink-0 place-items-center rounded-full bg-[#dbeafe] text-[10px] font-semibold text-[#1d4ed8]">${esc(thread.initials)}</span>
               <span class="min-w-0 flex-1">
                 <span class="flex flex-wrap items-center gap-2">
                   <span class="truncate text-sm font-semibold">${esc(thread.title)}</span>
-                  ${thread.pinned ? '<span class="rounded bg-[#f3f4f6] px-1.5 py-0.5 text-[10px] font-medium text-mute">Fijada</span>' : ""}
+                  ${thread.pinned ? '<span class="rounded-full bg-[#f3f4f6] px-1.5 py-0.5 text-[10px] font-medium text-mute">Fijada</span>' : ""}
                 </span>
                 <span class="mt-1 block text-xs leading-relaxed text-mute">${esc(thread.excerpt)}</span>
                 <span class="mt-2 flex flex-wrap gap-x-2 text-[11px] text-mute"><span>${esc(thread.author)}</span><span>·</span><span>${esc(thread.time)}</span><span>·</span><span>${thread.replies} respuestas</span></span>
@@ -220,7 +221,7 @@ function drawForo() {
   }
   const threadCategory = forumCategory(thread.category);
   root.querySelector("#forum-thread").innerHTML = `
-    <span class="inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${threadCategory.tone}">${esc(threadCategory.name)}</span>
+    <span class="inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold ${threadCategory.tone}">${esc(threadCategory.name)}</span>
     <h2 class="mt-3 text-lg font-semibold leading-snug">${esc(thread.title)}</h2>
     <p class="mt-2 text-xs text-mute">${esc(thread.author)} · ${esc(thread.time)} · ${thread.replies} respuestas</p>
     <div class="mt-5 space-y-4">
@@ -245,6 +246,29 @@ function drawForo() {
 function bindForo() {
   const root = main.querySelector("#foro");
   if (!root) return;
+  let composeOpener = null;
+  root.insertAdjacentHTML(
+    "beforeend",
+    overlay({
+      id: "forum-compose",
+      titleId: "forum-compose-title",
+      title: "Nueva conversación",
+      helpId: "forum-compose-help",
+      help: "El contenido es solo una simulación visual.",
+      formId: "forum-compose-form",
+      closeAttr: "data-forum-close-compose",
+      submitLabel: "Crear",
+      body: `<label class="${labelClass}" for="forum-compose-name">Título<input id="forum-compose-name" required class="${inputClass}" placeholder="¿De qué quieres hablar?" /></label><label class="${labelClass}" for="forum-compose-body">Descripción<textarea id="forum-compose-body" rows="4" class="${areaClass}" placeholder="Añade algo de contexto..."></textarea></label>`,
+    }),
+  );
+  trapOverlay(root.querySelector("#forum-compose"));
+  const closeCompose = () => {
+    const layer = root.querySelector("#forum-compose");
+    if (!layer || layer.hidden) return;
+    layer.hidden = true;
+    composeOpener?.focus();
+    composeOpener = null;
+  };
   const search = root.querySelector("#foro-search");
   if (search) search.value = forumUi.q;
   drawForo();
@@ -269,14 +293,14 @@ function bindForo() {
     const compose = event.target.closest?.("[data-forum-compose]");
     if (compose) {
       forumUi.compose = compose.dataset.forumCompose;
+      composeOpener = compose;
       root.querySelector("#forum-compose-title").textContent = forumUi.compose === "category" ? "Crear categoría" : "Nueva conversación";
       root.querySelector("#forum-compose-name").placeholder = forumUi.compose === "category" ? "Nombre de la categoría" : "¿De qué quieres hablar?";
       root.querySelector("#forum-compose").hidden = false;
-      root.querySelector("#forum-compose-name").focus();
       return;
     }
     if (event.target.closest?.("[data-forum-close-compose]") || event.target.id === "forum-compose") {
-      root.querySelector("#forum-compose").hidden = true;
+      closeCompose();
       return;
     }
     if (event.target.closest?.("[data-forum-close-thread]")) {
@@ -286,8 +310,13 @@ function bindForo() {
 
   root.querySelector("#forum-compose-form")?.addEventListener("submit", (event) => {
     event.preventDefault();
-    root.querySelector("#forum-compose").hidden = true;
     event.currentTarget.reset();
+    closeCompose();
+  });
+  root.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || root.querySelector("#forum-compose")?.hidden) return;
+    event.preventDefault();
+    closeCompose();
   });
   root.querySelector("#forum-reply")?.addEventListener("submit", (event) => {
     event.preventDefault();

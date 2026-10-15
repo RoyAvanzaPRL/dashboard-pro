@@ -30,6 +30,11 @@
             fontFamily: {
               sans: ["Inter", "sans-serif"],
             },
+            borderRadius: {
+              lg: "10px",
+              "2xl": "10px",
+              full: "10px",
+            },
           },
         },
       };
@@ -48,7 +53,7 @@
                   <span class="block truncate text-[11px] text-mute">Socia</span>
                 </span>
               </button>
-              <div id="profile-panel" hidden class="absolute left-0 top-12 z-40 w-56 rounded-xl border border-line bg-white p-1.5 shadow-[0_12px_32px_rgba(20,24,28,0.12)]">
+              <div id="profile-panel" hidden class="absolute left-0 top-12 z-40 w-56 rounded-2xl border border-line bg-white p-1.5 shadow-[0_12px_32px_rgba(20,24,28,0.12)]">
                 <div class="px-2.5 py-2">
                   <p class="truncate text-sm font-semibold">Marina Soler</p>
                   <p class="truncate text-xs text-mute">marina.soler@albor.example</p>
@@ -83,7 +88,7 @@
                 </span>
                 <svg viewBox="0 0 24 24" class="line only-full size-3.5 shrink-0 text-mute"><path d="m6 9 6 6 6-6"></path></svg>
               </button>
-              <div id="sede-panel" hidden class="absolute left-0 top-12 z-40 w-64 rounded-xl border border-line bg-white p-1.5 shadow-[0_12px_32px_rgba(20,24,28,0.12)]">
+              <div id="sede-panel" hidden class="absolute left-0 top-12 z-40 w-64 rounded-2xl border border-line bg-white p-1.5 shadow-[0_12px_32px_rgba(20,24,28,0.12)]">
                 <label class="relative mb-1.5 block">
                   <span class="sr-only" for="sede-q">Buscar sede</span>
                   <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-2.5 top-1/2 size-3.5 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
@@ -103,7 +108,7 @@
           </button>
         </div>
 
-        <div id="notice-panel" hidden class="absolute left-full top-3 z-40 ml-1 w-80 rounded-xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]">
+        <div id="notice-panel" hidden class="absolute left-full top-3 z-40 ml-1 w-80 rounded-2xl border border-line bg-white p-1.5 shadow-[0_16px_40px_rgba(20,24,28,0.12)]">
           <p class="px-2.5 py-1.5 text-[11px] font-semibold tracking-wide text-mute">HOY</p>
           <a href="#/expediente/EXP-2026-019" class="block rounded-lg px-2.5 py-2 hover:bg-[#f6f7f8]">
             <p class="text-sm font-medium">Contestación de Nou Transport</p>
@@ -178,7 +183,7 @@
         </div>
       </aside>
 
-      <main id="main" class="min-w-0 flex-1 overflow-hidden rounded-[24px] bg-white shadow-[0_10px_40px_rgba(20,24,28,0.08)]"></main>
+      <main id="main" class="min-w-0 flex-1 overflow-hidden rounded-[10px] bg-white shadow-[0_10px_40px_rgba(20,24,28,0.08)]"></main>
     </div>
 
     <script type="module" src="./js/main.js"></script>

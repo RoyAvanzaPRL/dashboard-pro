@@ -72,7 +72,7 @@ export function mountCalculos(main) {
   root.querySelector("#calculos-count").textContent = `${CALC_TOOLS.length} herramientas`;
   root.querySelector("#calculos-list").innerHTML = CALC_TOOLS.map(
     (tool) => `<li>
-      <a href="#/calculo/${encodeURIComponent(tool.id)}" class="flex h-full flex-col rounded-xl border border-line px-4 py-4 transition hover:border-tide/40 hover:bg-[#f8fbfa]">
+      <a href="#/calculo/${encodeURIComponent(tool.id)}" class="flex h-full flex-col rounded-2xl border border-line px-4 py-4 transition hover:border-tide/40 hover:bg-[#f8fbfa]">
         <span class="text-[11px] font-semibold uppercase tracking-wide text-[#b45309]">${esc(tool.area)}</span>
         <span class="mt-2 text-sm font-semibold leading-snug">${esc(tool.title)}</span>
         <span class="mt-2 flex-1 text-sm leading-relaxed text-mute">${esc(tool.summary)}</span>
@@ -136,7 +136,7 @@ export function mountConvenios(main, route) {
   root.querySelector("#convenios-list").innerHTML = org.docs
     .map(
       (doc) => `<li>
-      <a href="#/convenio/${encodeURIComponent(`${org.id}-${doc.id}`)}" class="flex h-full flex-col rounded-xl border border-line px-4 py-4 transition hover:border-tide/40 hover:bg-[#f8fbfa]">
+      <a href="#/convenio/${encodeURIComponent(`${org.id}-${doc.id}`)}" class="flex h-full flex-col rounded-2xl border border-line px-4 py-4 transition hover:border-tide/40 hover:bg-[#f8fbfa]">
         <span class="text-[11px] font-semibold uppercase tracking-wide text-[#146c43]">PDF</span>
         <span class="mt-2 text-sm font-semibold leading-snug">${esc(doc.title)}</span>
         <span class="mt-2 flex-1 text-sm leading-relaxed text-mute">${esc(doc.summary)}</span>

@@ -40,29 +40,10 @@
       <div id="forum-thread" class="min-h-0 flex-1 overflow-y-auto px-5 py-4"></div>
       <form id="forum-reply" class="shrink-0 border-t border-line px-4 py-3">
         <label class="sr-only" for="forum-reply-input">Responder en la conversación</label>
-        <textarea id="forum-reply-input" rows="2" placeholder="Escribe una respuesta..." class="w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none placeholder:text-mute focus:border-tide"></textarea>
-        <button type="submit" class="mt-2 w-full rounded-lg bg-ink px-3 py-2 text-sm font-semibold text-white">Responder</button>
+        <textarea id="forum-reply-input" rows="2" placeholder="Escribe una respuesta..." class="w-full resize-none rounded-lg border border-line bg-white px-3 py-2 text-sm outline-none placeholder:text-mute focus:border-ink"></textarea>
+        <button type="submit" class="mt-2 inline-flex h-9 w-full items-center justify-center rounded-lg bg-ink px-3 text-sm font-semibold text-white">Responder</button>
       </form>
     </aside>
   </div>
 
-  <div id="forum-compose" hidden class="absolute inset-0 z-30 grid place-items-center bg-ink/20 p-4">
-    <form id="forum-compose-form" class="w-full max-w-md rounded-2xl bg-white p-5 shadow-[0_24px_60px_rgba(20,24,28,0.18)]">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <h2 id="forum-compose-title" class="text-lg font-semibold">Nueva conversación</h2>
-          <p id="forum-compose-help" class="mt-1 text-sm text-mute">El contenido es solo una simulación visual.</p>
-        </div>
-        <button type="button" data-forum-close-compose class="grid size-8 place-items-center rounded-lg text-mute hover:bg-[#f6f7f8] hover:text-ink" aria-label="Cerrar">×</button>
-      </div>
-      <label class="mt-5 block text-xs font-medium text-mute" for="forum-compose-name">Título</label>
-      <input id="forum-compose-name" required class="mt-1 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="¿De qué quieres hablar?" />
-      <label class="mt-3 block text-xs font-medium text-mute" for="forum-compose-body">Descripción</label>
-      <textarea id="forum-compose-body" rows="4" class="mt-1 w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-tide" placeholder="Añade algo de contexto..."></textarea>
-      <div class="mt-5 flex justify-end gap-3">
-        <button type="button" data-forum-close-compose class="text-sm font-medium">Cancelar</button>
-        <button type="submit" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white">Crear</button>
-      </div>
-    </form>
-  </div>
 </div>
