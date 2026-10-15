@@ -152,7 +152,13 @@
   padding-right: 8px;
 }
 #sidebar.is-compact .only-full {
-  display: none;
+  max-width: 0;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    opacity 120ms ease,
+    max-width 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    max-height 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 #sidebar.is-compact .nav-section {
   height: 10px;
@@ -161,14 +167,11 @@
   overflow: hidden;
   color: transparent;
 }
-#sidebar.is-compact .nav-link {
-  justify-content: center;
-  padding-left: 0;
-  padding-right: 0;
-}
+#sidebar.is-compact .brand-row > button:first-child,
+#sidebar.is-compact #sede-toggle,
+#sidebar.is-compact .nav-link,
 #sidebar.is-compact .foot-btn {
-  padding-left: 0;
-  padding-right: 0;
+  justify-content: flex-start;
 }
 #sidebar.is-moving .nav-scroll {
   overflow: visible;
