@@ -62,7 +62,7 @@
   height: calc(2.25rem - 2px);
   border: 0;
   background: transparent;
-  padding: 0 0.75rem 0 0;
+  padding: 0 0 0 0.75rem;
   color: #1c1e21;
   font-size: 0.875rem;
   outline: none;

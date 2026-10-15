@@ -1,4 +1,5 @@
 import { clients, matters } from "../../../data/index.js";
+import { renderBreadcrumbs } from "../../components/breadcrumbs.js";
 import { esc, fill } from "../../core/dom.js";
 
 const STATUS = {
@@ -25,6 +26,10 @@ export function mount(main, route) {
 
   const client = clients[matter.clientId];
   document.title = `${id} · Albor`;
+  renderBreadcrumbs(view, [
+    { label: "Foro", href: "#/foro" },
+    { label: matter.title || id },
+  ]);
   fill(view, { ...matter, id, clientName: client?.name || "" });
   const status = view.querySelector('[data-bind="status"]');
   if (status) status.innerHTML = statusMarkup(matter.status);

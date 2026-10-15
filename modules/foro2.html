@@ -1,0 +1,38 @@
+<div id="foro2" class="relative flex h-full min-h-0 flex-col gap-4 overflow-hidden bg-[#f3f4f6] px-4 py-6">
+  <header class="flex shrink-0 items-end justify-between gap-4 rounded-2xl bg-white px-5 py-4 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+    <div class="min-w-0">
+      <div data-breadcrumbs></div>
+      <h1 id="foro2-title" class="text-lg font-semibold">Foro 2</h1>
+      <p id="foro2-subtitle" class="text-sm text-mute">Consultas técnicas entre despachos</p>
+    </div>
+    <div id="foro2-actions" class="flex shrink-0 items-center gap-2">
+      <label class="relative hidden sm:block">
+        <span class="sr-only">Buscar en el foro</span>
+        <svg viewBox="0 0 24 24" class="line pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-mute"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+        <input id="foro2-search" type="search" placeholder="Buscar" class="h-9 w-44 rounded-lg border border-line bg-white pl-9 pr-3 text-sm outline-none placeholder:text-mute focus:border-ink" />
+      </label>
+      <button type="button" id="foro2-compose-cat" class="hidden rounded-lg border border-line px-3 py-2 text-sm font-medium hover:bg-[#f6f7f8] sm:inline-flex">Crear categoría</button>
+      <button type="button" id="foro2-compose-topic" class="rounded-lg bg-tide px-3 py-2 text-sm font-semibold text-white hover:bg-[#0f9f91]">Nuevo tema</button>
+    </div>
+  </header>
+
+  <div id="foro2-home" class="min-h-0 flex-1 overflow-y-auto">
+    <div id="foro2-categories" class="grid gap-4 sm:grid-cols-2"></div>
+  </div>
+
+  <div id="foro2-workspace" hidden class="grid min-h-0 flex-1 grid-cols-1 gap-4 lg:grid-cols-[15rem_minmax(0,1fr)]">
+    <aside class="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <div class="flex shrink-0 items-center justify-between gap-2 border-b border-line px-3 py-3">
+        <div class="min-w-0">
+          <h2 id="foro2-list-title" class="truncate text-sm font-semibold"></h2>
+          <p id="foro2-list-count" class="mt-0.5 text-[11px] text-mute"></p>
+        </div>
+      </div>
+      <div id="foro2-topics" class="min-h-0 flex-1 overflow-y-auto px-2 py-1"></div>
+    </aside>
+
+    <section class="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <div id="foro2-thread-scroll" class="min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-7 sm:py-6"></div>
+    </section>
+  </div>
+</div>

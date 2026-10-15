@@ -1,0 +1,44 @@
+<div id="calculo-page" class="flex h-full min-h-0 flex-col gap-4 overflow-hidden bg-[#f3f4f6] px-4 py-6">
+  <header class="flex shrink-0 flex-wrap items-end justify-between gap-3 rounded-2xl bg-white px-5 py-4 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+    <div class="min-w-0">
+      <div data-breadcrumbs></div>
+      <h1 class="mt-2 text-lg font-semibold">Cálculo</h1>
+      <p id="calculo-subtitle" class="text-sm text-mute"></p>
+    </div>
+  </header>
+
+  <div class="grid min-h-0 flex-1 gap-4 overflow-hidden lg:grid-cols-[minmax(0,1fr)_17rem]">
+    <article class="flex min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+      <div class="min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-7 sm:py-6">
+        <span class="inline-flex rounded-md bg-[#fff3e0] px-2 py-0.5 text-[11px] font-semibold text-[#b45309]">Utilidad</span>
+        <h2 id="calculo-title" class="mt-4 max-w-3xl text-2xl font-semibold leading-tight tracking-tight"></h2>
+        <p id="calculo-summary" class="mt-5 max-w-3xl text-base leading-relaxed text-[#3c424a]"></p>
+        <div id="calculo-body" class="news-prose mt-6 max-w-3xl space-y-4 border-t border-line pt-6 text-[15px] leading-relaxed text-[#3c424a]"></div>
+        <section class="mt-6 max-w-3xl rounded-xl bg-[#fff3e0] px-4 py-4">
+          <p class="text-[11px] font-semibold tracking-wide text-[#b45309]">NOTA DE USO</p>
+          <p id="calculo-note" class="mt-1 text-sm leading-relaxed text-[#5c3a12]"></p>
+        </section>
+      </div>
+    </article>
+
+    <aside class="hidden min-h-0 flex-col gap-4 overflow-y-auto lg:flex">
+      <section class="rounded-2xl bg-white px-4 py-4 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+        <p class="text-xs font-semibold uppercase tracking-wide text-mute">Ficha</p>
+        <dl class="mt-3 space-y-3 text-sm">
+          <div>
+            <dt class="text-[11px] font-semibold tracking-wide text-mute">ÁREA</dt>
+            <dd id="calculo-side-area" class="mt-1"></dd>
+          </div>
+          <div>
+            <dt class="text-[11px] font-semibold tracking-wide text-mute">ACTUALIZADO</dt>
+            <dd id="calculo-side-updated" class="mt-1"></dd>
+          </div>
+        </dl>
+      </section>
+      <section class="rounded-2xl bg-white px-4 py-4 shadow-[0_1px_2px_rgba(20,24,28,0.04)]">
+        <p class="text-xs font-semibold uppercase tracking-wide text-mute">Otras herramientas</p>
+        <ul id="calculo-related" class="mt-2"></ul>
+      </section>
+    </aside>
+  </div>
+</div>
