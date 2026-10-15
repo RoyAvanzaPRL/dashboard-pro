@@ -7,10 +7,10 @@ Albor es un prototipo estático con HTML, Tailwind por CDN y ES Modules nativos.
 Los fragmentos de pantalla se cargan con `fetch`, por lo que hay que servir la carpeta:
 
 ```bash
-python3 -m http.server 4173
+python3 -m http.server 8000
 ```
 
-Abre `http://localhost:4173/#/resumen`.
+Abre `http://localhost:8000/#/resumen`.
 
 Tras levantar el servidor, recorre estas rutas en el navegador (smoke manual):
 

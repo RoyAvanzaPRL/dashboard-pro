@@ -1,3 +1,4 @@
+import { renderBreadcrumbs } from "../../components/breadcrumbs.js";
 import { esc } from "../../core/dom.js";
 
 let main;
@@ -96,6 +97,7 @@ const NEWS = [
     title: "Modificación del reglamento de procedimiento administrativo común",
     summary: "Se ajustan los plazos de subsanación y la notificación electrónica en procedimientos locales.",
     body: "El BOE publica hoy el Real Decreto que revisa plazos de subsanación y el régimen de notificación electrónica. Afecta a recursos contencioso-administrativos frente a ayuntamientos y a la forma de acreditar la notificación en sede judicial.\n\nRecomendación Albor: revisar los expedientes abiertos de terraza y licencia (Braseria del Port, veladores) y anotar la fecha de publicación en la ficha del asunto.",
+    impact: "Revisar expedientes abiertos de terraza y licencia y anotar la fecha de publicación en la ficha del asunto.",
     unread: true,
     featured: true,
   },
@@ -108,6 +110,7 @@ const NEWS = [
     title: "Unificación de doctrina sobre alegaciones en reposición",
     summary: "El TS fija cuándo el silencio administrativo cuenta para el cómputo del recurso.",
     body: "La Sala Tercera unifica criterio: si la administración no resuelve la reposición en plazo, el cómputo del contencioso arranca desde el día siguiente al vencimiento, no desde la notificación tardía.\n\nÚtil para Nou Transport y para cualquier recurso de reposición pendiente de respuesta municipal.",
+    impact: "Contrastar con Nou Transport y con cualquier reposición municipal sin respuesta.",
     unread: true,
     featured: false,
   },
@@ -120,6 +123,7 @@ const NEWS = [
     title: "Criterios de inspección de terrazas en vía pública",
     summary: "Nuevas pautas de aforo, ocupación y sanción mínima en municipios de costa.",
     body: "El DOGC concreta criterios de inspección para terrazas: medición de ocupación, aforo y umbral mínimo de sanción. Sitges y Barcelona quedan dentro del ámbito de aplicación.\n\nClara y Adrià pueden contrastarlo con el expediente de Braseria del Port antes de las alegaciones del día 21.",
+    impact: "Contrastar con Braseria del Port antes de las alegaciones del día 21.",
     unread: true,
     featured: false,
   },
@@ -132,6 +136,7 @@ const NEWS = [
     title: "Cómo anotar un BOE en el expediente en cinco minutos",
     summary: "Checklist interno: fuente, extracto, impacto y responsable de seguimiento.",
     body: "1) Pegar el enlace del BOE en la nota del expediente.\n2) Extraer el párrafo que afecta al cliente.\n3) Marcar impacto: alto / medio / bajo.\n4) Asignar seguimiento (letrada + fecha).\n5) Subir el PDF a Archivo del asunto.\n\nLaia deja la plantilla en Guías · Mesa de hoy.",
+    impact: "Usar la plantilla de Guías · Mesa de hoy en el próximo BOE relevante.",
     unread: false,
     featured: false,
   },
@@ -144,6 +149,7 @@ const NEWS = [
     title: "Actualización de tasas judiciales en el orden contencioso",
     summary: "Nuevos importes para recursos frente a actos de entidades locales.",
     body: "Se publican los importes actualizados de tasas en el orden contencioso-administrativo. Entrada en vigor a los veinte días de la publicación.\n\nRevisar provisiones de fondos en asuntos con recurso pendiente de interposición.",
+    impact: "Revisar provisiones de fondos en asuntos con recurso pendiente de interposición.",
     unread: true,
     featured: false,
   },
@@ -156,6 +162,7 @@ const NEWS = [
     title: "Lectura semanal del BOE: ritual de 15 minutos",
     summary: "Cada lunes, Marina o Jordi filtran lo relevante para mercantil y contencioso.",
     body: "Ritual acordado: 15 minutos los lunes, filtro por palabras clave (terraza, sanción, tasa, silencio, mercantil), y un resumen de tres viñetas en el canal del despacho.\n\nQuien lea marca la noticia como leída en el tablón de noticias para que el resto sepa qué ya está cubierto.",
+    impact: "Marcar como leída en el tablón tras el ritual del lunes.",
     unread: false,
     featured: false,
   },
@@ -168,6 +175,7 @@ const NEWS = [
     title: "Licencia de velador: proporcionalidad de la sanción",
     summary: "El TSJ anula una sanción por falta de motivación del aforo.",
     body: "El tribunal estima el recurso al considerar insuficiente la motivación del aforo usado para calcular la sanción. Refuerza la línea de alegaciones que Adrià prepara en licencias de terraza.",
+    impact: "Incorporar el criterio de proporcionalidad en alegaciones de velador.",
     unread: false,
     featured: false,
   },
@@ -180,6 +188,7 @@ const NEWS = [
     title: "Tramitación de la reforma de la Ley de enjuiciamiento civil",
     summary: "Avance parlamentario con impacto en plazos de contestación.",
     body: "El texto en comisión propone acotar plazos de contestación en determinados procedimientos civiles. Todavía no es derecho vigente, pero conviene seguir el calendario de enmiendas por si afecta a Mora & Hijos.",
+    impact: "Seguir el calendario de enmiendas por si afecta a Mora & Hijos.",
     unread: false,
     featured: false,
   },
@@ -269,12 +278,19 @@ function renderNewsDetail() {
   const item = newsById(newsUi.active);
   const cat = NEWS_CATS[item.cat];
   const preview = item.body.split(/\n\n+/)[0];
+  const impact = item.impact
+    ? `<section class="mt-5 rounded-xl bg-mint px-3 py-3">
+        <p class="text-[11px] font-semibold tracking-wide text-tide">PARA EL DESPACHO</p>
+        <p class="mt-1 text-sm leading-relaxed text-[#1f3d36]">${esc(item.impact)}</p>
+      </section>`
+    : "";
   box.innerHTML = `
     <span class="inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${cat.tone}">${esc(cat.label)}</span>
     <h2 class="mt-3 text-lg font-semibold leading-snug">${esc(item.title)}</h2>
     <p class="mt-2 text-xs text-mute">${esc(newsWhen(item))} · ${esc(item.source)}</p>
     <p class="mt-4 text-sm leading-relaxed text-[#3c424a]">${esc(item.summary)}</p>
-    <p class="mt-4 text-sm leading-relaxed text-[#3c424a]">${esc(preview)}</p>`;
+    <p class="mt-4 text-sm leading-relaxed text-[#3c424a]">${esc(preview)}</p>
+    ${impact}`;
 }
 
 function newsRow(item, { compact = false } = {}) {
@@ -391,6 +407,10 @@ function bindInicio2() {
       newsUi.active = open.dataset.newsOpen;
       const item = newsById(newsUi.active);
       if (item.unread) item.unread = false;
+      if (window.matchMedia("(max-width: 1023px)").matches) {
+        location.hash = `#/noticia/${encodeURIComponent(newsUi.active)}`;
+        return;
+      }
       drawNews();
       return;
     }
@@ -398,29 +418,97 @@ function bindInicio2() {
       location.hash = `#/noticia/${encodeURIComponent(newsUi.active)}`;
     }
   });
-  root.querySelector("#news-panel")?.addEventListener("dblclick", () => {
-    location.hash = `#/noticia/${encodeURIComponent(newsUi.active)}`;
-  });
+}
+
+function newsNeighbors(id) {
+  const index = NEWS.findIndex((item) => item.id === id);
+  return {
+    prev: index > 0 ? NEWS[index - 1] : null,
+    next: index >= 0 && index < NEWS.length - 1 ? NEWS[index + 1] : null,
+  };
 }
 
 function bindNoticia(id) {
   const root = main.querySelector("#news-article");
   if (!root) return;
   const item = newsById(id);
+  item.unread = false;
+  jumpToNewsItem(item);
   const cat = NEWS_CATS[item.cat];
-  root.querySelector("#news-article-category").className = `inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${cat.tone}`;
-  root.querySelector("#news-article-category").textContent = cat.label;
+  const { prev, next } = newsNeighbors(item.id);
+
+  document.title = `${item.title} · Albor`;
+  renderBreadcrumbs(root, [
+    { label: "Tablón", href: "#/agenda" },
+    { label: cat.label, href: `#/agenda?cat=${encodeURIComponent(item.cat)}` },
+    { label: item.title },
+  ]);
+
+  const category = root.querySelector("#news-article-category");
+  category.className = `inline-flex rounded-md px-2 py-0.5 text-[11px] font-semibold ${cat.tone}`;
+  category.textContent = cat.label;
+  root.querySelector("#news-article-source").textContent = item.source;
   root.querySelector("#news-article-title").textContent = item.title;
-  root.querySelector("#news-article-meta").textContent = `${newsWhen(item)} · ${item.source}`;
+  root.querySelector("#news-article-meta").textContent = newsWhen(item);
   root.querySelector("#news-article-summary").textContent = item.summary;
   root.querySelector("#news-article-body").innerHTML = item.body
     .split(/\n\n+/)
     .map((para) => `<p>${esc(para).replace(/\n/g, "<br>")}</p>`)
     .join("");
+
+  const impact = root.querySelector("#news-article-impact");
+  const impactText = root.querySelector("#news-article-impact-text");
+  if (item.impact) {
+    impact.hidden = false;
+    impactText.textContent = item.impact;
+  } else {
+    impact.hidden = true;
+  }
+
+  root.querySelector("#news-article-side-cat").textContent = cat.label;
+  root.querySelector("#news-article-side-when").textContent = newsWhen(item);
+  root.querySelector("#news-article-side-source").textContent = item.source;
+
+  const prevLink = root.querySelector("#news-article-prev");
+  const nextLink = root.querySelector("#news-article-next");
+  if (prev) {
+    prevLink.href = `#/noticia/${encodeURIComponent(prev.id)}`;
+    prevLink.classList.remove("pointer-events-none", "opacity-40");
+  } else {
+    prevLink.href = "#/agenda";
+    prevLink.classList.add("pointer-events-none", "opacity-40");
+  }
+  if (next) {
+    nextLink.href = `#/noticia/${encodeURIComponent(next.id)}`;
+    nextLink.classList.remove("pointer-events-none", "opacity-40");
+  } else {
+    nextLink.href = "#/agenda";
+    nextLink.classList.add("pointer-events-none", "opacity-40");
+  }
+
+  const weekDates = newsWeekDates(
+    NEWS_WEEKS.find((week) => week.days.some((day) => day.date === item.date)) || currentNewsWeek(),
+  );
+  const related = NEWS.filter((row) => row.id !== item.id && weekDates.has(row.date)).slice(0, 5);
+  root.querySelector("#news-article-related").innerHTML = related.length
+    ? related
+        .map((row) => {
+          const rowCat = NEWS_CATS[row.cat];
+          return `<li class="border-t border-line first:border-t-0">
+            <a href="#/noticia/${encodeURIComponent(row.id)}" class="block py-2.5 hover:text-tide">
+              <span class="block text-[10px] font-semibold uppercase tracking-wide text-mute">${esc(rowCat.label)}</span>
+              <span class="mt-1 block text-sm font-medium leading-snug">${esc(row.title)}</span>
+            </a>
+          </li>`;
+        })
+        .join("")
+    : `<li class="py-2 text-sm text-mute">No hay más piezas en esta semana.</li>`;
 }
 
-export function mountAgenda(root) {
+export function mountAgenda(root, route) {
   main = root;
+  const cat = route?.query?.get?.("cat") || "";
+  newsUi.filter = NEWS_CATS[cat] ? cat : "todas";
   bindInicio2();
 }
 

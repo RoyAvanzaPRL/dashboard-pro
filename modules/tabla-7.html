@@ -8,13 +8,13 @@
       </div>
       <div class="flex min-w-0 flex-wrap items-center justify-end gap-2">
         <div id="tabla7-search-wrap" class="t7-search shrink-0">
-          <button type="button" id="tabla7-search-btn" class="t7-search-btn" aria-expanded="false" aria-controls="tabla7-q" aria-label="Buscar">
-            <svg viewBox="0 0 24 24" class="line size-4"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
-          </button>
-          <form id="tabla7-search" class="t7-search-form">
+          <form id="tabla7-search" class="t7-search-form" aria-hidden="true">
             <label class="sr-only" for="tabla7-q">Buscar en cualquier dato</label>
             <input id="tabla7-q" type="text" placeholder="Buscar" autocomplete="off" tabindex="-1" />
           </form>
+          <button type="button" id="tabla7-search-btn" class="t7-search-btn" aria-expanded="false" aria-controls="tabla7-q" aria-label="Buscar">
+            <svg viewBox="0 0 24 24" class="line size-4"><circle cx="11" cy="11" r="6"></circle><path d="m16 16.5 4 4"></path></svg>
+          </button>
         </div>
         <button type="button" id="tabla7-add" class="h-9 rounded-lg bg-ink px-3 text-sm font-semibold text-white">Añadir</button>
         <div class="relative shrink-0">

@@ -1,3 +1,4 @@
+import { renderBreadcrumbs } from "../../components/breadcrumbs.js";
 import { esc } from "../../core/dom.js";
 
 let main;
@@ -104,8 +105,8 @@ const FORUM_THREADS = [
 ];
 
 const forumUi = {
-  category: "general",
-  thread: "t1",
+  category: "",
+  thread: "",
   q: "",
   compose: "",
 };
@@ -118,40 +119,78 @@ function forumThread(id) {
   return FORUM_THREADS.find((thread) => thread.id === id) || null;
 }
 
+function forumCategoryList() {
+  const q = forumUi.q.trim().toLowerCase();
+  return FORUM_CATEGORIES.filter((category) => {
+    if (!q) return true;
+    return [category.name, category.description].join(" ").toLowerCase().includes(q);
+  });
+}
+
 function forumThreadList() {
   const q = forumUi.q.trim().toLowerCase();
   return FORUM_THREADS.filter((thread) => {
     if (thread.category !== forumUi.category) return false;
     if (!q) return true;
     return [thread.title, thread.excerpt, thread.author].join(" ").toLowerCase().includes(q);
-  });
+  }).sort((a, b) => Number(b.pinned) - Number(a.pinned));
+}
+
+function forumCountLabel(count) {
+  return `${count} ${count === 1 ? "conversación" : "conversaciones"}`;
+}
+
+function drawForumHome(root) {
+  const categories = forumCategoryList();
+  root.querySelector("#forum-categories").innerHTML = categories.length
+    ? categories
+        .map((item) => {
+          const threads = FORUM_THREADS.filter((thread) => thread.category === item.id);
+          const preview = threads.find((thread) => thread.pinned) || threads[0];
+          return `<button type="button" data-forum-category="${item.id}" class="flex h-full flex-col rounded-2xl bg-white p-5 text-left shadow-[0_1px_2px_rgba(20,24,28,0.04)] hover:ring-1 hover:ring-black/10">
+            <span class="flex items-start justify-between gap-3">
+              <span class="grid size-10 shrink-0 place-items-center rounded-xl ${item.tone} text-sm font-semibold">${esc(item.name.slice(0, 1))}</span>
+              <span class="text-xs text-mute">${esc(forumCountLabel(threads.length))}</span>
+            </span>
+            <span class="mt-4 text-base font-semibold">${esc(item.name)}</span>
+            <span class="mt-1 text-sm leading-relaxed text-mute">${esc(item.description)}</span>
+            <span class="mt-4 truncate border-t border-line pt-3 text-xs text-mute">${preview ? esc(preview.title) : "Sin conversaciones"}</span>
+          </button>`;
+        })
+        .join("")
+    : `<div class="rounded-2xl bg-white px-5 py-10 text-center text-sm text-mute shadow-[0_1px_2px_rgba(20,24,28,0.04)]">Ninguna categoría coincide.</div>`;
 }
 
 function drawForo() {
   const root = main.querySelector("#foro");
   if (!root) return;
-  const category = forumCategory(forumUi.category);
-  const threads = forumThreadList();
-  if (!threads.some((thread) => thread.id === forumUi.thread)) forumUi.thread = threads[0]?.id || "";
+  const home = root.querySelector("#forum-home");
+  const workspace = root.querySelector("#forum-workspace");
+  const category = forumUi.category ? forumCategory(forumUi.category) : null;
+  const title = root.querySelector("#foro-title");
+  if (!category || !FORUM_CATEGORIES.some((item) => item.id === forumUi.category)) {
+    forumUi.category = "";
+    home.hidden = false;
+    workspace.hidden = true;
+    renderBreadcrumbs(root, []);
+    title?.classList.remove("mt-2");
+    drawForumHome(root);
+    return;
+  }
 
-  root.querySelector("#forum-categories").innerHTML = FORUM_CATEGORIES.map((item) => {
-    const active = item.id === forumUi.category;
-    const count = FORUM_THREADS.filter((thread) => thread.category === item.id).length;
-    return `<button type="button" data-forum-category="${item.id}" class="w-full rounded-xl p-3 text-left ${active ? "bg-[#e7f8f3]" : "hover:bg-[#f6f7f8]"}">
-      <span class="flex items-start justify-between gap-2">
-        <span class="flex min-w-0 items-center gap-2">
-          <span class="grid size-7 shrink-0 place-items-center rounded-lg ${item.tone} text-xs font-semibold">${esc(item.name.slice(0, 1))}</span>
-          <span class="truncate text-sm font-medium ${active ? "text-[#0f766e]" : "text-ink"}">${esc(item.name)}</span>
-        </span>
-        <span class="text-xs text-mute">${count}</span>
-      </span>
-      <span class="mt-1 block truncate pl-9 text-xs text-mute">${esc(item.description)}</span>
-    </button>`;
-  }).join("");
+  home.hidden = true;
+  workspace.hidden = false;
+  renderBreadcrumbs(root, [
+    { label: "Foro", href: "#/foro" },
+    { label: category.name },
+  ]);
+  title?.classList.add("mt-2");
+  const threads = forumThreadList();
+  if (!threads.some((thread) => thread.id === forumUi.thread)) forumUi.thread = threads.find((thread) => thread.pinned)?.id || threads[0]?.id || "";
 
   root.querySelector("#forum-category-title").textContent = category.name;
   root.querySelector("#forum-category-description").textContent = category.description;
-  root.querySelector("#forum-thread-count").textContent = `${threads.length} ${threads.length === 1 ? "conversación" : "conversaciones"}`;
+  root.querySelector("#forum-thread-count").textContent = forumCountLabel(threads.length);
   root.querySelector("#forum-threads").innerHTML = threads.length
     ? threads
         .map(
@@ -200,8 +239,7 @@ function drawForo() {
         )
         .join("")}
     </div>`;
-  panel?.classList.toggle("hidden", !thread);
-  panel?.classList.toggle("forum-mobile-open", Boolean(thread));
+  panel?.classList.add("forum-mobile-open");
 }
 
 function bindForo() {
@@ -219,10 +257,7 @@ function bindForo() {
   root.addEventListener("click", (event) => {
     const category = event.target.closest?.("[data-forum-category]");
     if (category) {
-      forumUi.category = category.dataset.forumCategory;
-      forumUi.q = "";
-      if (search) search.value = "";
-      drawForo();
+      location.hash = `#/foro/${category.dataset.forumCategory}`;
       return;
     }
     const thread = event.target.closest?.("[data-forum-thread]");
@@ -245,9 +280,7 @@ function bindForo() {
       return;
     }
     if (event.target.closest?.("[data-forum-close-thread]")) {
-      const panel = root.querySelector("#forum-thread-panel");
-      panel.classList.add("hidden");
-      panel.classList.remove("forum-mobile-open");
+      root.querySelector("#forum-thread-panel")?.classList.remove("forum-mobile-open");
     }
   });
 
@@ -262,7 +295,13 @@ function bindForo() {
   });
 }
 
-export function mount(root) {
+export function mount(root, route) {
   main = root;
+  const category = FORUM_CATEGORIES.some((item) => item.id === route?.param) ? route.param : "";
+  if (category !== forumUi.category) {
+    forumUi.q = "";
+    forumUi.thread = "";
+  }
+  forumUi.category = category;
   bindForo();
 }

@@ -1,0 +1,43 @@
+.foro2-attach {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 0.5rem;
+  border: 1px solid #eceef1;
+  background: #f7f8f9;
+  padding: 0.375rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.foro2-comment {
+  border-top: 1px solid #eceef1;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.foro2-comment:first-child {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.foro2-topic-btn {
+  display: block;
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+}
+
+.foro2-topic-btn:hover {
+  background: #f8fbfa;
+}
+
+.foro2-topic-btn.is-active {
+  background: #f6fbfa;
+}
+
+.foro2-topic-btn.is-active .foro2-topic-title {
+  color: #0f766e;
+}
